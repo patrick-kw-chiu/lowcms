@@ -1,0 +1,11 @@
+{
+	"name": "Teddy Bear",
+	"age": 50,
+	"address": {
+		"street": "321 JP St",
+		"city": "Tokyo",
+		"state": "TO",
+		"postalCode": "54321"
+	},
+	"hobbies": ["cooking", "badminton", "programming", "sleeping", "eating", "reading", "hiking"]
+}

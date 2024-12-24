@@ -1,0 +1,43 @@
+[
+  {
+    "productId": 1,
+    "productName": "A green door",
+    "price": 12.5,
+    "tags": [
+      "furniture",
+      "home",
+      "green"
+    ]
+  },
+  {
+    "productId": 2,
+    "productName": "A red bed",
+    "price": 14.55555,
+    "tags": [
+      "furniture",
+      "bedroom",
+      "dinning room",
+      "home"
+    ]
+  },
+  {
+    "productId": 3,
+    "productName": "Dining table",
+    "price": 18,
+    "tags": [
+      "furniture",
+      "dinning room",
+      "brown"
+    ]
+  },
+  {
+    "productId": 4,
+    "productName": "Portable air conditioner",
+    "price": 32,
+    "tags": [
+      "appliance",
+      "home",
+      "white"
+    ]
+  }
+]

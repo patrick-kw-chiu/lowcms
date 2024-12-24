@@ -1,0 +1,32 @@
+[
+	{
+		"id": 1,
+		"name": "Patrick",
+		"title": "Senior software engineer"
+	},
+	{
+		"id": 2,
+		"name": "Lorinda",
+		"title": "CEO"
+	},
+	{
+		"id": 3,
+		"name": "Dylan",
+		"title": "CTO"
+	},
+	{
+		"id": 4,
+		"name": "Patrick clone #1",
+		"title": "Senior software engineer$$"
+	},
+	{
+		"id": 5,
+		"name": "Patrick clone #2",
+		"title": "Senior software engineer??"
+	},
+	{
+		"id": 6,
+		"name": "Patrick clone #3",
+		"title": "Senior software engineer.."
+	}
+]

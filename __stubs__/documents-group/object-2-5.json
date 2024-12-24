@@ -1,0 +1,11 @@
+{
+	"name": "Dylan Chiu",
+	"age": 1,
+	"address": {
+		"street": "123 Peter St",
+		"city": "Toronto",
+		"state": "ON",
+		"postalCode": "54321"
+	},
+	"hobbies": ["sleeping", "reading"]
+}

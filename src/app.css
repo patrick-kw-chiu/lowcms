@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 222.2 84% 4.9%;
+
+		--muted: 210 40% 96.1%;
+		--muted-foreground: 215.4 16.3% 46.9%;
+
+		/* --popover: 0 0% 100%; */
+		--popover: 0 0% 97%;
+		--popover-foreground: 222.2 84% 4.9%;
+
+		--tooltip: 0 0% 92%;
+
+		--card: 0 0% 100%;
+		--card-foreground: 222.2 84% 4.9%;
+
+		--border: 214.3 31.8% 91.4%;
+		--input: 214.3 31.8% 91.4%;
+
+		--primary: 222.2 47.4% 11.2%;
+		--primary-foreground: 210 40% 98%;
+
+		--secondary: 210 40% 96.1%;
+		--secondary-foreground: 222.2 47.4% 11.2%;
+
+		--accent: 210 40% 96.1%;
+		--accent-foreground: 222.2 47.4% 11.2%;
+
+		--destructive: 0 72.2% 50.6%;
+		--destructive-foreground: 210 40% 98%;
+
+		--ring: 222.2 84% 4.9%;
+
+		--radius: 0.5rem;
+
+		--blink-color: rgba(255, 0, 0, 0.3);
+	}
+
+	.dark {
+		--background: 222.2 84% 4.9%;
+		--foreground: 210 40% 98%;
+
+		--muted: 217.2 32.6% 17.5%;
+		--muted-foreground: 215 20.2% 65.1%;
+
+		/* --popover: 222.2 84% 4.9%; */
+		--popover: 222.2 41% 16%;
+		--popover-foreground: 210 40% 98%;
+
+		--tooltip: 222.2 29% 29%;
+
+		--card: 222.2 84% 4.9%;
+		--card-foreground: 210 40% 98%;
+
+		--border: 217.2 32.6% 17.5%;
+		--input: 217.2 32.6% 17.5%;
+
+		--primary: 210 40% 98%;
+		--primary-foreground: 222.2 47.4% 11.2%;
+
+		--secondary: 217.2 32.6% 17.5%;
+		--secondary-foreground: 210 40% 98%;
+
+		--accent: 217.2 32.6% 17.5%;
+		--accent-foreground: 210 40% 98%;
+
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 210 40% 98%;
+
+		--ring: 212.7 26.8% 83.9%;
+
+		--blink-color: rgba(255, 0, 0, 0.4);
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+
+	.lc-icon {
+		@apply h-5 w-5;
+	}
+
+	.lc-menu-icon-button {
+		@apply flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8;
+	}
+
+	.lc-menu-icon-button-disabled {
+		@apply cursor-not-allowed opacity-25;
+	}
+
+	.lc-menu-icon-button-active {
+		@apply bg-accent text-accent-foreground hover:text-foreground;
+	}
+
+	.lc-aside {
+		@apply inset-y-0 left-0 z-10 w-14 flex-col border-r bg-background;
+	}
+
+	.lc-hide-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+
+	.lc-long-content {
+		@apply lc-hide-scrollbar flex h-full flex-col overflow-y-scroll p-2;
+	}
+
+	@keyframes blinkBackground {
+		0% {
+			background-color: inherit;
+		}
+		50% {
+			background-color: var(--blink-color);
+		}
+		100% {
+			background-color: inherit;
+		}
+	}
+	.lc-blink-background {
+		animation: blinkBackground 2.5s linear infinite;
+	}
+
+	.lc-badge-string {
+		@apply h-4 !bg-red-200 !text-black dark:!bg-red-800 dark:!text-white;
+	}
+
+	.lc-badge-number {
+		@apply h-4 !bg-orange-200 !text-black dark:!bg-orange-800 dark:!text-white;
+	}
+
+	.lc-badge-integer {
+		@apply h-4 !bg-orange-300 !text-black dark:!bg-orange-700 dark:!text-white;
+	}
+
+	.lc-badge-boolean {
+		@apply h-4 !bg-yellow-200 !text-black dark:!bg-yellow-800 dark:!text-white;
+	}
+
+	.lc-badge-array {
+		@apply h-4 !bg-green-200 !text-black dark:!bg-green-800 dark:!text-white;
+	}
+
+	.lc-badge-object {
+		@apply h-4 !bg-blue-200 !text-black dark:!bg-blue-800 dark:!text-white;
+	}
+
+	.lc-badge-unknown {
+		@apply h-4 !bg-purple-200 !text-black dark:!bg-purple-800 dark:!text-white;
+	}
+
+	:root {
+		div[role='tooltip'].bg-popover {
+			background-color: hsl(var(--tooltip));
+		}
+	}
+}

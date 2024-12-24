@@ -1,0 +1,11 @@
+{
+	"name": "Sam Gate",
+	"age": 45,
+	"address": {
+		"street": "333 Nnn Yyyy St",
+		"city": "New York",
+		"state": "NY",
+		"postalCode": "54321"
+	},
+	"hobbies": ["programming", "running"]
+}

@@ -1,0 +1,11 @@
+{
+	"name": "Patrick Chiu",
+	"age": 32,
+	"address": {
+		"street": "123 Peter St",
+		"city": "Toronto",
+		"state": "ON",
+		"postalCode": "54321"
+	},
+	"hobbies": ["gardening", "badminton"]
+}

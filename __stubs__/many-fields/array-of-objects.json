@@ -1,0 +1,84 @@
+[
+  {
+    "productId": 1,
+    "productName": "A green door",
+    "price": 12.5,
+    "tags": [
+      "furniture",
+      "home",
+      "green"
+    ],
+    "isRecommended": true,
+    "origin": "Canada",
+    "url": "https://www.ikea.com/products/a-green-door",
+    "description": "A green door",
+    "image": "https://www.ikea.com/images/products/a-green-door",
+    "testimonial": "It is awesome!",
+    "rating": 5,
+    "nested": {
+      "whatever": {
+        "field": "value it is"
+      }
+    }
+  },
+  {
+    "productId": 2,
+    "productName": "A blue window",
+    "price": 7.2,
+    "tags": [
+      "furniture",
+      "home",
+      "blue"
+    ],
+    "isRecommended": false,
+    "origin": "Germany",
+    "url": "https://www.ikea.com/products/a-blue-window",
+    "description": "A blue window",
+    "image": "https://www.ikea.com/images/products/a-blue-window",
+    "testimonial": "It is great!",
+    "rating": 4
+  },
+  {
+    "productId": 3,
+    "productName": "A red chair",
+    "price": 5.6,
+    "tags": [
+      "home",
+      "red",
+      "furniture"
+    ],
+    "isRecommended": false,
+    "origin": "France",
+    "url": "https://www.ikea.com/products/a-red-chair",
+    "description": "A red chair",
+    "image": "https://www.ikea.com/images/products/a-red-chair",
+    "testimonial": "It is amazing!",
+    "rating": 5,
+    "nested": {
+      "whatever": {
+        "field": "value it is 2"
+      }
+    }
+  },
+  {
+    "productId": 6,
+    "productName": "The 6th product",
+    "price": 655,
+    "tags": [
+      "home",
+      "red"
+    ],
+    "isRecommended": true,
+    "origin": "666666",
+    "url": "6666",
+    "description": "666",
+    "image": "666",
+    "testimonial": "It is great 6!",
+    "rating": 6,
+    "nested": {
+      "whatever": {
+        "field": "something's here"
+      }
+    }
+  }
+]
