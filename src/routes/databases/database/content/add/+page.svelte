@@ -287,6 +287,10 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Add Content | LowCMS</title>
+	<meta name="description" content="Configure a content to be managed by LowCMS." />
+</svelte:head>
 <div class="flex h-full">
 	<Toaster richColors />
 	<div class="flex h-14 w-full items-center gap-2 border-b-4 border-b-background px-4">

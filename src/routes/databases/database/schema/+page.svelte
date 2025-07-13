@@ -93,6 +93,13 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Schema | LowCMS</title>
+	<meta
+		name="description"
+		content="Validate and safeguard your editing experience with JSON Schema."
+	/>
+</svelte:head>
 <div class="p-12" style="height: 100dvh">
 	<Toaster richColors />
 	<Card.Root class="lc-long-content w-full" style="height: calc(100% - 3.5rem)">

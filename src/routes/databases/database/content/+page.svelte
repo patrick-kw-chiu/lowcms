@@ -206,6 +206,10 @@
 	let isContentEditorOpen = $state(false);
 </script>
 
+<svelte:head>
+	<title>Content | LowCMS</title>
+	<meta name="description" content="Manage your local files content with LowCMS." />
+</svelte:head>
 <div class="flex h-full">
 	<Toaster richColors />
 	<Resizable.PaneGroup direction="horizontal" class="directory-viewer" style="height: 100dvh">

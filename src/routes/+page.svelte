@@ -4,10 +4,17 @@
 	import README from './README.md?raw';
 </script>
 
+<svelte:head>
+	<title>LowCMS</title>
+	<meta
+		name="description"
+		content="Instant browser-based CMS layer on top of your local JSON files"
+	/>
+</svelte:head>
 <div id="home-page">
 	<div style="text-align: center;">
 		<img
-			src="https://github.com/patrick-kw-chiu/lowcms/blob/static/logo.png?raw=true?raw=true"
+			src="https://github.com/patrick-kw-chiu/lowcms/blob/main/static/logo_2.png?raw=true?raw=true"
 			alt="LowCMS"
 			style="display: block; margin-left: auto; margin-right: auto; width: 200px;"
 		/>

@@ -144,6 +144,13 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Databases | LowCMS</title>
+	<meta
+		name="description"
+		content="Mount your local directory as a database to be managed by LowCMS."
+	/>
+</svelte:head>
 <Tabs.Root bind:value={databaseStorage}>
 	<div class="flex items-center">
 		<Tabs.List>
