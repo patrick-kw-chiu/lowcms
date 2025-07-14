@@ -73,6 +73,7 @@
 	};
 
 	const handleUpdateSchema = async () => {
+		console.log({ schemaToEdit, schemaId });
 		if (!schemaToEdit || !schemaId) {
 			return;
 		}
@@ -263,7 +264,10 @@
 				<div
 					class={`relative mb-2 whitespace-break-spaces rounded-xl bg-accent p-4 font-mono text-xs`}
 				>
-					<SchemaEditor jsonSchema={schemaToEdit!.properties ?? {}} disabled={false} />
+					<SchemaEditor
+						bind:jsonSchema={schemaToEdit!.properties as JSONSchema7}
+						disabled={false}
+					/>
 				</div>
 				<div>
 					{cap(m.used_by_x_y({ x: contentsLinkToSchema.length, y: m.content() }))}

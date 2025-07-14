@@ -32,20 +32,25 @@ jobs:
         run: |
           npm run build
 
-      - name: Create "build-with-zh" directory
-        run: mkdir -p build-with-zh
-
-      - name: Copy "build" to "build-with-zh/zh"
-        run: cp -r build build-with-zh/zh
-
-      - name: Copy "build" to "build-with-zh"
-        run: cp -r build/* build-with-zh/
-
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
           # this should match the `pages` option in your adapter-static options
-          path: 'build-with-zh/'
+          path: 'build/'
+
+      # - name: Create "build-with-zh" directory
+      #   run: mkdir -p build-with-zh
+
+      # - name: Copy "build" to "build-with-zh/zh"
+      #   run: cp -r build build-with-zh/zh
+
+      # - name: Copy "build" to "build-with-zh"
+      #   run: cp -r build/* build-with-zh/
+
+      # - name: Upload Artifacts
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     path: 'build-with-zh/'
 
   deploy:
     needs: build_site

@@ -102,7 +102,7 @@
 	</Popover.Trigger>
 	<Popover.Content
 		class="border-3 w-80 overflow-scroll"
-		style="max-height: calc(50dvh - 60px); min-height: 240px"
+		style="max-height: calc(50dvh - 60px); min-height: 280px"
 	>
 		<FieldEditor
 			onConfirmFieldDetail={(field, schema) => {

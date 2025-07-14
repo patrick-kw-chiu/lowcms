@@ -235,12 +235,7 @@
 												<a
 													href={`/${BASE_PATH}/databases/database/content?databaseId=${dbConfig.id}`}
 												>
-													<DropdownMenu.Item
-														onclick={() => {
-															deleteDbConfigDialogOpen = true;
-															selectedDatabaseConfigId = dbConfig.id;
-														}}
-													>
+													<DropdownMenu.Item>
 														{cap(m.connect())}
 													</DropdownMenu.Item>
 												</a>

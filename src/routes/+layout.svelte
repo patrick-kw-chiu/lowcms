@@ -203,7 +203,7 @@
 					-->
 				</div>
 				<DarkModeSwitchButton />
-				<LanguageSwitchButton />
+				<!-- <LanguageSwitchButton /> -->
 				<!-- <DropdownMenu.Root>
 					<DropdownMenu.Trigger asChild let:builder>
 						<Button
