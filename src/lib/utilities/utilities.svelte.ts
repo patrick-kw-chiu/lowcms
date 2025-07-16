@@ -663,9 +663,12 @@ export function hasXType(schema: JSONSchema7WithUnknown, _type = 'unknown'): boo
  */
 export const getValueByJsonPaths = <T = any>(
 	object: any,
-	jsonPaths: (string | number)[]
+	jsonPaths: (string | number)[] = []
 ): T | undefined => {
 	let value = object;
+	if (jsonPaths.length === 1 && jsonPaths[0] === '') {
+		return value;
+	}
 	for (const field of jsonPaths) {
 		value = value?.[field];
 	}

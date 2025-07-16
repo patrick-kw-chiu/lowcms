@@ -119,24 +119,31 @@ It could edit a single `document` or document inside a `collection`.
 		const file = await selectedContent.fileHandle!.getFile();
 		const contentInFile = await file.text();
 		try {
-			const originalJson: JSONObject = JSON.parse(contentInFile);
-			const newJson =
-				selectedContent.type === 'document'
-					? selectedContent.jsonPath
-						? setValueByJsonPathsMutable(originalJson, selectedContent.jsonPath.split('.'), {
-								value: editedData
-							})
-						: editedData
-					: checkedRowIndex === originalJson.length
-						? [...(originalJson as []), editedData]
-						: originalJson.map((row: any, index: number) => {
-								return index === checkedRowIndex ? editedData : row;
-							});
+			const jsonContent: JSONObject = JSON.parse(contentInFile);
+
+			if (selectedContent.type === 'document') {
+				setValueByJsonPathsMutable(jsonContent, selectedContent.jsonPath!.split('.'), {
+					value: editedData
+				});
+			} else {
+				const originalJsonWithPath = getValueByJsonPaths(
+					jsonContent,
+					selectedContent.jsonPath!.split('.')
+				);
+				setValueByJsonPathsMutable(jsonContent, selectedContent.jsonPath!.split('.'), {
+					value:
+						checkedRowIndex === jsonContent.length
+							? [...(originalJsonWithPath as []), editedData]
+							: originalJsonWithPath.map((row: any, index: number) => {
+									return index === checkedRowIndex ? editedData : row;
+								})
+				});
+			}
 
 			// Create a FileSystemWritableFileStream to write to.
 			const writable = await selectedContent.fileHandle!.createWritable();
 			// Write the contents of the file to the stream.
-			await writable.write(JSON.stringify(newJson, null, 2));
+			await writable.write(JSON.stringify(jsonContent, null, 2));
 			// Close the file and write the contents to disk.
 			await writable.close();
 			toast.success(selectedContent.name, {
