@@ -101,6 +101,10 @@
 			schemaId
 		});
 		if (isUpdated) {
+			toast.success('Content updated!', {
+				position: 'top-center',
+				duration: 1500
+			});
 			invalidateAll();
 			onUpdateSuccess?.();
 		} else {

@@ -50,6 +50,8 @@ It could edit a single `document` or document inside a `collection`.
 	import RemovableSelect from '../../removable-select/removable-select.svelte';
 	import DocumentEditor from './document-editor.svelte';
 	import CirclePlus from 'lucide-svelte/icons/circle-plus';
+	import Trash_2 from 'lucide-svelte/icons/trash-2';
+	import ConfirmToRemove from '../../popover/confirm-to-remove.svelte';
 
 	interface Props {
 		config: JSONSchema7;
@@ -59,12 +61,21 @@ It could edit a single `document` or document inside a `collection`.
 	let { config, jsonPaths, data }: Props = $props();
 	let items = $derived(config!.items) as JSONSchema7;
 	let array = $derived(getValueByJsonPaths(data, jsonPaths));
+	$effect(() => {
+		if (!array) {
+			array = setValueByJsonPathsMutable(data, jsonPaths, {
+				isGetNestedFieldOnly: true,
+				isArray: true
+			});
+		}
+	});
 	let fields = $derived(Object.keys(array[0] ?? {}));
 	let stringFields = $derived(fields.filter((field) => typeof array[0][field] === 'string'));
 
 	// State
 	let selectedObject = $state<JSONObject>();
 	let selectedObjectIndex = $state<number>();
+	let objectIndexToRemove = $state(-1);
 
 	const getContainerId = (index: number) => {
 		return `${index.toString()}_${jsonPaths.join('-')}`;
@@ -178,13 +189,39 @@ It could edit a single `document` or document inside a `collection`.
 					<SquarePen
 						class="h-5 w-5"
 						onclick={() => {
-							// checkedRowIndexes = [row.____rawIndex____];
-							// onAttemptedToEditRows?.([row.____rawIndex____], [row]);
 							selectedObject = item;
 							selectedObjectIndex = index;
 						}}
 					/>
 				</Button>
+				<Button class="h-8 w-8" variant="ghost" size="icon">
+					<Trash_2
+						class="h-5 w-5"
+						onclick={() => {
+							objectIndexToRemove = index;
+						}}
+					/>
+				</Button>
+				<ConfirmToRemove
+					bind:open={
+						() => objectIndexToRemove === index,
+						() => {
+							objectIndexToRemove = -1;
+						}
+					}
+					deleteTarget={`"${item[stringFields[0]]}"`}
+					onConfirm={() => {
+						const array = setValueByJsonPathsMutable(data, jsonPaths, {
+							isGetNestedFieldOnly: true,
+							isArray: true
+						});
+						array.splice(index, 1);
+						objectIndexToRemove = -1;
+					}}
+					onCancel={() => {
+						objectIndexToRemove = -1;
+					}}
+				/>
 				<div
 					use:draggable={{
 						container: getContainerId(index),
@@ -196,14 +233,16 @@ It could edit a single `document` or document inside a `collection`.
 					}}
 					in:fade={{ duration: 150 }}
 					out:fade={{ duration: 150 }}
-					class="svelte-dnd-touch-feedback cursor-move rounded-lg bg-white p-2.5 shadow-sm ring-1 ring-gray-200 transition-all duration-200 hover:shadow-md hover:ring-2 hover:ring-blue-200"
+					class="svelte-dnd-touch-feedback flex cursor-move gap-2 rounded-lg bg-white p-2.5 shadow-sm ring-1 ring-gray-200 transition-all duration-200 hover:shadow-md hover:ring-2 hover:ring-blue-200"
 				>
-					{#each stringFields.slice(0, 2) as field}
-						<h3 class="text-base">
-							<span class="text-gray-500">{field}:</span>
-							<span class="font-medium text-gray-900">{item[field]}</span>
-						</h3>
-					{/each}
+					<div class="flex flex-col">
+						{#each stringFields.slice(0, 2) as field}
+							<h3 class="text-base">
+								<span class="text-gray-500">{field}:</span>
+								<span class="font-medium text-gray-900">{item[field]}</span>
+							</h3>
+						{/each}
+					</div>
 				</div>
 			</div>
 		{/each}

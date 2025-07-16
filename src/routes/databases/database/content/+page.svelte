@@ -64,6 +64,7 @@
 		})
 	);
 
+	let uiState = $state<'initializing' | 'loading' | 'success'>('initializing');
 	let selectedContents = $state<Content[]>([]);
 	let contentJson = $state<JSONObject[]>([]);
 	let schema = $state<JSONSchema7 | null>();
@@ -74,12 +75,14 @@
 		selectedContents = [];
 		contentJson = [];
 		schema = null;
+		uiState = 'initializing';
 	};
 
 	$effect(() => {
 		if (contentId) {
 			const content = contents.find((content) => content.id === contentId);
 			if (content) {
+				uiState = 'loading';
 				loadContentAndSchema(content);
 			} else {
 				resetState();
@@ -164,6 +167,7 @@
 					console.log(e);
 				}
 			}
+			uiState = 'success';
 		} catch (e) {
 			toast.warning('', {
 				position: 'top-center',
@@ -261,8 +265,12 @@
 			{:else if !contentJson || contentJson.length === 0}
 				<div class="flex h-full items-center justify-center px-16">
 					<!-- TODO locales -->
-					Content not found. It could be because the file path is pointing to a file that is removed
-					from your desk. Please remove and add the content again.
+					{#if uiState === 'loading'}
+						Loading content...
+					{:else}
+						Content not found. It could be because the file path is pointing to a file that is
+						removed from your desk. Please remove and add the content again.
+					{/if}
 				</div>
 			{:else if !schema}
 				<div class="flex h-full items-center justify-center px-16">
@@ -296,7 +304,11 @@
 											>
 												{cap(m.name())}:
 											</span>
-											<Input disabled value={selectedContents[0]?.name} class="!opacity-90" />
+											<Input
+												disabled
+												value={selectedContents[0]?.name}
+												class="!cursor-default !opacity-90"
+											/>
 											<span
 												class="text-muted-foreground"
 												style={languageTag() === 'en' ? 'min-width: 90px' : 'min-width: 62px'}
@@ -306,7 +318,7 @@
 											<Input
 												disabled
 												value={cap(m[selectedContents[0]?.type as 'document' | 'collection']?.())}
-												class="size-fit !opacity-90"
+												class="size-fit !cursor-default !opacity-90"
 											/>
 										</div>
 										{#if selectedContents[0]?.description}
@@ -320,7 +332,7 @@
 												<Textarea
 													disabled
 													value={selectedContents[0]?.description}
-													class="!opacity-90"
+													class="!cursor-default !opacity-90"
 													style="resize: none"
 												/>
 											</div>

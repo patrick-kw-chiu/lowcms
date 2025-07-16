@@ -429,7 +429,7 @@ export const deriveJSONSchema = (object: JSONObject | JSONObject[], nestedSchema
 
 			// 2. Apply type specific handling
 			if (['array-of-objects'].includes(mostOccuredType!)) {
-				const objects = array.flatMap((obj) => obj[key]);
+				const objects = array.flatMap((obj) => obj[key]).filter((obj) => Boolean(obj));
 				console.log({ key, objects, array });
 				const reducedObject = reduceObjects(objects);
 				console.log({ reducedObject });

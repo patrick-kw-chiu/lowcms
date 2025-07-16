@@ -133,7 +133,7 @@ It could edit a single `document` or document inside a `collection`.
 			await writable.write(JSON.stringify(newJson, null, 2));
 			// Close the file and write the contents to disk.
 			await writable.close();
-			toast.info(selectedContent.name, {
+			toast.success(selectedContent.name, {
 				position: 'top-center',
 				// TODO locales
 				description: 'Saved successfully!',

@@ -240,7 +240,7 @@
 			</main>
 		</div>
 	</div>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-59JQDQSWTG">
+	<script async src={`https://www.googletagmanager.com/gtag/js?id=G-59JQDQSWTG`}>
 	</script>
 	<script>
 		window.dataLayer = window.dataLayer || [];

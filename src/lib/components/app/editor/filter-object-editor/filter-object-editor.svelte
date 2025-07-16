@@ -50,7 +50,7 @@
 {#snippet XIcon(type: 'and-or' | 'op' = 'and-or', lv1Index: number, lv2Index?: number)}
 	<X
 		class="h-4 w-4 cursor-pointer rounded-full p-0.5 hover:bg-sky-200/30"
-		style={`transform: translateX(${type === 'and-or' ? 0.5 : 0}rem)`}
+		style={`transform: translateX(${type === 'and-or' ? 0.5 : 0}rem); min-width: 1rem;`}
 		onclick={() => {
 			const rootOpKey = filterObject['$and'] ? '$and' : '$or';
 			const rootHasOnly1Field = filterObject[rootOpKey].length === 1;
@@ -119,7 +119,11 @@
 			<div style="font-weight: bold;">{label}</div>
 			<div class="opacity-70" style="font-style: italic">{OpTypeToLabelMap[opType!]}</div>
 			<div style="text-decoration: dashed underline;">
-				{opType === '$regex' ? filters.____rawRegexValue____ : opValue}
+				{opType === '$regex'
+					? filters.____rawRegexValue____
+					: Array.isArray(opValue)
+						? opValue.join(', ')
+						: opValue}
 			</div>
 			{@render XIcon('op', lv1Index, lv2Index)}
 		</div>
