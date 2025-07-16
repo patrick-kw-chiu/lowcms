@@ -9,7 +9,7 @@
         "bunting": true
       },
       {
-        "title": "Good Friday updated",
+        "title": "Good Friday",
         "date": "2019-04-19",
         "notes": "",
         "bunting": false
@@ -458,7 +458,13 @@
     "division": "scotland",
     "events": [
       {
-        "title": "2nd January updated",
+        "title": "New Year’s Day",
+        "date": "2019-01-01",
+        "notes": "",
+        "bunting": true
+      },
+      {
+        "title": "2nd January",
         "date": "2019-01-02",
         "notes": "",
         "bunting": true
@@ -874,6 +880,12 @@
       {
         "title": "Spring bank holiday",
         "date": "2026-05-25",
+        "notes": "",
+        "bunting": true
+      },
+      {
+        "title": "Summer bank holiday",
+        "date": "2026-08-03",
         "notes": "",
         "bunting": true
       },

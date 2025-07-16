@@ -105,6 +105,12 @@ It could edit a single `document` or document inside a `collection`.
 		// 1. When it is a nested object inside an array
 		if (!selectedContent) {
 			rows[checkedRowIndex] = editedData;
+			toast.info('Nested object updated successfully', {
+				position: 'top-center',
+				// TODO locales
+				description: 'Please note that it is NOT saved to the file yet',
+				duration: 1500
+			});
 			onUpdateSuccess?.();
 			return;
 		}
@@ -324,7 +330,7 @@ It could edit a single `document` or document inside a `collection`.
 			</Toggle>
 			<div class="w-10"></div>
 			<Button size="sm" disabled={hasContentChanged} onclick={handleUpdateDocument}>
-				{cap(m.save_changes())}
+				{cap(m[selectedContent ? 'save_changes' : 'confirm']())}
 			</Button>
 		</div>
 		<div

@@ -18,7 +18,7 @@
 	// Libraries - lucide
 	import Boxes from 'lucide-svelte/icons/boxes';
 	import FileText from 'lucide-svelte/icons/file-text';
-	import ChevronLeft from 'lucide-svelte/icons/chevron-left';
+	import Expand from 'lucide-svelte/icons/expand';
 	import Key from 'lucide-svelte/icons/key';
 	import File from 'lucide-svelte/icons/file';
 	import CircleHelp from 'lucide-svelte/icons/circle-help';
@@ -87,6 +87,7 @@
 	let originalContentDescription = $state(contentDescription);
 	let originalSchemaId = $state(schemaId);
 	let showSchemaPreview = $state(true);
+	let showActualValue = $state(false);
 
 	let hasContentChanged = $derived(
 		originalContentName !== contentName ||
@@ -220,9 +221,26 @@
 					json={contentJsonInFile}
 					disabled={contentIn === 'entire-file'}
 					onselect={onJsonPathsSelect!}
+					isExpanded={showActualValue}
 				/>
 				{#if contentIn === 'entire-file'}
 					<div class="absolute left-0 top-0 h-full w-full backdrop-blur-[1px]"></div>
+				{:else}
+					<Toggle
+						aria-label="Toggle value expansion"
+						pressed={showActualValue}
+						onPressedChange={(pressed) => {
+							// TODO locales
+							toast.info(pressed ? 'Show actual value' : 'Show value type', {
+								position: 'top-center',
+								duration: 1500
+							});
+							showActualValue = pressed;
+						}}
+						class="absolute right-2 top-2 h-10 w-10"
+					>
+						<Expand class="h-5 w-5" />
+					</Toggle>
 				{/if}
 			{:else}
 				{JSON.stringify(contentJsonInFile, null, 2)}
