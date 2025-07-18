@@ -1,9 +1,3 @@
-[LowCMS](https://patrick-kw-chiu.github.io/lowcms/databases) is an instant CMS layer on top of your local JSON files. With built-in support for [JSON Schema](https://json-schema.org/), it lets you manage and edit structured content effortlessly — no need to touch an IDE or text editor!
-
-## 30s Demo
-
-![LowCMS Demo v0.1.0 launch](https://github.com/patrick-kw-chiu/lowcms/blob/main/demo/v0.1.0-launch/gif-2.gif?raw=true)
-
 ## Features
 
 - **Rich and Safer Editing Experience** 🤹🏻

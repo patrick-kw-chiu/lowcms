@@ -55,6 +55,7 @@
 		"@thisux/sveltednd": "^0.0.20",
 		"@types/json-schema": "^7.0.15",
 		"dexie": "^4.0.10",
+		"embla-carousel-autoplay": "^8.6.0",
 		"escape-string-regexp": "^5.0.0",
 		"markdown-it": "^14.1.0",
 		"nanoid": "^5.0.9",
