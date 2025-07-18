@@ -175,7 +175,8 @@ export const getLowCMSTypeByValue = (value: unknown) => {
 	}
 	if (Array.isArray(value)) {
 		if (value.length === 0) {
-			return 'array-empty';
+			// return 'array-empty';
+			return 'unknown';
 		}
 		if (checkIsJsonObject(value[0])) {
 			return 'array-of-objects';
@@ -413,10 +414,17 @@ export const deriveJSONSchema = (object: JSONObject | JSONObject[], nestedSchema
 		// => see if we can suggest the values as enum
 		for (const key in typeMap) {
 			// types is the count of detected types of the field
-			const types = typeMap[key].filter((t: string) => t !== 'array-empty');
+
+			const isOnlyContainsEmptyArray =
+				new Set(typeMap[key] as string[]).values().next().value === 'array-empty';
+
+			const types = isOnlyContainsEmptyArray
+				? ['unknown']
+				: typeMap[key].filter((t: string) => t !== 'array-empty');
+
 			const mostOccuredType = getMostOccurance(types);
 			const jsonSchemaType = convertLowCMSTypeToJSONSchemaType(mostOccuredType);
-			console.log({ key, mostOccuredType, jsonSchemaType });
+			console.log({ key, types, mostOccuredType, jsonSchemaType });
 
 			// 1. Apply default keyword fields
 			_schema.properties[key] = {
@@ -612,14 +620,14 @@ export const getLabelFor = (jsonPaths: string[], prefix = 'document-editor') => 
 };
 
 /**
- * Recursively checks if any nested property in a JSON Schema object has the _type.
+ * Recursively checks if any nested property in a JSON Schema object has the types.
  *
  * @param {JSONSchema} schema - The JSON Schema object to inspect.
- * @returns {boolean} - True if a property with _type is found, otherwise false.
+ * @returns {boolean} - True if a property with types is found, otherwise false.
  */
-export function hasXType(schema: JSONSchema7WithUnknown, _type = 'unknown'): boolean {
-	// Base case: Check if the current object itself has _type e.g. "unknown".
-	if (schema.type === _type) {
+export function hasXTypes(schema: JSONSchema7WithUnknown, types = ['unknown']): boolean {
+	// Base case: Check if the current object itself has types e.g. "unknown".
+	if (types.includes(schema.type)) {
 		return true;
 	}
 
@@ -628,7 +636,7 @@ export function hasXType(schema: JSONSchema7WithUnknown, _type = 'unknown'): boo
 		// We use `Object.values` and the `.some()` method for an early exit.
 		// If any of the recursive calls return true, `.some()` will stop and return true.
 		const hasUnknownInProperties = Object.values(schema.properties).some((propertySchema) =>
-			hasXType(propertySchema as JSONSchema7WithUnknown)
+			hasXTypes(propertySchema as JSONSchema7WithUnknown)
 		);
 		if (hasUnknownInProperties) {
 			return true;
@@ -641,14 +649,14 @@ export function hasXType(schema: JSONSchema7WithUnknown, _type = 'unknown'): boo
 		if (Array.isArray(schema.items)) {
 			// If it's an array of schemas, check each one.
 			const hasUnknownInItemsArray = schema.items.some((itemSchema) =>
-				hasXType(itemSchema as JSONSchema7WithUnknown)
+				hasXTypes(itemSchema as JSONSchema7WithUnknown)
 			);
 			if (hasUnknownInItemsArray) {
 				return true;
 			}
 		} else if (typeof schema.items === 'object') {
 			// If it's a single schema object.
-			if (hasXType(schema.items as JSONSchema7WithUnknown)) {
+			if (hasXTypes(schema.items as JSONSchema7WithUnknown)) {
 				return true;
 			}
 		}

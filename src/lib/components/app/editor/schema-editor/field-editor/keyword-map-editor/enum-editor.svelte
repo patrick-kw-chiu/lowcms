@@ -60,13 +60,20 @@
 
 	const removeEnumValue = (enumValue: string) => {
 		console.log({ keywordObj });
-		keywordObj = {
-			...keywordObj,
-			items: {
-				...(keywordObj.items as JSONSchema7),
-				enum: (keywordObj.items as JSONSchema7).enum!.filter((e) => e !== enumValue)
-			}
-		};
+		if (type === 'string') {
+			keywordObj = {
+				...keywordObj,
+				enum: (keywordObj?.enum ?? []).filter((e) => e !== enumValue)
+			};
+		} else {
+			keywordObj = {
+				...keywordObj,
+				items: {
+					...(keywordObj.items as JSONSchema7),
+					enum: (keywordObj.items as JSONSchema7).enum!.filter((e) => e !== enumValue)
+				}
+			};
+		}
 	};
 </script>
 

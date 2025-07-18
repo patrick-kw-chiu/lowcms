@@ -68,7 +68,8 @@
 
 <Accordion.Root class="w-full" bind:value={getValue, setValue}>
 	<Accordion.Item value={directoryHandle.name} class="border-b-0">
-		<Accordion.Trigger class="p-0">{directoryHandle.name}</Accordion.Trigger>
+		<Accordion.Trigger class="text-ellipsis p-0 text-left">{directoryHandle.name}</Accordion.Trigger
+		>
 		<Accordion.Content class="pb-0 pl-3">
 			{#each directories.directories as directory}
 				<DirectoryTree

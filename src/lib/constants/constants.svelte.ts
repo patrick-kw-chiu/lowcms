@@ -53,7 +53,7 @@ export const BASE_SCHEMA: JSONSchema7 = {
 	properties: {}
 };
 
-export const TYPE_TO_JSON_TYPE_MAP: Record<LowCMSType, JSONSchema7TypeName | 'any'> = {
+export const TYPE_TO_JSON_TYPE_MAP: Record<LowCMSType, JSONSchema7TypeName | 'unknown'> = {
 	string: 'string',
 	number: 'number',
 	boolean: 'boolean',
@@ -63,7 +63,7 @@ export const TYPE_TO_JSON_TYPE_MAP: Record<LowCMSType, JSONSchema7TypeName | 'an
 	'array-of-strings': 'array',
 	'array-empty': 'array',
 	null: 'null',
-	unknown: 'any'
+	unknown: 'unknown'
 };
 
 export const OpTypeToLabelMap: Record<string, string> = {

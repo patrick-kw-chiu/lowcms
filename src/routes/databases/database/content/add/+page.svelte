@@ -40,7 +40,7 @@
 		getValueByJsonPaths,
 		getLowCMSTypeByValue,
 		removeFileExtension,
-		hasXType
+		hasXTypes
 	} from '$lib/utilities/utilities.svelte';
 
 	// Types
@@ -117,7 +117,7 @@
 						? m.enter_the_x({ x: m.content_name() })
 						: !Boolean(schema.title)
 							? m.enter_the_x({ x: m.schema_title() })
-							: hasXType(schema as JSONSchema7WithUnknown)
+							: hasXTypes(schema as JSONSchema7WithUnknown, ['unknown', 'null', 'array-empty'])
 								? // TODO locales
 									'Schema contains property(s) with the "unknown" type. Please assign a type to this property.'
 								: ''
@@ -173,7 +173,7 @@
 			};
 			initialSchema = schema;
 		} catch (e) {
-			toast.warning('Invalid JSON', {
+			toast.warning(`"${file.name}" is an invalid JSON`, {
 				position: 'top-center',
 				description: (e as Error).toString()
 			});

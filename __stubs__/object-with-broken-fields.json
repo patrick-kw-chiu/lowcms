@@ -1,0 +1,58 @@
+{
+	"product_id": "e5f6a7b8-c9d0-1234-5678-90abcdef1234",
+	"sku": "HP-NC-BLUE-01",
+	"name": "Aura Noise-Cancelling Headphones",
+	"description": "Immerse yourself in sound with the Aura headphones. Active noise cancellation, 30-hour battery life, and plush earcups for all-day comfort.",
+	"price": {
+		"amount": 249.99,
+		"currency": "USD"
+	},
+	"stock_quantity": 120,
+	"is_active": true,
+	"created_at": "2023-02-01T00:00:00Z",
+	"updated_at": "2023-10-25T00:00:00Z",
+	"brand": "SoundWave",
+	"numberArray": [1, 2, 32, 4, 5],
+	"emptyArray": [],
+	"variants": [
+		{
+			"variant_id": "aura-blue",
+			"attributes": {
+				"color": "Midnight Blue"
+			},
+			"price_modifier": 0,
+			"stock": 70
+		},
+		{
+			"variant_id": "aura-wht",
+			"attributes": {
+				"color": "Ivory White"
+			},
+			"price_modifier": 0,
+			"stock": 50
+		}
+	],
+	"reviews": [
+		{
+			"review_id": "rev-006",
+			"author": "MusicLover22",
+			"rating": 5,
+			"comment": "The noise cancellation is magic!",
+			"date": "2023-06-15T14:30:00Z"
+		}
+	],
+	"shipping_details": {
+		"weight_kg": 0.25,
+		"dimensions_cm": {
+			"width": 20,
+			"height": 22,
+			"depth": 10
+		}
+	},
+	"tags": ["headphones", "audio", "noise-cancelling", "bluetooth", "hdmi"],
+	"supplier_info": {
+		"supplier_id": "SUP-1011",
+		"supplier_name": "Innovate Electronics",
+		"contact_email": "b2b@innovate-elec.com"
+	}
+}

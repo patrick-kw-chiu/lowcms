@@ -1,2795 +1,2504 @@
 [
-  {
-    "product_id": "e5f6a7b8-c9d0-1234-5678-90abcdef1234",
-    "sku": "HP-NC-BLUE-01",
-    "name": "Aura Noise-Cancelling Headphones",
-    "description": "Immerse yourself in sound with the Aura headphones. Active noise cancellation, 30-hour battery life, and plush earcups for all-day comfort.",
-    "price": {
-      "amount": 249.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 120,
-    "is_active": true,
-    "created_at": "2023-02-01T00:00:00Z",
-    "updated_at": "2023-10-25T00:00:00Z",
-    "brand": "SoundWave",
-    "numberArray": [
-      1,
-      2,
-      32,
-      4,
-      5
-    ],
-    "variants": [
-      {
-        "variant_id": "aura-blue",
-        "attributes": {
-          "color": "Midnight Blue"
-        },
-        "price_modifier": 0,
-        "stock": 70
-      },
-      {
-        "variant_id": "aura-wht",
-        "attributes": {
-          "color": "Ivory White"
-        },
-        "price_modifier": 0,
-        "stock": 50
-      }
-    ],
-    "reviews": [
-      {
-        "review_id": "rev-006",
-        "author": "MusicLover22",
-        "rating": 5,
-        "comment": "The noise cancellation is magic!",
-        "date": "2023-06-15T14:30:00Z"
-      }
-    ],
-    "shipping_details": {
-      "weight_kg": 0.25,
-      "dimensions_cm": {
-        "width": 20,
-        "height": 22,
-        "depth": 10
-      }
-    },
-    "tags": [
-      "headphones",
-      "audio",
-      "noise-cancelling",
-      "bluetooth",
-      "hdmi"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-1011",
-      "supplier_name": "Innovate Electronics",
-      "contact_email": "b2b@innovate-elec.com"
-    }
-  },
-  {
-    "product_id": "f6a7b8c9-d0e1-2345-6789-0abcdef12345",
-    "sku": "YOGA-MAT-ECO-GRN",
-    "name": "Eco-Friendly Yoga Mat",
-    "description": "Made from sustainable, non-toxic TPE material. This mat provides excellent grip and cushioning for your practice.",
-    "stock_quantity": 300,
-    "is_active": true,
-    "created_at": "2023-04-11T00:00:00Z",
-    "updated_at": "2023-09-30T00:00:00Z",
-    "brand": "ZenFlow",
-    "categories": [
-      {
-        "category_id": 501,
-        "name": "Sports & Outdoors"
-      },
-      {
-        "category_id": 502,
-        "name": "Fitness"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "tags": [
-      "yoga",
-      "fitness",
-      "eco-friendly",
-      "mat"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-8800",
-      "supplier_name": "Wellness Gear Co.",
-      "contact_email": "sales@wellnessgear.co"
-    },
-    "shipping_details": {
-      "dimensions_cm": {
-        "width": 1,
-        "height": 2,
-        "depth": 3
-      }
-    }
-  },
-  {
-    "product_id": "a1a1a1a1-b2b2-c3c3-d4d4-e5e5e5e5e5e5",
-    "sku": "SMART-W-44-BLK",
-    "name": "Chrono Smartwatch Series 5",
-    "description": "Track your fitness, receive notifications, and more with the Chrono 5. Features a bright OLED screen and GPS.",
-    "price": {
-      "amount": 349,
-      "currency": "USD"
-    },
-    "stock_quantity": 75,
-    "is_active": true,
-    "created_at": "2023-08-10T10:00:00Z",
-    "updated_at": "2023-11-05T12:00:00Z",
-    "brand": "TechCorp",
-    "categories": [
-      {
-        "category_id": 201,
-        "name": "Electronics"
-      },
-      {
-        "category_id": 204,
-        "name": "Wearables"
-      }
-    ],
-    "variants": [
-      {
-        "variant_id": "chrono-blk",
-        "attributes": {
-          "color": "Graphite",
-          "band": "Silicone"
-        },
-        "price_modifier": 0,
-        "stock": 75
-      }
-    ],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.3,
-      "dimensions_cm": {
-        "width": 10,
-        "height": 25,
-        "depth": 5
-      }
-    },
-    "tags": [
-      "smartwatch",
-      "fitness",
-      "wearable",
-      "tech"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-1011",
-      "supplier_name": "Innovate Electronics",
-      "contact_email": "b2b@innovate-elec.com"
-    }
-  },
-  {
-    "product_id": "b2b2b2b2-c3c3-d4d4-e5e5-f6f6f6f6f6f6",
-    "sku": "JEANS-DNM-W-28",
-    "name": "Women's Classic Slim Jeans",
-    "description": "A perfect fit that never goes out of style. Made with stretch denim for ultimate comfort.",
-    "price": {
-      "amount": 79.5,
-      "currency": "USD"
-    },
-    "stock_quantity": 150,
-    "is_active": true,
-    "created_at": "2023-03-20T15:00:00Z",
-    "updated_at": "2023-10-10T11:00:00Z",
-    "brand": "Urban Threads",
-    "categories": [
-      {
-        "category_id": 101,
-        "name": "Apparel"
-      },
-      {
-        "category_id": 103,
-        "name": "Women's Fashion"
-      }
-    ],
-    "variants": [
-      {
-        "variant_id": "jeans-28",
-        "attributes": {
-          "size": "28",
-          "wash": "Dark Indigo"
-        },
-        "price_modifier": 0,
-        "stock": 50
-      },
-      {
-        "variant_id": "jeans-29",
-        "attributes": {
-          "size": "29",
-          "wash": "Dark Indigo"
-        },
-        "price_modifier": 0,
-        "stock": 50
-      },
-      {
-        "variant_id": "jeans-30",
-        "attributes": {
-          "size": "30",
-          "wash": "Light Wash"
-        },
-        "price_modifier": 0,
-        "stock": 50
-      }
-    ],
-    "reviews": [
-      {
-        "review_id": "rev-007",
-        "author": "Fashionista",
-        "rating": 5,
-        "comment": "So comfortable and flattering!",
-        "date": "2023-05-01T16:00:00Z"
-      }
-    ],
-    "shipping_details": {
-      "weight_kg": 0.7,
-      "dimensions_cm": {
-        "width": 30,
-        "height": 40,
-        "depth": 4
-      }
-    },
-    "tags": [
-      "jeans",
-      "denim",
-      "women",
-      "fashion"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-5543",
-      "supplier_name": "Global Textiles Inc.",
-      "contact_email": "sales@globaltextiles.com"
-    }
-  },
-  {
-    "product_id": "c3c3c3c3-d4d4-e5e5-f6f6-a1a1a1a1a1a1",
-    "sku": "MUG-THERM-16-STL",
-    "name": "16oz Insulated Travel Mug",
-    "description": "Keeps drinks hot for 6 hours or cold for 12 hours. Leak-proof lid and stainless steel construction.",
-    "price": {
-      "amount": 22.95,
-      "currency": "USD"
-    },
-    "stock_quantity": 400,
-    "is_active": true,
-    "created_at": "2022-09-01T18:00:00Z",
-    "updated_at": "2023-11-02T19:00:00Z",
-    "brand": "GoGear Edited",
-    "categories": [
-      {
-        "category_id": 401,
-        "name": "Home & Kitchen"
-      },
-      {
-        "category_id": 501,
-        "name": "Sports & Outdoors"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.4,
-      "dimensions_cm": {
-        "width": 9,
-        "height": 20,
-        "depth": 9
-      }
-    },
-    "tags": [
-      "travel",
-      "mug",
-      "coffee",
-      "insulated"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-8800",
-      "supplier_name": "Wellness Gear Co.",
-      "contact_email": null
-    }
-  },
-  {
-    "product_id": "d4d4d4d4-e5e5-f6f6-a1a1-b2b2b2b2b2b2",
-    "sku": "BACKPACK-TRV-GRY",
-    "name": "Explorer Travel Backpack 40L",
-    "description": "The perfect carry-on backpack for your adventures. Weather-resistant fabric, laptop compartment, and multiple pockets.",
-    "price": {
-      "amount": 120,
-      "currency": "USD"
-    },
-    "stock_quantity": 60,
-    "is_active": false,
-    "created_at": "2023-01-05T14:00:00Z",
-    "updated_at": "2023-06-15T09:00:00Z",
-    "brand": "GoGear",
-    "categories": [
-      {
-        "category_id": 501,
-        "name": "Sports & Outdoors"
-      },
-      {
-        "category_id": 601,
-        "name": "Travel"
-      }
-    ],
-    "variants": [],
-    "reviews": [
-      {
-        "review_id": "rev-008",
-        "author": "Wanderlust",
-        "rating": 5,
-        "comment": "Took this all over Europe. Held up perfectly.",
-        "date": "2023-08-20T21:00:00Z"
-      }
-    ],
-    "shipping_details": {
-      "weight_kg": 1.5,
-      "dimensions_cm": {
-        "width": 35,
-        "height": 55,
-        "depth": 20
-      }
-    },
-    "tags": [
-      "backpack",
-      "travel",
-      "outdoors",
-      "carry-on"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-8800",
-      "supplier_name": "Wellness Gear Co.",
-      "contact_email": "sales@wellnessgear.co"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000001",
-    "sku": "DESK-LAMP-LED-WHT",
-    "name": "LED Desk Lamp with Wireless Charger",
-    "description": "Modern LED desk lamp with adjustable brightness, color temperature, and a built-in 10W wireless charging pad.",
-    "price": {
-      "amount": 45.5,
-      "currency": "USD"
-    },
-    "stock_quantity": 180,
-    "is_active": true,
-    "created_at": "2023-07-19T11:00:00Z",
-    "updated_at": "2023-11-04T15:00:00Z",
-    "brand": "Lumina",
-    "categories": [
-      {
-        "category_id": 401,
-        "name": "Home & Kitchen"
-      },
-      {
-        "category_id": 701,
-        "name": "Office Supplies"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.8,
-      "dimensions_cm": {
-        "width": 18,
-        "height": 40,
-        "depth": 18
-      }
-    },
-    "tags": [
-      "lamp",
-      "office",
-      "led",
-      "wireless charging"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-3321",
-      "supplier_name": "Home Goods Direct",
-      "contact_email": "contact@hgdirect.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000002",
-    "sku": "POWERBANK-20K-BLK",
-    "name": "20,000mAh Power Bank",
-    "description": "High-capacity power bank with USB-C PD and Quick Charge 3.0. Charge your phone up to 4 times.",
-    "price": {
-      "amount": 39.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 220,
-    "is_active": true,
-    "created_at": "2023-06-01T00:00:00Z",
-    "updated_at": "2023-10-30T00:00:00Z",
-    "brand": "TechCorp",
-    "categories": [
-      {
-        "category_id": 201,
-        "name": "Electronics"
-      },
-      {
-        "category_id": 205,
-        "name": "Accessories"
-      }
-    ],
-    "variants": [],
-    "reviews": [
-      {
-        "review_id": "rev-009",
-        "author": "Techie Tom",
-        "rating": 5,
-        "comment": "A must-have for travel. Charges my devices super fast.",
-        "date": "2023-09-01T12:00:00Z"
-      }
-    ],
-    "shipping_details": {
-      "weight_kg": 0.45,
-      "dimensions_cm": {
-        "width": 8,
-        "height": 16,
-        "depth": 2.5
-      }
-    },
-    "tags": [
-      "power bank",
-      "charging",
-      "mobile",
-      "usb-c"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-1011",
-      "supplier_name": "Innovate Electronics",
-      "contact_email": "b2b@innovate-elec.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000003",
-    "sku": "WATER-BTL-32-SS",
-    "name": "32oz Stainless Steel Water Bottle",
-    "description": "Double-wall vacuum insulated water bottle. Keeps liquids cold for 24 hours.",
-    "price": {
-      "amount": 28,
-      "currency": "USD"
-    },
-    "stock_quantity": 600,
-    "is_active": true,
-    "created_at": "2022-01-10T00:00:00Z",
-    "updated_at": "2023-11-01T00:00:00Z",
-    "brand": "GoGear",
-    "categories": [
-      {
-        "category_id": 501,
-        "name": "Sports & Outdoors"
-      }
-    ],
-    "variants": [
-      {
-        "variant_id": "btl-ss-blue",
-        "attributes": {
-          "color": "Ocean Blue"
-        },
-        "price_modifier": 0,
-        "stock": 200
-      },
-      {
-        "variant_id": "btl-ss-blk",
-        "attributes": {
-          "color": "Matte Black"
-        },
-        "price_modifier": 0,
-        "stock": 400
-      }
-    ],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.5,
-      "dimensions_cm": {
-        "width": 9,
-        "height": 26,
-        "depth": 9
-      }
-    },
-    "supplier_info": {
-      "supplier_id": "SUP-8800",
-      "supplier_name": "Wellness Gear Co.",
-      "contact_email": "sales@wellnessgear.co"
-    },
-    "tags": [
-      "journal",
-      "cable",
-      "cycling"
-    ]
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000004",
-    "sku": "BLENDER-PRO-RED",
-    "name": "Pro Power Blender 1200W",
-    "description": "Crush ice, make smoothies, and blend soups with ease. 1200-watt motor and a 64oz BPA-free container.",
-    "price": {
-      "amount": 99.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 90,
-    "is_active": true,
-    "created_at": "2023-02-14T00:00:00Z",
-    "updated_at": "2023-10-18T00:00:00Z",
-    "brand": "KitchenPro",
-    "categories": [
-      {
-        "category_id": 401,
-        "name": "Home & Kitchen"
-      },
-      {
-        "category_id": 402,
-        "name": "Appliances"
-      }
-    ],
-    "variants": [],
-    "reviews": [
-      {
-        "review_id": "rev-010",
-        "author": "HealthyEats",
-        "rating": 5,
-        "comment": "Makes the smoothest smoothies I've ever had.",
-        "date": "2023-04-10T08:00:00Z"
-      }
-    ],
-    "shipping_details": {
-      "weight_kg": 4.5,
-      "dimensions_cm": {
-        "width": 25,
-        "height": 45,
-        "depth": 22
-      }
-    },
-    "tags": [
-      "blender",
-      "kitchen",
-      "smoothie",
-      "appliance"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-4412",
-      "supplier_name": "Appliance Depot",
-      "contact_email": "orders@appliancedepot.net"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000005",
-    "sku": "SOCKS-WOOL-3PK",
-    "name": "Merino Wool Hiking Socks (3-Pack)",
-    "description": "Breathable, moisture-wicking, and comfortable for long treks. Reinforced heel and toe.",
-    "price": {
-      "amount": 32,
-      "currency": "USD"
-    },
-    "stock_quantity": 250,
-    "is_active": true,
-    "created_at": "2023-09-05T00:00:00Z",
-    "updated_at": "2023-11-03T00:00:00Z",
-    "brand": "GoGear",
-    "categories": [
-      {
-        "category_id": 501,
-        "name": "Sports & Outdoors"
-      },
-      {
-        "category_id": 101,
-        "name": "Apparel"
-      }
-    ],
-    "variants": [
-      {
-        "variant_id": "socks-m",
-        "attributes": {
-          "size": "M"
-        },
-        "price_modifier": 0,
-        "stock": 150
-      },
-      {
-        "variant_id": "socks-l",
-        "attributes": {
-          "size": "L"
-        },
-        "price_modifier": 0,
-        "stock": 100
-      }
-    ],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.2,
-      "dimensions_cm": {
-        "width": 15,
-        "height": 25,
-        "depth": 5
-      }
-    },
-    "tags": [
-      "hiking",
-      "socks",
-      "wool",
-      "outdoors"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-8800",
-      "supplier_name": "Wellness Gear Co.",
-      "contact_email": "sales@wellnessgear.co"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000006",
-    "sku": "CAM-MIRROR-X2",
-    "name": "AuraCam X2 Mirrorless Camera",
-    "description": "A compact and powerful mirrorless camera with a 24MP sensor, 4K video, and interchangeable lenses.",
-    "price": {
-      "amount": 899,
-      "currency": "USD"
-    },
-    "stock_quantity": 40,
-    "is_active": true,
-    "created_at": "2023-05-22T00:00:00Z",
-    "updated_at": "2023-10-28T00:00:00Z",
-    "brand": "PhotoPro",
-    "categories": [
-      {
-        "category_id": 201,
-        "name": "Electronics"
-      },
-      {
-        "category_id": 801,
-        "name": "Cameras"
-      }
-    ],
-    "variants": [
-      {
-        "variant_id": "cam-body",
-        "attributes": {
-          "kit": "Body Only"
-        },
-        "price_modifier": 0,
-        "stock": 25
-      },
-      {
-        "variant_id": "cam-kit",
-        "attributes": {
-          "kit": "18-55mm Lens"
-        },
-        "price_modifier": 200,
-        "stock": 15
-      }
-    ],
-    "reviews": [
-      {
-        "review_id": "rev-011",
-        "author": "Shutterbug",
-        "rating": 5,
-        "comment": "Amazing image quality in such a small package.",
-        "date": "2023-07-15T19:00:00Z"
-      }
-    ],
-    "shipping_details": {
-      "weight_kg": 0.6,
-      "dimensions_cm": {
-        "width": 14,
-        "height": 10,
-        "depth": 9
-      }
-    },
-    "tags": [
-      "camera",
-      "mirrorless",
-      "photography",
-      "4k"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-1011",
-      "supplier_name": "Innovate Electronics",
-      "contact_email": null
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000007",
-    "sku": "CHAIR-OFFICE-ERGO",
-    "name": "ErgoFlex Office Chair",
-    "description": "All-day comfort with adjustable lumbar support, armrests, and seat height. Breathable mesh back.",
-    "price": {
-      "amount": 279.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 65,
-    "is_active": true,
-    "created_at": "2022-12-01T00:00:00Z",
-    "updated_at": "2023-10-01T00:00:00Z",
-    "brand": "WorkWell",
-    "categories": [
-      {
-        "category_id": 701,
-        "name": "Office Supplies"
-      },
-      {
-        "category_id": 901,
-        "name": "Furniture"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 15,
-      "dimensions_cm": {
-        "width": 60,
-        "height": 90,
-        "depth": 60
-      }
-    },
-    "tags": [
-      "office chair",
-      "ergonomic",
-      "furniture",
-      "wfh"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-3321",
-      "supplier_name": "Home Goods Direct",
-      "contact_email": "contact@hgdirect.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000008",
-    "sku": "KB-MECH-RGB",
-    "name": "GamerKey Pro Mechanical Keyboard",
-    "description": "Mechanical keyboard with customizable RGB backlighting, Cherry MX Red switches, and a durable aluminum frame.",
-    "price": {
-      "amount": 119.95,
-      "currency": "USD"
-    },
-    "stock_quantity": 110,
-    "is_active": true,
-    "created_at": "2023-04-18T00:00:00Z",
-    "updated_at": "2023-11-05T00:00:00Z",
-    "brand": "GameOn",
-    "categories": [
-      {
-        "category_id": 201,
-        "name": "Electronics"
-      },
-      {
-        "category_id": 202,
-        "name": "Computers"
-      },
-      {
-        "category_id": 205,
-        "name": "Accessories"
-      }
-    ],
-    "variants": [],
-    "reviews": [
-      {
-        "review_id": "rev-012",
-        "author": "ProGamer_91",
-        "rating": 5,
-        "comment": "The switches feel amazing. My APM went up!",
-        "date": "2023-06-20T22:00:00Z"
-      }
-    ],
-    "shipping_details": {
-      "weight_kg": 1.2,
-      "dimensions_cm": {
-        "width": 45,
-        "height": 4,
-        "depth": 15
-      }
-    },
-    "tags": [
-      "keyboard",
-      "mechanical",
-      "gaming",
-      "rgb"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-1011",
-      "supplier_name": "Innovate Electronics",
-      "contact_email": "b2b@innovate-elec.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000009",
-    "sku": "COOKBOOK-VEGAN-01",
-    "name": "Everyday Vegan",
-    "description": "A cookbook with over 100 simple and delicious plant-based recipes for every meal of the day.",
-    "price": {
-      "amount": 24.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 450,
-    "is_active": true,
-    "created_at": "2023-08-01T00:00:00Z",
-    "updated_at": "2023-10-15T00:00:00Z",
-    "brand": "GreenLeaf Press",
-    "categories": [
-      {
-        "category_id": 301,
-        "name": "Books"
-      },
-      {
-        "category_id": 303,
-        "name": "Cooking"
-      }
-    ],
-    "variants": [],
-    "reviews": [
-      {
-        "review_id": "rev-013",
-        "author": "PlantPower",
-        "rating": 5,
-        "comment": "The recipes are easy to follow and so tasty!",
-        "date": "2023-09-10T15:00:00Z"
-      }
-    ],
-    "shipping_details": {
-      "weight_kg": 0.9,
-      "dimensions_cm": {
-        "width": 20,
-        "height": 25,
-        "depth": 2.5
-      }
-    },
-    "tags": [
-      "cookbook",
-      "vegan",
-      "recipes",
-      "plant-based"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-9876",
-      "supplier_name": "Publishing House Co.",
-      "contact_email": null
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000010",
-    "sku": "TENT-2P-UL",
-    "name": "Ultralight 2-Person Backpacking Tent",
-    "description": "A spacious yet ultralight tent for two, designed for backpacking. Easy setup and fully waterproof.",
-    "price": {
-      "amount": 299.95,
-      "currency": "USD"
-    },
-    "stock_quantity": 35,
-    "is_active": true,
-    "created_at": "2023-03-01T00:00:00Z",
-    "updated_at": "2023-09-20T00:00:00Z",
-    "brand": "Summit Gear",
-    "categories": [
-      {
-        "category_id": 501,
-        "name": "Sports & Outdoors"
-      },
-      {
-        "category_id": 503,
-        "name": "Camping"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 1.4,
-      "dimensions_cm": {
-        "width": 15,
-        "height": 50,
-        "depth": 15
-      }
-    },
-    "tags": [
-      "tent",
-      "camping",
-      "backpacking",
-      "ultralight"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-8800",
-      "supplier_name": "Wellness Gear Co.",
-      "contact_email": "sales@wellnessgear.co"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000011",
-    "sku": "SOAP-HAND-LAV",
-    "name": "Lavender Hand Soap (12oz)",
-    "description": "A gentle, moisturizing hand soap with a calming lavender scent. Made with natural ingredients.",
-    "price": {
-      "amount": 8.5,
-      "currency": "USD"
-    },
-    "stock_quantity": 800,
-    "is_active": true,
-    "created_at": "2022-05-15T00:00:00Z",
-    "updated_at": "2023-11-05T00:00:00Z",
-    "brand": "PureNature",
-    "categories": [
-      {
-        "category_id": 1001,
-        "name": "Beauty & Personal Care"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.4,
-      "dimensions_cm": {
-        "width": 8,
-        "height": 18,
-        "depth": 8
-      }
-    },
-    "tags": [
-      "soap",
-      "lavender",
-      "natural",
-      "personal care"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-7755",
-      "supplier_name": "Clean Living Supplies",
-      "contact_email": "orders@cleanliving.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000012",
-    "sku": "DOG-BED-L-GRY",
-    "name": "Large Orthopedic Dog Bed",
-    "description": "A comfortable, supportive bed for large breed dogs. Features a memory foam base and a removable, washable cover.",
-    "price": {
-      "amount": 65,
-      "currency": "USD"
-    },
-    "stock_quantity": 100,
-    "is_active": true,
-    "created_at": "2023-06-20T00:00:00Z",
-    "updated_at": "2023-10-22T00:00:00Z",
-    "brand": "Paws & Comfort",
-    "categories": [
-      {
-        "category_id": 1101,
-        "name": "Pet Supplies"
-      }
-    ],
-    "variants": [],
-    "reviews": [
-      {
-        "review_id": "rev-014",
-        "author": "DogLover",
-        "rating": 5,
-        "comment": "My old golden retriever loves this bed. He seems so much more comfortable.",
-        "date": "2023-08-15T14:00:00Z"
-      }
-    ],
-    "shipping_details": {
-      "weight_kg": 3,
-      "dimensions_cm": {
-        "width": 100,
-        "height": 15,
-        "depth": 70
-      }
-    },
-    "tags": [
-      "dog",
-      "pet supplies",
-      "bed",
-      "orthopedic"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-6432",
-      "supplier_name": "Pet Emporium",
-      "contact_email": "purchasing@petemporium.net"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000013",
-    "sku": "SUNGLASS-AVTR-G",
-    "name": "Classic Aviator Sunglasses",
-    "description": "Timeless aviator style with polarized lenses for 100% UV protection. Lightweight metal frame.",
-    "price": {
-      "amount": 150,
-      "currency": "USD"
-    },
-    "stock_quantity": 95,
-    "is_active": true,
-    "created_at": "2023-04-01T00:00:00Z",
-    "updated_at": "2023-09-01T00:00:00Z",
-    "brand": "Ray-Ban",
-    "categories": [
-      {
-        "category_id": 101,
-        "name": "Apparel"
-      },
-      {
-        "category_id": 205,
-        "name": "Accessories"
-      }
-    ],
-    "variants": [
-      {
-        "variant_id": "sunglass-g15",
-        "attributes": {
-          "lens": "Green Classic G-15",
-          "frame": "Gold"
-        },
-        "price_modifier": 0,
-        "stock": 50
-      },
-      {
-        "variant_id": "sunglass-brn",
-        "attributes": {
-          "lens": "Brown Gradient",
-          "frame": "Black"
-        },
-        "price_modifier": 0,
-        "stock": 45
-      }
-    ],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.15,
-      "dimensions_cm": {
-        "width": 8,
-        "height": 6,
-        "depth": 18
-      }
-    },
-    "tags": [
-      "sunglasses",
-      "aviator",
-      "fashion",
-      "uv protection"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-5543",
-      "supplier_name": "Global Textiles Inc.",
-      "contact_email": "sales@globaltextiles.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000014",
-    "sku": "RUG-AREA-8x10",
-    "name": "Modern Abstract Area Rug (8'x10')",
-    "description": "A stylish and soft area rug with a modern abstract design in blue and grey tones. Stain-resistant and easy to clean.",
-    "price": {
-      "amount": 259,
-      "currency": "USD"
-    },
-    "stock_quantity": 40,
-    "is_active": true,
-    "created_at": "2023-01-25T00:00:00Z",
-    "updated_at": "2023-10-19T00:00:00Z",
-    "brand": "Loom & Co",
-    "categories": [
-      {
-        "category_id": 401,
-        "name": "Home & Kitchen"
-      },
-      {
-        "category_id": 901,
-        "name": "Furniture"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 12,
-      "dimensions_cm": {
-        "width": 20,
-        "height": 244,
-        "depth": 20
-      }
-    },
-    "tags": [
-      "rug",
-      "home decor",
-      "living room",
-      "abstract"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-3321",
-      "supplier_name": "Home Goods Direct",
-      "contact_email": "contact@hgdirect.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000015",
-    "sku": "DRONE-QUAD-4K",
-    "name": "SkyRider 4K Quadcopter Drone",
-    "description": "Capture stunning aerial footage with this easy-to-fly drone. Features 4K camera, 3-axis gimbal, and 30-minute flight time.",
-    "price": {
-      "amount": 499,
-      "currency": "USD"
-    },
-    "stock_quantity": 55,
-    "is_active": true,
-    "created_at": "2023-07-01T00:00:00Z",
-    "updated_at": "2023-11-01T00:00:00Z",
-    "brand": "AeroTech",
-    "categories": [
-      {
-        "category_id": 201,
-        "name": "Electronics"
-      },
-      {
-        "category_id": 1201,
-        "name": "Drones"
-      }
-    ],
-    "variants": [],
-    "reviews": [
-      {
-        "review_id": "rev-015",
-        "author": "FilmMakerPro",
-        "rating": 4,
-        "comment": "Great video quality for the price. The app could be more intuitive.",
-        "date": "2023-09-05T18:00:00Z"
-      }
-    ],
-    "shipping_details": {
-      "weight_kg": 0.9,
-      "dimensions_cm": {
-        "width": 25,
-        "height": 10,
-        "depth": 25
-      }
-    },
-    "tags": [
-      "drone",
-      "quadcopter",
-      "4k",
-      "camera",
-      "aerial"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-1011",
-      "supplier_name": "Innovate Electronics",
-      "contact_email": "b2b@innovate-elec.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000016",
-    "sku": "FIT-TRACKER-V3",
-    "name": "Pulse V3 Fitness Tracker",
-    "description": "Monitor your steps, heart rate, sleep, and workouts. Slim, waterproof design with a 7-day battery life.",
-    "price": {
-      "amount": 59.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 350,
-    "is_active": true,
-    "created_at": "2023-05-01T00:00:00Z",
-    "updated_at": "2023-11-03T00:00:00Z",
-    "brand": "ZenFlow",
-    "categories": [
-      {
-        "category_id": 201,
-        "name": "Electronics"
-      },
-      {
-        "category_id": 204,
-        "name": "Wearables"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.1,
-      "dimensions_cm": {
-        "width": 10,
-        "height": 15,
-        "depth": 3
-      }
-    },
-    "tags": [
-      "fitness tracker",
-      "wearable",
-      "health",
-      "activity"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-8800",
-      "supplier_name": "Wellness Gear Co.",
-      "contact_email": null
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000017",
-    "sku": "GARDEN-HOSE-50FT",
-    "name": "50ft Expandable Garden Hose",
-    "description": "A lightweight, flexible garden hose that expands to 50 feet and won't kink. Includes a 9-pattern spray nozzle.",
-    "price": {
-      "amount": 34.95,
-      "currency": "USD"
-    },
-    "stock_quantity": 180,
-    "is_active": true,
-    "created_at": "2023-04-10T00:00:00Z",
-    "updated_at": "2023-08-20T00:00:00Z",
-    "brand": "YardMaster",
-    "categories": [
-      {
-        "category_id": 1301,
-        "name": "Garden & Outdoor"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 1.2,
-      "dimensions_cm": {
-        "width": 25,
-        "height": 25,
-        "depth": 10
-      }
-    },
-    "tags": [
-      "garden",
-      "hose",
-      "outdoor",
-      "watering"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-3321",
-      "supplier_name": "Home Goods Direct",
-      "contact_email": "contact@hgdirect.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000018",
-    "sku": "PUZZLE-1000-LAKE",
-    "name": "1000-Piece Jigsaw Puzzle - Mountain Lake",
-    "description": "A beautiful and challenging 1000-piece puzzle featuring a serene mountain lake scene. Made from high-quality recycled board.",
-    "price": {
-      "amount": 19.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 210,
-    "is_active": true,
-    "created_at": "2022-11-01T00:00:00Z",
-    "updated_at": "2023-10-01T00:00:00Z",
-    "brand": "PuzzleTime",
-    "categories": [
-      {
-        "category_id": 1401,
-        "name": "Toys & Games"
-      }
-    ],
-    "variants": [],
-    "reviews": [
-      {
-        "review_id": "rev-016",
-        "author": "PuzzleFanatic",
-        "rating": 5,
-        "comment": "The pieces fit together perfectly. A very satisfying puzzle to complete.",
-        "date": "2023-02-11T20:00:00Z"
-      }
-    ],
-    "shipping_details": {
-      "weight_kg": 0.8,
-      "dimensions_cm": {
-        "width": 30,
-        "height": 22,
-        "depth": 5
-      }
-    },
-    "tags": [
-      "puzzle",
-      "jigsaw",
-      "games",
-      "hobby"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-7755",
-      "supplier_name": "Clean Living Supplies",
-      "contact_email": "orders@cleanliving.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000019",
-    "sku": "GUITAR-ACOUSTIC-D",
-    "name": "Dreadnought Acoustic Guitar",
-    "description": "A full-sized dreadnought guitar with a rich, resonant tone. Spruce top with mahogany back and sides. Perfect for beginners and intermediate players.",
-    "price": {
-      "amount": 199,
-      "currency": "USD"
-    },
-    "stock_quantity": 50,
-    "is_active": true,
-    "created_at": "2023-02-20T00:00:00Z",
-    "updated_at": "2023-10-25T00:00:00Z",
-    "brand": "Fender",
-    "categories": [
-      {
-        "category_id": 1501,
-        "name": "Musical Instruments"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 5,
-      "dimensions_cm": {
-        "width": 50,
-        "height": 110,
-        "depth": 15
-      }
-    },
-    "tags": [
-      "guitar",
-      "acoustic",
-      "music",
-      "instrument"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-1011",
-      "supplier_name": "Innovate Electronics",
-      "contact_email": "b2b@innovate-elec.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000020",
-    "sku": "AIR-FRYER-5QT",
-    "name": "5-Quart Digital Air Fryer",
-    "description": "Enjoy crispy, delicious food with less oil. Digital touchscreen with 8 presets for easy cooking.",
-    "price": {
-      "amount": 89.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 130,
-    "is_active": false,
-    "created_at": "2023-06-12T00:00:00Z",
-    "updated_at": "2023-10-12T00:00:00Z",
-    "brand": "KitchenPro",
-    "categories": [
-      {
-        "category_id": 401,
-        "name": "Home & Kitchen"
-      },
-      {
-        "category_id": 402,
-        "name": "Appliances"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 5.5,
-      "dimensions_cm": {
-        "width": 35,
-        "height": 38,
-        "depth": 35
-      }
-    },
-    "tags": [
-      "air fryer",
-      "kitchen",
-      "cooking",
-      "healthy"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-4412",
-      "supplier_name": "Appliance Depot",
-      "contact_email": "orders@appliancedepot.net"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000021",
-    "sku": "SHAMPOO-ARGAN-8OZ",
-    "name": "Argan Oil Repairing Shampoo",
-    "description": "Sulfate-free shampoo infused with argan oil to nourish and repair dry, damaged hair.",
-    "price": {
-      "amount": 16,
-      "currency": "USD"
-    },
-    "stock_quantity": 400,
-    "is_active": true,
-    "created_at": "2022-08-10T00:00:00Z",
-    "updated_at": "2023-11-04T00:00:00Z",
-    "brand": "PureNature",
-    "categories": [
-      {
-        "category_id": 1001,
-        "name": "Beauty & Personal Care"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.3,
-      "dimensions_cm": {
-        "width": 6,
-        "height": 20,
-        "depth": 6
-      }
-    },
-    "tags": [
-      "shampoo",
-      "hair care",
-      "argan oil",
-      "beauty"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-7755",
-      "supplier_name": "Clean Living Supplies",
-      "contact_email": "orders@cleanliving.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000022",
-    "sku": "MONITOR-27-4K",
-    "name": "27-inch 4K UHD Monitor",
-    "description": "A stunning 27\" IPS monitor with 4K resolution, 99% sRGB color gamut, and USB-C connectivity.",
-    "price": {
-      "amount": 449.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 80,
-    "is_active": true,
-    "created_at": "2023-03-15T00:00:00Z",
-    "updated_at": "2023-10-30T00:00:00Z",
-    "brand": "Dell",
-    "categories": [
-      {
-        "category_id": 201,
-        "name": "Electronics"
-      },
-      {
-        "category_id": 202,
-        "name": "Computers"
-      }
-    ],
-    "variants": [],
-    "reviews": [
-      {
-        "review_id": "rev-017",
-        "author": "DesignerDan",
-        "rating": 5,
-        "comment": "The color accuracy is fantastic for photo editing.",
-        "date": "2023-05-20T10:00:00Z"
-      }
-    ],
-    "shipping_details": {
-      "weight_kg": 7,
-      "dimensions_cm": {
-        "width": 65,
-        "height": 45,
-        "depth": 20
-      }
-    },
-    "tags": [
-      "monitor",
-      "4k",
-      "ips",
-      "computer",
-      "display"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-1011",
-      "supplier_name": "Innovate Electronics",
-      "contact_email": "b2b@innovate-elec.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000023",
-    "sku": "CAT-TOWER-TALL",
-    "name": "Multi-Level Cat Tower",
-    "description": "A tall cat tree with multiple scratching posts, perches, and a cozy condo for your feline friend.",
-    "price": {
-      "amount": 89.95,
-      "currency": "USD"
-    },
-    "stock_quantity": 70,
-    "is_active": true,
-    "created_at": "2023-07-22T00:00:00Z",
-    "updated_at": "2023-10-29T00:00:00Z",
-    "brand": "Paws & Comfort",
-    "categories": [
-      {
-        "category_id": 1101,
-        "name": "Pet Supplies"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 18,
-      "dimensions_cm": {
-        "width": 60,
-        "height": 150,
-        "depth": 50
-      }
-    },
-    "tags": [
-      "cat",
-      "pet supplies",
-      "furniture",
-      "tower"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-6432",
-      "supplier_name": "Pet Emporium",
-      "contact_email": "purchasing@petemporium.net"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000024",
-    "sku": "ESPRESSO-MACHINE-A",
-    "name": "Automatic Espresso Machine",
-    "description": "Bean-to-cup espresso machine with a built-in grinder and milk frother. Make lattes and cappuccinos with one touch.",
-    "price": {
-      "amount": 599,
-      "currency": "USD"
-    },
-    "stock_quantity": 30,
-    "is_active": true,
-    "created_at": "2023-01-18T00:00:00Z",
-    "updated_at": "2023-10-21T00:00:00Z",
-    "brand": "De'Longhi",
-    "categories": [
-      {
-        "category_id": 401,
-        "name": "Home & Kitchen"
-      },
-      {
-        "category_id": 402,
-        "name": "Appliances"
-      }
-    ],
-    "variants": [],
-    "reviews": [
-      {
-        "review_id": "rev-018",
-        "author": "BaristaAtHome",
-        "rating": 5,
-        "comment": "A serious upgrade to my morning coffee routine. Worth every penny.",
-        "date": "2023-03-01T08:30:00Z"
-      }
-    ],
-    "shipping_details": {
-      "weight_kg": 10,
-      "dimensions_cm": {
-        "width": 30,
-        "height": 40,
-        "depth": 45
-      }
-    },
-    "tags": [
-      "espresso",
-      "coffee",
-      "machine",
-      "appliance"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-4412",
-      "supplier_name": "Appliance Depot",
-      "contact_email": "orders@appliancedepot.net"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000025",
-    "sku": "JACKET-RAIN-W-M",
-    "name": "Women's Waterproof Rain Jacket",
-    "description": "A lightweight, packable rain jacket that is fully waterproof and breathable. Perfect for hiking or city commuting.",
-    "price": {
-      "amount": 95,
-      "currency": "USD"
-    },
-    "stock_quantity": 140,
-    "is_active": true,
-    "created_at": "2023-03-25T00:00:00Z",
-    "updated_at": "2023-09-15T00:00:00Z",
-    "brand": "Summit Gear",
-    "categories": [
-      {
-        "category_id": 101,
-        "name": "Apparel"
-      },
-      {
-        "category_id": 103,
-        "name": "Women's Fashion"
-      }
-    ],
-    "variants": [
-      {
-        "variant_id": "jacket-w-s",
-        "attributes": {
-          "size": "S",
-          "color": "Aqua"
-        },
-        "price_modifier": 0,
-        "stock": 50
-      },
-      {
-        "variant_id": "jacket-w-m",
-        "attributes": {
-          "size": "M",
-          "color": "Aqua"
-        },
-        "price_modifier": 0,
-        "stock": 60
-      },
-      {
-        "variant_id": "jacket-w-l",
-        "attributes": {
-          "size": "L",
-          "color": "Black"
-        },
-        "price_modifier": 0,
-        "stock": 30
-      }
-    ],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.4,
-      "dimensions_cm": {
-        "width": 25,
-        "height": 35,
-        "depth": 5
-      }
-    },
-    "tags": [
-      "jacket",
-      "rain",
-      "waterproof",
-      "outdoor",
-      "women"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-8800",
-      "supplier_name": "Wellness Gear Co.",
-      "contact_email": "sales@wellnessgear.co"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000026",
-    "sku": "LEGO-STARWARS-X",
-    "name": "LEGO Star Wars X-Wing Fighter",
-    "description": "Build an incredibly detailed LEGO version of the classic X-Wing Fighter. Includes 4 minifigures.",
-    "price": {
-      "amount": 99.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 110,
-    "is_active": true,
-    "created_at": "2023-08-15T00:00:00Z",
-    "updated_at": "2023-11-02T00:00:00Z",
-    "brand": "LEGO",
-    "categories": [
-      {
-        "category_id": 1401,
-        "name": "Toys & Games"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 1.5,
-      "dimensions_cm": {
-        "width": 48,
-        "height": 28,
-        "depth": 7
-      }
-    },
-    "tags": [
-      "lego",
-      "star wars",
-      "toys",
-      "building",
-      "x-wing"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-7755",
-      "supplier_name": "Clean Living Supplies",
-      "contact_email": null
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000027",
-    "sku": "PROJECTOR-1080P",
-    "name": "HD 1080p Home Theater Projector",
-    "description": "Turn any room into a home theater with this bright, 1080p native resolution projector. Supports screens up to 300 inches.",
-    "price": {
-      "amount": 250,
-      "currency": "USD"
-    },
-    "stock_quantity": 60,
-    "is_active": true,
-    "created_at": "2023-05-10T00:00:00Z",
-    "updated_at": "2023-10-26T00:00:00Z",
-    "brand": "CinemaView",
-    "categories": [
-      {
-        "category_id": 201,
-        "name": "Electronics"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 2.8,
-      "dimensions_cm": {
-        "width": 30,
-        "height": 12,
-        "depth": 25
-      }
-    },
-    "tags": [
-      "projector",
-      "home theater",
-      "1080p",
-      "movies"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-1011",
-      "supplier_name": "Innovate Electronics",
-      "contact_email": "b2b@innovate-elec.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000028",
-    "sku": "SLEEP-BAG-0F",
-    "name": "0°F Mummy Sleeping Bag",
-    "description": "Stay warm on cold nights with this 0°F rated mummy sleeping bag. Synthetic fill is lightweight and performs well in damp conditions.",
-    "price": {
-      "amount": 139.95,
-      "currency": "USD"
-    },
-    "stock_quantity": 85,
-    "is_active": true,
-    "created_at": "2022-10-01T00:00:00Z",
-    "updated_at": "2023-09-25T00:00:00Z",
-    "brand": "Summit Gear",
-    "categories": [
-      {
-        "category_id": 501,
-        "name": "Sports & Outdoors"
-      },
-      {
-        "category_id": 503,
-        "name": "Camping"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 2.2,
-      "dimensions_cm": {
-        "width": 25,
-        "height": 45,
-        "depth": 25
-      }
-    },
-    "tags": [
-      "sleeping bag",
-      "camping",
-      "outdoors",
-      "winter"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-8800",
-      "supplier_name": "Wellness Gear Co.",
-      "contact_email": "sales@wellnessgear.co"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000029",
-    "sku": "CAST-IRON-12",
-    "name": "12-Inch Cast Iron Skillet",
-    "description": "A pre-seasoned 12-inch cast iron skillet for searing, sautéing, baking, and more. Unbeatable heat retention.",
-    "price": {
-      "amount": 29.97,
-      "currency": "USD"
-    },
-    "stock_quantity": 300,
-    "is_active": true,
-    "created_at": "2021-06-01T00:00:00Z",
-    "updated_at": "2023-11-05T00:00:00Z",
-    "brand": "Lodge",
-    "categories": [
-      {
-        "category_id": 401,
-        "name": "Home & Kitchen"
-      },
-      {
-        "category_id": 403,
-        "name": "Cookware"
-      }
-    ],
-    "variants": [],
-    "reviews": [
-      {
-        "review_id": "rev-019",
-        "author": "HomeCook",
-        "rating": 5,
-        "comment": "A kitchen essential. Use it for everything.",
-        "date": "2022-03-15T12:00:00Z"
-      }
-    ],
-    "shipping_details": {
-      "weight_kg": 3.7,
-      "dimensions_cm": {
-        "width": 32,
-        "height": 6,
-        "depth": 50
-      }
-    },
-    "tags": [
-      "cast iron",
-      "skillet",
-      "cookware",
-      "kitchen"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-4412",
-      "supplier_name": "Appliance Depot",
-      "contact_email": "orders@appliancedepot.net"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000030",
-    "sku": "SD-CARD-128-PRO",
-    "name": "128GB Pro UHS-II SD Card",
-    "description": "A high-speed SD card for professional photographers and videographers. Read speeds up to 300MB/s.",
-    "price": {
-      "amount": 49.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 500,
-    "is_active": true,
-    "created_at": "2023-07-11T00:00:00Z",
-    "updated_at": "2023-10-28T00:00:00Z",
-    "brand": "SanDisk",
-    "categories": [
-      {
-        "category_id": 201,
-        "name": "Electronics"
-      },
-      {
-        "category_id": 801,
-        "name": "Cameras"
-      },
-      {
-        "category_id": 205,
-        "name": "Accessories"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.02,
-      "dimensions_cm": {
-        "width": 2.4,
-        "height": 3.2,
-        "depth": 0.2
-      }
-    },
-    "tags": [
-      "sd card",
-      "memory card",
-      "storage",
-      "photography"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-1011",
-      "supplier_name": "Innovate Electronics",
-      "contact_email": "b2b@innovate-elec.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000031",
-    "sku": "ELECTRIC-TB-WHT",
-    "name": "SonicPulse Electric Toothbrush",
-    "description": "Removes 10x more plaque than a manual toothbrush. 5 brushing modes and a 2-minute timer.",
-    "price": {
-      "amount": 79.95,
-      "currency": "USD"
-    },
-    "stock_quantity": 200,
-    "is_active": true,
-    "created_at": "2023-02-08T00:00:00Z",
-    "updated_at": "2023-11-01T00:00:00Z",
-    "brand": "Philips Sonicare",
-    "categories": [
-      {
-        "category_id": 1001,
-        "name": "Beauty & Personal Care"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.5,
-      "dimensions_cm": {
-        "width": 18,
-        "height": 25,
-        "depth": 8
-      }
-    },
-    "tags": [
-      "toothbrush",
-      "electric",
-      "oral care",
-      "health"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-7755",
-      "supplier_name": "Clean Living Supplies",
-      "contact_email": "orders@cleanliving.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000032",
-    "sku": "ROUTER-WIFI6-AX",
-    "name": "AX3000 Wi-Fi 6 Router",
-    "description": "Next-gen Wi-Fi 6 router for faster speeds, greater capacity, and reduced network congestion.",
-    "price": {
-      "amount": 149.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 120,
-    "is_active": true,
-    "created_at": "2023-06-30T00:00:00Z",
-    "updated_at": "2023-10-29T00:00:00Z",
-    "brand": "TP-Link",
-    "categories": [
-      {
-        "category_id": 201,
-        "name": "Electronics"
-      },
-      {
-        "category_id": 202,
-        "name": "Computers"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.8,
-      "dimensions_cm": {
-        "width": 30,
-        "height": 8,
-        "depth": 25
-      }
-    },
-    "tags": [
-      "router",
-      "wifi 6",
-      "networking",
-      "internet"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-1011",
-      "supplier_name": "Innovate Electronics",
-      "contact_email": "b2b@innovate-elec.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000033",
-    "sku": "DUMBBELL-SET-ADJ",
-    "name": "Adjustable Dumbbell Set (5-52.5 lbs)",
-    "description": "Replaces 15 sets of weights. Easily adjust from 5 to 52.5 lbs with the turn of a dial.",
-    "price": {
-      "amount": 399,
-      "currency": "USD"
-    },
-    "stock_quantity": 45,
-    "is_active": true,
-    "created_at": "2022-12-15T00:00:00Z",
-    "updated_at": "2023-10-15T00:00:00Z",
-    "brand": "Bowflex",
-    "categories": [
-      {
-        "category_id": 501,
-        "name": "Sports & Outdoors"
-      },
-      {
-        "category_id": 502,
-        "name": "Fitness"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 50,
-      "dimensions_cm": {
-        "width": 50,
-        "height": 30,
-        "depth": 55
-      }
-    },
-    "tags": [
-      "dumbbell",
-      "fitness",
-      "home gym",
-      "weights"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-8800",
-      "supplier_name": "Wellness Gear Co.",
-      "contact_email": "sales@wellnessgear.co"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000034",
-    "sku": "CANDLE-VANILLA-3W",
-    "name": "3-Wick Vanilla Bean Candle",
-    "description": "A large 3-wick candle with a rich, creamy vanilla bean fragrance. Made with soy wax for a clean burn.",
-    "price": {
-      "amount": 24.5,
-      "currency": "USD"
-    },
-    "stock_quantity": 350,
-    "is_active": true,
-    "created_at": "2022-09-01T00:00:00Z",
-    "updated_at": "2023-11-03T00:00:00Z",
-    "brand": "Home Scents",
-    "categories": [
-      {
-        "category_id": 401,
-        "name": "Home & Kitchen"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.8,
-      "dimensions_cm": {
-        "width": 12,
-        "height": 10,
-        "depth": 12
-      }
-    },
-    "tags": [
-      "candle",
-      "home decor",
-      "fragrance",
-      "vanilla"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-3321",
-      "supplier_name": "Home Goods Direct",
-      "contact_email": "contact@hgdirect.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000035",
-    "sku": "BIRD-FEEDER-SQRL",
-    "name": "Squirrel-Proof Bird Feeder",
-    "description": "A bird feeder designed with a weight-activated cage that closes to block squirrels, but not birds.",
-    "price": {
-      "amount": 42.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 115,
-    "is_active": true,
-    "created_at": "2023-04-05T00:00:00Z",
-    "updated_at": "2023-09-30T00:00:00Z",
-    "brand": "YardMaster",
-    "categories": [
-      {
-        "category_id": 1301,
-        "name": "Garden & Outdoor"
-      },
-      {
-        "category_id": 1101,
-        "name": "Pet Supplies"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 1.5,
-      "dimensions_cm": {
-        "width": 20,
-        "height": 35,
-        "depth": 20
-      }
-    },
-    "tags": [
-      "bird feeder",
-      "garden",
-      "squirrel proof",
-      "wildlife"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-3321",
-      "supplier_name": "Home Goods Direct",
-      "contact_email": null
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000036",
-    "sku": "SCALE-KITCHEN-DG",
-    "name": "Digital Kitchen Food Scale",
-    "description": "A precise digital scale for measuring ingredients. Measures up to 11 lbs (5kg) with a tare function.",
-    "price": {
-      "amount": 14.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 500,
-    "is_active": true,
-    "created_at": "2022-03-01T00:00:00Z",
-    "updated_at": "2023-10-20T00:00:00Z",
-    "brand": "KitchenPro",
-    "categories": [
-      {
-        "category_id": 401,
-        "name": "Home & Kitchen"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.4,
-      "dimensions_cm": {
-        "width": 15,
-        "height": 3,
-        "depth": 20
-      }
-    },
-    "tags": [
-      "scale",
-      "kitchen",
-      "baking",
-      "cooking"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-4412",
-      "supplier_name": "Appliance Depot",
-      "contact_email": "orders@appliancedepot.net"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000037",
-    "sku": "MOUSE-WIRELESS-ERGO",
-    "name": "Ergonomic Wireless Mouse",
-    "description": "A vertical wireless mouse designed to reduce wrist strain. Features adjustable DPI and a rechargeable battery.",
-    "price": {
-      "amount": 34.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 230,
-    "is_active": true,
-    "created_at": "2023-05-25T00:00:00Z",
-    "updated_at": "2023-11-05T00:00:00Z",
-    "brand": "Logitech",
-    "categories": [
-      {
-        "category_id": 201,
-        "name": "Electronics"
-      },
-      {
-        "category_id": 202,
-        "name": "Computers"
-      },
-      {
-        "category_id": 205,
-        "name": "Accessories"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.15,
-      "dimensions_cm": {
-        "width": 8,
-        "height": 7,
-        "depth": 12
-      }
-    },
-    "tags": [
-      "mouse",
-      "ergonomic",
-      "wireless",
-      "computer"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-1011",
-      "supplier_name": "Innovate Electronics",
-      "contact_email": "b2b@innovate-elec.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000038",
-    "sku": "FACE-CREAM-HYA",
-    "name": "Hyaluronic Acid Face Cream",
-    "description": "A deeply hydrating daily face cream with hyaluronic acid and ceramides to lock in moisture.",
-    "price": {
-      "amount": 22,
-      "currency": "USD"
-    },
-    "stock_quantity": 410,
-    "is_active": true,
-    "created_at": "2023-01-01T00:00:00Z",
-    "updated_at": "2023-11-01T00:00:00Z",
-    "brand": "CeraVe",
-    "categories": [
-      {
-        "category_id": 1001,
-        "name": "Beauty & Personal Care"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.2,
-      "dimensions_cm": {
-        "width": 8,
-        "height": 8,
-        "depth": 8
-      }
-    },
-    "tags": [
-      "face cream",
-      "skincare",
-      "moisturizer",
-      "beauty"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-7755",
-      "supplier_name": "Clean Living Supplies",
-      "contact_email": "orders@cleanliving.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000039",
-    "sku": "HAMMOCK-DOUBLE-NYL",
-    "name": "DoubleNest Camping Hammock",
-    "description": "A lightweight and compact hammock for two. Made from durable, breathable nylon. Includes straps for easy setup.",
-    "price": {
-      "amount": 69.95,
-      "currency": "USD"
-    },
-    "stock_quantity": 180,
-    "is_active": true,
-    "created_at": "2023-04-20T00:00:00Z",
-    "updated_at": "2023-10-10T00:00:00Z",
-    "brand": "ENO",
-    "categories": [
-      {
-        "category_id": 501,
-        "name": "Sports & Outdoors"
-      },
-      {
-        "category_id": 503,
-        "name": "Camping"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.6,
-      "dimensions_cm": {
-        "width": 15,
-        "height": 15,
-        "depth": 10
-      }
-    },
-    "tags": [
-      "hammock",
-      "camping",
-      "outdoors",
-      "lightweight"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-8800",
-      "supplier_name": "Wellness Gear Co.",
-      "contact_email": "sales@wellnessgear.co"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000040",
-    "sku": "WEB-CAM-1080P-MIC",
-    "name": "1080p HD Webcam with Microphone",
-    "description": "A plug-and-play webcam for video conferencing and streaming. Features a wide-angle lens and noise-reducing microphone.",
-    "price": {
-      "amount": 39.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 280,
-    "is_active": true,
-    "created_at": "2022-10-10T00:00:00Z",
-    "updated_at": "2023-10-27T00:00:00Z",
-    "brand": "Logitech",
-    "categories": [
-      {
-        "category_id": 201,
-        "name": "Electronics"
-      },
-      {
-        "category_id": 202,
-        "name": "Computers"
-      },
-      {
-        "category_id": 205,
-        "name": "Accessories"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.25,
-      "dimensions_cm": {
-        "width": 10,
-        "height": 8,
-        "depth": 6
-      }
-    },
-    "tags": [
-      "webcam",
-      "streaming",
-      "video conferencing",
-      "1080p"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-1011",
-      "supplier_name": "Innovate Electronics",
-      "contact_email": null
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000041",
-    "sku": "TOWEL-SET-BAMBOO",
-    "name": "Bamboo Bath Towel Set (6-Piece)",
-    "description": "An ultra-soft and absorbent towel set made from a sustainable bamboo-cotton blend. Includes 2 bath towels, 2 hand towels, and 2 washcloths.",
-    "price": {
-      "amount": 59.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 150,
-    "is_active": true,
-    "created_at": "2023-03-03T00:00:00Z",
-    "updated_at": "2023-10-03T00:00:00Z",
-    "brand": "Loom & Co",
-    "categories": [
-      {
-        "category_id": 401,
-        "name": "Home & Kitchen"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 2.5,
-      "dimensions_cm": {
-        "width": 40,
-        "height": 15,
-        "depth": 30
-      }
-    },
-    "tags": [
-      "towels",
-      "bamboo",
-      "bath",
-      "home"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-3321",
-      "supplier_name": "Home Goods Direct",
-      "contact_email": "contact@hgdirect.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000042",
-    "sku": "ART-SET-ACRYLIC",
-    "name": "Acrylic Paint Set (24 Colors)",
-    "description": "A vibrant set of 24 non-toxic acrylic paints in 12ml tubes. Perfect for artists of all levels.",
-    "price": {
-      "amount": 25.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 300,
-    "is_active": true,
-    "created_at": "2022-11-20T00:00:00Z",
-    "updated_at": "2023-09-20T00:00:00Z",
-    "brand": "Artify",
-    "categories": [
-      {
-        "category_id": 1601,
-        "name": "Arts & Crafts"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.7,
-      "dimensions_cm": {
-        "width": 25,
-        "height": 3,
-        "depth": 20
-      }
-    },
-    "tags": [
-      "art",
-      "paint",
-      "acrylic",
-      "crafts"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-7755",
-      "supplier_name": "Clean Living Supplies",
-      "contact_email": "orders@cleanliving.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000043",
-    "sku": "DOG-TREATS-PB",
-    "name": "Organic Peanut Butter Dog Treats",
-    "description": "All-natural, grain-free dog treats made with organic peanut butter. A healthy and delicious reward for your pup.",
-    "price": {
-      "amount": 9.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 600,
-    "is_active": true,
-    "created_at": "2023-08-20T00:00:00Z",
-    "updated_at": "2023-11-04T00:00:00Z",
-    "brand": "Paws & Comfort",
-    "categories": [
-      {
-        "category_id": 1101,
-        "name": "Pet Supplies"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.5,
-      "dimensions_cm": {
-        "width": 15,
-        "height": 22,
-        "depth": 8
-      }
-    },
-    "tags": [
-      "dog",
-      "pet supplies",
-      "treats",
-      "organic"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-6432",
-      "supplier_name": "Pet Emporium",
-      "contact_email": "purchasing@petemporium.net"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000044",
-    "sku": "CHARGER-GAN-100W",
-    "name": "100W GaN 4-Port Charging Station",
-    "description": "A compact and powerful GaN charger with 2 USB-C and 2 USB-A ports. Fast charge your laptop, phone, and tablet simultaneously.",
-    "price": {
-      "amount": 69.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 180,
-    "is_active": true,
-    "created_at": "2023-07-28T00:00:00Z",
-    "updated_at": "2023-11-05T00:00:00Z",
-    "brand": "Anker",
-    "categories": [
-      {
-        "category_id": 201,
-        "name": "Electronics"
-      },
-      {
-        "category_id": 205,
-        "name": "Accessories"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.3,
-      "dimensions_cm": {
-        "width": 8,
-        "height": 8,
-        "depth": 4
-      }
-    },
-    "tags": [
-      "charger",
-      "gan",
-      "usb-c",
-      "fast charging"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-1011",
-      "supplier_name": "Innovate Electronics",
-      "contact_email": "b2b@innovate-elec.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000045",
-    "sku": "CUTTING-BOARD-BAM",
-    "name": "Extra Large Bamboo Cutting Board",
-    "description": "A durable and eco-friendly cutting board with juice grooves. Made from 100% organic bamboo.",
-    "price": {
-      "amount": 21.95,
-      "currency": "USD"
-    },
-    "stock_quantity": 250,
-    "is_active": false,
-    "created_at": "2022-07-14T00:00:00Z",
-    "updated_at": "2023-08-14T00:00:00Z",
-    "brand": "KitchenPro",
-    "categories": [
-      {
-        "category_id": 401,
-        "name": "Home & Kitchen"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 1.5,
-      "dimensions_cm": {
-        "width": 45,
-        "height": 2,
-        "depth": 30
-      }
-    },
-    "tags": [
-      "cutting board",
-      "bamboo",
-      "kitchen",
-      "cookware"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-4412",
-      "supplier_name": "Appliance Depot",
-      "contact_email": "orders@appliancedepot.net"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000046",
-    "sku": "BIKE-LIGHT-SET",
-    "name": "Rechargeable LED Bike Light Set",
-    "description": "A bright, USB-rechargeable headlight and taillight set to keep you visible and safe. Multiple modes and waterproof.",
-    "price": {
-      "amount": 28.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 320,
-    "is_active": true,
-    "created_at": "2023-03-18T00:00:00Z",
-    "updated_at": "2023-10-18T00:00:00Z",
-    "brand": "GoGear",
-    "categories": [
-      {
-        "category_id": 501,
-        "name": "Sports & Outdoors"
-      },
-      {
-        "category_id": 504,
-        "name": "Cycling"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.2,
-      "dimensions_cm": {
-        "width": 10,
-        "height": 5,
-        "depth": 12
-      }
-    },
-    "tags": [
-      "bike light",
-      "cycling",
-      "safety",
-      "led",
-      "rechargeable"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-8800",
-      "supplier_name": "Wellness Gear Co.",
-      "contact_email": "sales@wellnessgear.co"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000047",
-    "sku": "THROW-BLANKET-Fleece",
-    "name": "Plush Fleece Throw Blanket",
-    "description": "A super soft and cozy fleece blanket, perfect for snuggling on the couch. Machine washable.",
-    "price": {
-      "amount": 19.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 450,
-    "is_active": true,
-    "created_at": "2022-09-15T00:00:00Z",
-    "updated_at": "2023-11-02T00:00:00Z",
-    "brand": "Loom & Co",
-    "categories": [
-      {
-        "category_id": 401,
-        "name": "Home & Kitchen"
-      }
-    ],
-    "variants": [
-      {
-        "variant_id": "blanket-grey",
-        "attributes": {
-          "color": "Charcoal Grey"
-        },
-        "price_modifier": 0,
-        "stock": 250
-      },
-      {
-        "variant_id": "blanket-navy",
-        "attributes": {
-          "color": "Navy Blue"
-        },
-        "price_modifier": 0,
-        "stock": 200
-      }
-    ],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.9,
-      "dimensions_cm": {
-        "width": 30,
-        "height": 15,
-        "depth": 30
-      }
-    },
-    "tags": [
-      "blanket",
-      "fleece",
-      "cozy",
-      "home decor"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-3321",
-      "supplier_name": "Home Goods Direct",
-      "contact_email": "contact@hgdirect.com"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000048",
-    "sku": "NOTEBOOK-3PK-A5",
-    "name": "A5 Lined Journal Notebook (3-Pack)",
-    "description": "A set of three high-quality A5 notebooks with durable covers and 100gsm acid-free paper.",
-    "price": {
-      "amount": 16.95,
-      "currency": "USD"
-    },
-    "stock_quantity": 700,
-    "is_active": true,
-    "created_at": "2022-01-20T00:00:00Z",
-    "updated_at": "2023-10-24T00:00:00Z",
-    "brand": "Moleskine",
-    "categories": [
-      {
-        "category_id": 701,
-        "name": "Office Supplies"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.8,
-      "dimensions_cm": {
-        "width": 15,
-        "height": 21,
-        "depth": 4
-      }
-    },
-    "tags": [
-      "notebook",
-      "journal",
-      "office",
-      "stationery"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-9876",
-      "supplier_name": "Publishing House Co.",
-      "contact_email": null
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000049",
-    "sku": "VACUUM-CORDLESS-V10",
-    "name": "V10 Cordless Stick Vacuum",
-    "description": "Powerful and lightweight cordless vacuum with up to 60 minutes of run time. Easily converts to a handheld.",
-    "price": {
-      "amount": 349.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 75,
-    "is_active": true,
-    "created_at": "2023-02-10T00:00:00Z",
-    "updated_at": "2023-11-01T00:00:00Z",
-    "brand": "Dyson",
-    "categories": [
-      {
-        "category_id": 401,
-        "name": "Home & Kitchen"
-      },
-      {
-        "category_id": 402,
-        "name": "Appliances"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 5.8,
-      "dimensions_cm": {
-        "width": 30,
-        "height": 120,
-        "depth": 25
-      }
-    },
-    "tags": [
-      "vacuum",
-      "cordless",
-      "cleaning",
-      "appliance"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-4412",
-      "supplier_name": "Appliance Depot",
-      "contact_email": "orders@appliancedepot.net"
-    }
-  },
-  {
-    "product_id": "10000000-0000-0000-0000-000000000050",
-    "sku": "HDMI-CABLE-8K-2M",
-    "name": "2m Ultra High-Speed 8K HDMI Cable",
-    "description": "A certified HDMI 2.1 cable supporting 8K@60Hz and 4K@120Hz for the ultimate viewing experience.",
-    "price": {
-      "amount": 18.99,
-      "currency": "USD"
-    },
-    "stock_quantity": 900,
-    "is_active": true,
-    "created_at": "2023-07-07T00:00:00Z",
-    "updated_at": "2023-10-27T00:00:00Z",
-    "brand": "CableMasters",
-    "categories": [
-      {
-        "category_id": 201,
-        "name": "Electronics"
-      },
-      {
-        "category_id": 205,
-        "name": "Accessories"
-      }
-    ],
-    "variants": [],
-    "reviews": [],
-    "shipping_details": {
-      "weight_kg": 0.15,
-      "dimensions_cm": {
-        "width": 15,
-        "height": 2,
-        "depth": 15
-      }
-    },
-    "tags": [
-      "hdmi",
-      "cable",
-      "8k",
-      "4k",
-      "electronics"
-    ],
-    "supplier_info": {
-      "supplier_id": "SUP-1011",
-      "supplier_name": "Innovate Electronics",
-      "contact_email": "b2b@innovate-elec.com"
-    }
-  },
-  {}
+	{
+		"product_id": "e5f6a7b8-c9d0-1234-5678-90abcdef1234",
+		"sku": "HP-NC-BLUE-01",
+		"name": "Aura Noise-Cancelling Headphones",
+		"description": "Immerse yourself in sound with the Aura headphones. Active noise cancellation, 30-hour battery life, and plush earcups for all-day comfort.",
+		"price": {
+			"amount": 249.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 120,
+		"is_active": true,
+		"created_at": "2023-02-01T00:00:00Z",
+		"updated_at": "2023-10-25T00:00:00Z",
+		"brand": "SoundWave",
+		"numberArray": [1, 2, 32, 4, 5],
+		"variants": [
+			{
+				"variant_id": "aura-blue",
+				"attributes": {
+					"color": "Midnight Blue"
+				},
+				"price_modifier": 0,
+				"stock": 70
+			},
+			{
+				"variant_id": "aura-wht",
+				"attributes": {
+					"color": "Ivory White"
+				},
+				"price_modifier": 0,
+				"stock": 50
+			}
+		],
+		"reviews": [
+			{
+				"review_id": "rev-006",
+				"author": "MusicLover22",
+				"rating": 5,
+				"comment": "The noise cancellation is magic!",
+				"date": "2023-06-15T14:30:00Z"
+			}
+		],
+		"shipping_details": {
+			"weight_kg": 0.25,
+			"dimensions_cm": {
+				"width": 20,
+				"height": 22,
+				"depth": 10
+			}
+		},
+		"tags": ["headphones", "audio", "noise-cancelling", "bluetooth", "hdmi"],
+		"supplier_info": {
+			"supplier_id": "SUP-1011",
+			"supplier_name": "Innovate Electronics",
+			"contact_email": "b2b@innovate-elec.com"
+		}
+	},
+	{
+		"emptyArray": [],
+		"product_id": "f6a7b8c9-d0e1-2345-6789-0abcdef12345",
+		"sku": "YOGA-MAT-ECO-GRN",
+		"name": "Eco-Friendly Yoga Mat",
+		"description": "Made from sustainable, non-toxic TPE material. This mat provides excellent grip and cushioning for your practice.",
+		"stock_quantity": 300,
+		"is_active": true,
+		"created_at": "2023-04-11T00:00:00Z",
+		"updated_at": "2023-09-30T00:00:00Z",
+		"brand": "ZenFlow",
+		"categories": [
+			{
+				"category_id": 501,
+				"name": "Sports & Outdoors"
+			},
+			{
+				"category_id": 502,
+				"name": "Fitness"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"tags": ["yoga", "fitness", "eco-friendly", "mat"],
+		"supplier_info": {
+			"supplier_id": "SUP-8800",
+			"supplier_name": "Wellness Gear Co.",
+			"contact_email": "sales@wellnessgear.co"
+		},
+		"shipping_details": {
+			"dimensions_cm": {
+				"width": 1,
+				"height": 2,
+				"depth": 3
+			}
+		}
+	},
+	{
+		"product_id": "a1a1a1a1-b2b2-c3c3-d4d4-e5e5e5e5e5e5",
+		"sku": "SMART-W-44-BLK",
+		"name": "Chrono Smartwatch Series 5",
+		"description": "Track your fitness, receive notifications, and more with the Chrono 5. Features a bright OLED screen and GPS.",
+		"price": {
+			"amount": 349,
+			"currency": "USD"
+		},
+		"stock_quantity": 75,
+		"is_active": true,
+		"created_at": "2023-08-10T10:00:00Z",
+		"updated_at": "2023-11-05T12:00:00Z",
+		"brand": "TechCorp",
+		"categories": [
+			{
+				"category_id": 201,
+				"name": "Electronics"
+			},
+			{
+				"category_id": 204,
+				"name": "Wearables"
+			}
+		],
+		"variants": [
+			{
+				"variant_id": "chrono-blk",
+				"attributes": {
+					"color": "Graphite",
+					"band": "Silicone"
+				},
+				"price_modifier": 0,
+				"stock": 75
+			}
+		],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.3,
+			"dimensions_cm": {
+				"width": 10,
+				"height": 25,
+				"depth": 5
+			}
+		},
+		"tags": ["smartwatch", "fitness", "wearable", "tech"],
+		"supplier_info": {
+			"supplier_id": "SUP-1011",
+			"supplier_name": "Innovate Electronics",
+			"contact_email": "b2b@innovate-elec.com"
+		}
+	},
+	{
+		"product_id": "b2b2b2b2-c3c3-d4d4-e5e5-f6f6f6f6f6f6",
+		"sku": "JEANS-DNM-W-28",
+		"name": "Women's Classic Slim Jeans",
+		"description": "A perfect fit that never goes out of style. Made with stretch denim for ultimate comfort.",
+		"price": {
+			"amount": 79.5,
+			"currency": "USD"
+		},
+		"stock_quantity": 150,
+		"is_active": true,
+		"created_at": "2023-03-20T15:00:00Z",
+		"updated_at": "2023-10-10T11:00:00Z",
+		"brand": "Urban Threads",
+		"categories": [
+			{
+				"category_id": 101,
+				"name": "Apparel"
+			},
+			{
+				"category_id": 103,
+				"name": "Women's Fashion"
+			}
+		],
+		"variants": [
+			{
+				"variant_id": "jeans-28",
+				"attributes": {
+					"size": "28",
+					"wash": "Dark Indigo"
+				},
+				"price_modifier": 0,
+				"stock": 50
+			},
+			{
+				"variant_id": "jeans-29",
+				"attributes": {
+					"size": "29",
+					"wash": "Dark Indigo"
+				},
+				"price_modifier": 0,
+				"stock": 50
+			},
+			{
+				"variant_id": "jeans-30",
+				"attributes": {
+					"size": "30",
+					"wash": "Light Wash"
+				},
+				"price_modifier": 0,
+				"stock": 50
+			}
+		],
+		"reviews": [
+			{
+				"review_id": "rev-007",
+				"author": "Fashionista",
+				"rating": 5,
+				"comment": "So comfortable and flattering!",
+				"date": "2023-05-01T16:00:00Z"
+			}
+		],
+		"shipping_details": {
+			"weight_kg": 0.7,
+			"dimensions_cm": {
+				"width": 30,
+				"height": 40,
+				"depth": 4
+			}
+		},
+		"tags": ["jeans", "denim", "women", "fashion"],
+		"supplier_info": {
+			"supplier_id": "SUP-5543",
+			"supplier_name": "Global Textiles Inc.",
+			"contact_email": "sales@globaltextiles.com"
+		}
+	},
+	{
+		"product_id": "c3c3c3c3-d4d4-e5e5-f6f6-a1a1a1a1a1a1",
+		"sku": "MUG-THERM-16-STL",
+		"name": "16oz Insulated Travel Mug",
+		"description": "Keeps drinks hot for 6 hours or cold for 12 hours. Leak-proof lid and stainless steel construction.",
+		"price": {
+			"amount": 22.95,
+			"currency": "USD"
+		},
+		"stock_quantity": 400,
+		"is_active": true,
+		"created_at": "2022-09-01T18:00:00Z",
+		"updated_at": "2023-11-02T19:00:00Z",
+		"brand": "GoGear Edited",
+		"categories": [
+			{
+				"category_id": 401,
+				"name": "Home & Kitchen"
+			},
+			{
+				"category_id": 501,
+				"name": "Sports & Outdoors"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.4,
+			"dimensions_cm": {
+				"width": 9,
+				"height": 20,
+				"depth": 9
+			}
+		},
+		"tags": ["travel", "mug", "coffee", "insulated"],
+		"supplier_info": {
+			"supplier_id": "SUP-8800",
+			"supplier_name": "Wellness Gear Co.",
+			"contact_email": null
+		}
+	},
+	{
+		"product_id": "d4d4d4d4-e5e5-f6f6-a1a1-b2b2b2b2b2b2",
+		"sku": "BACKPACK-TRV-GRY",
+		"name": "Explorer Travel Backpack 40L",
+		"description": "The perfect carry-on backpack for your adventures. Weather-resistant fabric, laptop compartment, and multiple pockets.",
+		"price": {
+			"amount": 120,
+			"currency": "USD"
+		},
+		"stock_quantity": 60,
+		"is_active": false,
+		"created_at": "2023-01-05T14:00:00Z",
+		"updated_at": "2023-06-15T09:00:00Z",
+		"brand": "GoGear",
+		"categories": [
+			{
+				"category_id": 501,
+				"name": "Sports & Outdoors"
+			},
+			{
+				"category_id": 601,
+				"name": "Travel"
+			}
+		],
+		"variants": [],
+		"reviews": [
+			{
+				"review_id": "rev-008",
+				"author": "Wanderlust",
+				"rating": 5,
+				"comment": "Took this all over Europe. Held up perfectly.",
+				"date": "2023-08-20T21:00:00Z"
+			}
+		],
+		"shipping_details": {
+			"weight_kg": 1.5,
+			"dimensions_cm": {
+				"width": 35,
+				"height": 55,
+				"depth": 20
+			}
+		},
+		"tags": ["backpack", "travel", "outdoors", "carry-on"],
+		"supplier_info": {
+			"supplier_id": "SUP-8800",
+			"supplier_name": "Wellness Gear Co.",
+			"contact_email": "sales@wellnessgear.co"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000001",
+		"sku": "DESK-LAMP-LED-WHT",
+		"name": "LED Desk Lamp with Wireless Charger",
+		"description": "Modern LED desk lamp with adjustable brightness, color temperature, and a built-in 10W wireless charging pad.",
+		"price": {
+			"amount": 45.5,
+			"currency": "USD"
+		},
+		"stock_quantity": 180,
+		"is_active": true,
+		"created_at": "2023-07-19T11:00:00Z",
+		"updated_at": "2023-11-04T15:00:00Z",
+		"brand": "Lumina",
+		"categories": [
+			{
+				"category_id": 401,
+				"name": "Home & Kitchen"
+			},
+			{
+				"category_id": 701,
+				"name": "Office Supplies"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.8,
+			"dimensions_cm": {
+				"width": 18,
+				"height": 40,
+				"depth": 18
+			}
+		},
+		"tags": ["lamp", "office", "led", "wireless charging"],
+		"supplier_info": {
+			"supplier_id": "SUP-3321",
+			"supplier_name": "Home Goods Direct",
+			"contact_email": "contact@hgdirect.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000002",
+		"sku": "POWERBANK-20K-BLK",
+		"name": "20,000mAh Power Bank",
+		"description": "High-capacity power bank with USB-C PD and Quick Charge 3.0. Charge your phone up to 4 times.",
+		"price": {
+			"amount": 39.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 220,
+		"is_active": true,
+		"created_at": "2023-06-01T00:00:00Z",
+		"updated_at": "2023-10-30T00:00:00Z",
+		"brand": "TechCorp",
+		"categories": [
+			{
+				"category_id": 201,
+				"name": "Electronics"
+			},
+			{
+				"category_id": 205,
+				"name": "Accessories"
+			}
+		],
+		"variants": [],
+		"reviews": [
+			{
+				"review_id": "rev-009",
+				"author": "Techie Tom",
+				"rating": 5,
+				"comment": "A must-have for travel. Charges my devices super fast.",
+				"date": "2023-09-01T12:00:00Z"
+			}
+		],
+		"shipping_details": {
+			"weight_kg": 0.45,
+			"dimensions_cm": {
+				"width": 8,
+				"height": 16,
+				"depth": 2.5
+			}
+		},
+		"tags": ["power bank", "charging", "mobile", "usb-c"],
+		"supplier_info": {
+			"supplier_id": "SUP-1011",
+			"supplier_name": "Innovate Electronics",
+			"contact_email": "b2b@innovate-elec.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000003",
+		"sku": "WATER-BTL-32-SS",
+		"name": "32oz Stainless Steel Water Bottle",
+		"description": "Double-wall vacuum insulated water bottle. Keeps liquids cold for 24 hours.",
+		"price": {
+			"amount": 28,
+			"currency": "USD"
+		},
+		"stock_quantity": 600,
+		"is_active": true,
+		"created_at": "2022-01-10T00:00:00Z",
+		"updated_at": "2023-11-01T00:00:00Z",
+		"brand": "GoGear",
+		"categories": [
+			{
+				"category_id": 501,
+				"name": "Sports & Outdoors"
+			}
+		],
+		"variants": [
+			{
+				"variant_id": "btl-ss-blue",
+				"attributes": {
+					"color": "Ocean Blue"
+				},
+				"price_modifier": 0,
+				"stock": 200
+			},
+			{
+				"variant_id": "btl-ss-blk",
+				"attributes": {
+					"color": "Matte Black"
+				},
+				"price_modifier": 0,
+				"stock": 400
+			}
+		],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.5,
+			"dimensions_cm": {
+				"width": 9,
+				"height": 26,
+				"depth": 9
+			}
+		},
+		"supplier_info": {
+			"supplier_id": "SUP-8800",
+			"supplier_name": "Wellness Gear Co.",
+			"contact_email": "sales@wellnessgear.co"
+		},
+		"tags": ["journal", "cable", "cycling"]
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000004",
+		"sku": "BLENDER-PRO-RED",
+		"name": "Pro Power Blender 1200W",
+		"description": "Crush ice, make smoothies, and blend soups with ease. 1200-watt motor and a 64oz BPA-free container.",
+		"price": {
+			"amount": 99.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 90,
+		"is_active": true,
+		"created_at": "2023-02-14T00:00:00Z",
+		"updated_at": "2023-10-18T00:00:00Z",
+		"brand": "KitchenPro",
+		"categories": [
+			{
+				"category_id": 401,
+				"name": "Home & Kitchen"
+			},
+			{
+				"category_id": 402,
+				"name": "Appliances"
+			}
+		],
+		"variants": [],
+		"reviews": [
+			{
+				"review_id": "rev-010",
+				"author": "HealthyEats",
+				"rating": 5,
+				"comment": "Makes the smoothest smoothies I've ever had.",
+				"date": "2023-04-10T08:00:00Z"
+			}
+		],
+		"shipping_details": {
+			"weight_kg": 4.5,
+			"dimensions_cm": {
+				"width": 25,
+				"height": 45,
+				"depth": 22
+			}
+		},
+		"tags": ["blender", "kitchen", "smoothie", "appliance"],
+		"supplier_info": {
+			"supplier_id": "SUP-4412",
+			"supplier_name": "Appliance Depot",
+			"contact_email": "orders@appliancedepot.net"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000005",
+		"sku": "SOCKS-WOOL-3PK",
+		"name": "Merino Wool Hiking Socks (3-Pack)",
+		"description": "Breathable, moisture-wicking, and comfortable for long treks. Reinforced heel and toe.",
+		"price": {
+			"amount": 32,
+			"currency": "USD"
+		},
+		"stock_quantity": 250,
+		"is_active": true,
+		"created_at": "2023-09-05T00:00:00Z",
+		"updated_at": "2023-11-03T00:00:00Z",
+		"brand": "GoGear",
+		"categories": [
+			{
+				"category_id": 501,
+				"name": "Sports & Outdoors"
+			},
+			{
+				"category_id": 101,
+				"name": "Apparel"
+			}
+		],
+		"variants": [
+			{
+				"variant_id": "socks-m",
+				"attributes": {
+					"size": "M"
+				},
+				"price_modifier": 0,
+				"stock": 150
+			},
+			{
+				"variant_id": "socks-l",
+				"attributes": {
+					"size": "L"
+				},
+				"price_modifier": 0,
+				"stock": 100
+			}
+		],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.2,
+			"dimensions_cm": {
+				"width": 15,
+				"height": 25,
+				"depth": 5
+			}
+		},
+		"tags": ["hiking", "socks", "wool", "outdoors"],
+		"supplier_info": {
+			"supplier_id": "SUP-8800",
+			"supplier_name": "Wellness Gear Co.",
+			"contact_email": "sales@wellnessgear.co"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000006",
+		"sku": "CAM-MIRROR-X2",
+		"name": "AuraCam X2 Mirrorless Camera",
+		"description": "A compact and powerful mirrorless camera with a 24MP sensor, 4K video, and interchangeable lenses.",
+		"price": {
+			"amount": 899,
+			"currency": "USD"
+		},
+		"stock_quantity": 40,
+		"is_active": true,
+		"created_at": "2023-05-22T00:00:00Z",
+		"updated_at": "2023-10-28T00:00:00Z",
+		"brand": "PhotoPro",
+		"categories": [
+			{
+				"category_id": 201,
+				"name": "Electronics"
+			},
+			{
+				"category_id": 801,
+				"name": "Cameras"
+			}
+		],
+		"variants": [
+			{
+				"variant_id": "cam-body",
+				"attributes": {
+					"kit": "Body Only"
+				},
+				"price_modifier": 0,
+				"stock": 25
+			},
+			{
+				"variant_id": "cam-kit",
+				"attributes": {
+					"kit": "18-55mm Lens"
+				},
+				"price_modifier": 200,
+				"stock": 15
+			}
+		],
+		"reviews": [
+			{
+				"review_id": "rev-011",
+				"author": "Shutterbug",
+				"rating": 5,
+				"comment": "Amazing image quality in such a small package.",
+				"date": "2023-07-15T19:00:00Z"
+			}
+		],
+		"shipping_details": {
+			"weight_kg": 0.6,
+			"dimensions_cm": {
+				"width": 14,
+				"height": 10,
+				"depth": 9
+			}
+		},
+		"tags": ["camera", "mirrorless", "photography", "4k"],
+		"supplier_info": {
+			"supplier_id": "SUP-1011",
+			"supplier_name": "Innovate Electronics",
+			"contact_email": null
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000007",
+		"sku": "CHAIR-OFFICE-ERGO",
+		"name": "ErgoFlex Office Chair",
+		"description": "All-day comfort with adjustable lumbar support, armrests, and seat height. Breathable mesh back.",
+		"price": {
+			"amount": 279.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 65,
+		"is_active": true,
+		"created_at": "2022-12-01T00:00:00Z",
+		"updated_at": "2023-10-01T00:00:00Z",
+		"brand": "WorkWell",
+		"categories": [
+			{
+				"category_id": 701,
+				"name": "Office Supplies"
+			},
+			{
+				"category_id": 901,
+				"name": "Furniture"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 15,
+			"dimensions_cm": {
+				"width": 60,
+				"height": 90,
+				"depth": 60
+			}
+		},
+		"tags": ["office chair", "ergonomic", "furniture", "wfh"],
+		"supplier_info": {
+			"supplier_id": "SUP-3321",
+			"supplier_name": "Home Goods Direct",
+			"contact_email": "contact@hgdirect.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000008",
+		"sku": "KB-MECH-RGB",
+		"name": "GamerKey Pro Mechanical Keyboard",
+		"description": "Mechanical keyboard with customizable RGB backlighting, Cherry MX Red switches, and a durable aluminum frame.",
+		"price": {
+			"amount": 119.95,
+			"currency": "USD"
+		},
+		"stock_quantity": 110,
+		"is_active": true,
+		"created_at": "2023-04-18T00:00:00Z",
+		"updated_at": "2023-11-05T00:00:00Z",
+		"brand": "GameOn",
+		"categories": [
+			{
+				"category_id": 201,
+				"name": "Electronics"
+			},
+			{
+				"category_id": 202,
+				"name": "Computers"
+			},
+			{
+				"category_id": 205,
+				"name": "Accessories"
+			}
+		],
+		"variants": [],
+		"reviews": [
+			{
+				"review_id": "rev-012",
+				"author": "ProGamer_91",
+				"rating": 5,
+				"comment": "The switches feel amazing. My APM went up!",
+				"date": "2023-06-20T22:00:00Z"
+			}
+		],
+		"shipping_details": {
+			"weight_kg": 1.2,
+			"dimensions_cm": {
+				"width": 45,
+				"height": 4,
+				"depth": 15
+			}
+		},
+		"tags": ["keyboard", "mechanical", "gaming", "rgb"],
+		"supplier_info": {
+			"supplier_id": "SUP-1011",
+			"supplier_name": "Innovate Electronics",
+			"contact_email": "b2b@innovate-elec.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000009",
+		"sku": "COOKBOOK-VEGAN-01",
+		"name": "Everyday Vegan",
+		"description": "A cookbook with over 100 simple and delicious plant-based recipes for every meal of the day.",
+		"price": {
+			"amount": 24.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 450,
+		"is_active": true,
+		"created_at": "2023-08-01T00:00:00Z",
+		"updated_at": "2023-10-15T00:00:00Z",
+		"brand": "GreenLeaf Press",
+		"categories": [
+			{
+				"category_id": 301,
+				"name": "Books"
+			},
+			{
+				"category_id": 303,
+				"name": "Cooking"
+			}
+		],
+		"variants": [],
+		"reviews": [
+			{
+				"review_id": "rev-013",
+				"author": "PlantPower",
+				"rating": 5,
+				"comment": "The recipes are easy to follow and so tasty!",
+				"date": "2023-09-10T15:00:00Z"
+			}
+		],
+		"shipping_details": {
+			"weight_kg": 0.9,
+			"dimensions_cm": {
+				"width": 20,
+				"height": 25,
+				"depth": 2.5
+			}
+		},
+		"tags": ["cookbook", "vegan", "recipes", "plant-based"],
+		"supplier_info": {
+			"supplier_id": "SUP-9876",
+			"supplier_name": "Publishing House Co.",
+			"contact_email": null
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000010",
+		"sku": "TENT-2P-UL",
+		"name": "Ultralight 2-Person Backpacking Tent",
+		"description": "A spacious yet ultralight tent for two, designed for backpacking. Easy setup and fully waterproof.",
+		"price": {
+			"amount": 299.95,
+			"currency": "USD"
+		},
+		"stock_quantity": 35,
+		"is_active": true,
+		"created_at": "2023-03-01T00:00:00Z",
+		"updated_at": "2023-09-20T00:00:00Z",
+		"brand": "Summit Gear",
+		"categories": [
+			{
+				"category_id": 501,
+				"name": "Sports & Outdoors"
+			},
+			{
+				"category_id": 503,
+				"name": "Camping"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 1.4,
+			"dimensions_cm": {
+				"width": 15,
+				"height": 50,
+				"depth": 15
+			}
+		},
+		"tags": ["tent", "camping", "backpacking", "ultralight"],
+		"supplier_info": {
+			"supplier_id": "SUP-8800",
+			"supplier_name": "Wellness Gear Co.",
+			"contact_email": "sales@wellnessgear.co"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000011",
+		"sku": "SOAP-HAND-LAV",
+		"name": "Lavender Hand Soap (12oz)",
+		"description": "A gentle, moisturizing hand soap with a calming lavender scent. Made with natural ingredients.",
+		"price": {
+			"amount": 8.5,
+			"currency": "USD"
+		},
+		"stock_quantity": 800,
+		"is_active": true,
+		"created_at": "2022-05-15T00:00:00Z",
+		"updated_at": "2023-11-05T00:00:00Z",
+		"brand": "PureNature",
+		"categories": [
+			{
+				"category_id": 1001,
+				"name": "Beauty & Personal Care"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.4,
+			"dimensions_cm": {
+				"width": 8,
+				"height": 18,
+				"depth": 8
+			}
+		},
+		"tags": ["soap", "lavender", "natural", "personal care"],
+		"supplier_info": {
+			"supplier_id": "SUP-7755",
+			"supplier_name": "Clean Living Supplies",
+			"contact_email": "orders@cleanliving.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000012",
+		"sku": "DOG-BED-L-GRY",
+		"name": "Large Orthopedic Dog Bed",
+		"description": "A comfortable, supportive bed for large breed dogs. Features a memory foam base and a removable, washable cover.",
+		"price": {
+			"amount": 65,
+			"currency": "USD"
+		},
+		"stock_quantity": 100,
+		"is_active": true,
+		"created_at": "2023-06-20T00:00:00Z",
+		"updated_at": "2023-10-22T00:00:00Z",
+		"brand": "Paws & Comfort",
+		"categories": [
+			{
+				"category_id": 1101,
+				"name": "Pet Supplies"
+			}
+		],
+		"variants": [],
+		"reviews": [
+			{
+				"review_id": "rev-014",
+				"author": "DogLover",
+				"rating": 5,
+				"comment": "My old golden retriever loves this bed. He seems so much more comfortable.",
+				"date": "2023-08-15T14:00:00Z"
+			}
+		],
+		"shipping_details": {
+			"weight_kg": 3,
+			"dimensions_cm": {
+				"width": 100,
+				"height": 15,
+				"depth": 70
+			}
+		},
+		"tags": ["dog", "pet supplies", "bed", "orthopedic"],
+		"supplier_info": {
+			"supplier_id": "SUP-6432",
+			"supplier_name": "Pet Emporium",
+			"contact_email": "purchasing@petemporium.net"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000013",
+		"sku": "SUNGLASS-AVTR-G",
+		"name": "Classic Aviator Sunglasses",
+		"description": "Timeless aviator style with polarized lenses for 100% UV protection. Lightweight metal frame.",
+		"price": {
+			"amount": 150,
+			"currency": "USD"
+		},
+		"stock_quantity": 95,
+		"is_active": true,
+		"created_at": "2023-04-01T00:00:00Z",
+		"updated_at": "2023-09-01T00:00:00Z",
+		"brand": "Ray-Ban",
+		"categories": [
+			{
+				"category_id": 101,
+				"name": "Apparel"
+			},
+			{
+				"category_id": 205,
+				"name": "Accessories"
+			}
+		],
+		"variants": [
+			{
+				"variant_id": "sunglass-g15",
+				"attributes": {
+					"lens": "Green Classic G-15",
+					"frame": "Gold"
+				},
+				"price_modifier": 0,
+				"stock": 50
+			},
+			{
+				"variant_id": "sunglass-brn",
+				"attributes": {
+					"lens": "Brown Gradient",
+					"frame": "Black"
+				},
+				"price_modifier": 0,
+				"stock": 45
+			}
+		],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.15,
+			"dimensions_cm": {
+				"width": 8,
+				"height": 6,
+				"depth": 18
+			}
+		},
+		"tags": ["sunglasses", "aviator", "fashion", "uv protection"],
+		"supplier_info": {
+			"supplier_id": "SUP-5543",
+			"supplier_name": "Global Textiles Inc.",
+			"contact_email": "sales@globaltextiles.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000014",
+		"sku": "RUG-AREA-8x10",
+		"name": "Modern Abstract Area Rug (8'x10')",
+		"description": "A stylish and soft area rug with a modern abstract design in blue and grey tones. Stain-resistant and easy to clean.",
+		"price": {
+			"amount": 259,
+			"currency": "USD"
+		},
+		"stock_quantity": 40,
+		"is_active": true,
+		"created_at": "2023-01-25T00:00:00Z",
+		"updated_at": "2023-10-19T00:00:00Z",
+		"brand": "Loom & Co",
+		"categories": [
+			{
+				"category_id": 401,
+				"name": "Home & Kitchen"
+			},
+			{
+				"category_id": 901,
+				"name": "Furniture"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 12,
+			"dimensions_cm": {
+				"width": 20,
+				"height": 244,
+				"depth": 20
+			}
+		},
+		"tags": ["rug", "home decor", "living room", "abstract"],
+		"supplier_info": {
+			"supplier_id": "SUP-3321",
+			"supplier_name": "Home Goods Direct",
+			"contact_email": "contact@hgdirect.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000015",
+		"sku": "DRONE-QUAD-4K",
+		"name": "SkyRider 4K Quadcopter Drone",
+		"description": "Capture stunning aerial footage with this easy-to-fly drone. Features 4K camera, 3-axis gimbal, and 30-minute flight time.",
+		"price": {
+			"amount": 499,
+			"currency": "USD"
+		},
+		"stock_quantity": 55,
+		"is_active": true,
+		"created_at": "2023-07-01T00:00:00Z",
+		"updated_at": "2023-11-01T00:00:00Z",
+		"brand": "AeroTech",
+		"categories": [
+			{
+				"category_id": 201,
+				"name": "Electronics"
+			},
+			{
+				"category_id": 1201,
+				"name": "Drones"
+			}
+		],
+		"variants": [],
+		"reviews": [
+			{
+				"review_id": "rev-015",
+				"author": "FilmMakerPro",
+				"rating": 4,
+				"comment": "Great video quality for the price. The app could be more intuitive.",
+				"date": "2023-09-05T18:00:00Z"
+			}
+		],
+		"shipping_details": {
+			"weight_kg": 0.9,
+			"dimensions_cm": {
+				"width": 25,
+				"height": 10,
+				"depth": 25
+			}
+		},
+		"tags": ["drone", "quadcopter", "4k", "camera", "aerial"],
+		"supplier_info": {
+			"supplier_id": "SUP-1011",
+			"supplier_name": "Innovate Electronics",
+			"contact_email": "b2b@innovate-elec.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000016",
+		"sku": "FIT-TRACKER-V3",
+		"name": "Pulse V3 Fitness Tracker",
+		"description": "Monitor your steps, heart rate, sleep, and workouts. Slim, waterproof design with a 7-day battery life.",
+		"price": {
+			"amount": 59.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 350,
+		"is_active": true,
+		"created_at": "2023-05-01T00:00:00Z",
+		"updated_at": "2023-11-03T00:00:00Z",
+		"brand": "ZenFlow",
+		"categories": [
+			{
+				"category_id": 201,
+				"name": "Electronics"
+			},
+			{
+				"category_id": 204,
+				"name": "Wearables"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.1,
+			"dimensions_cm": {
+				"width": 10,
+				"height": 15,
+				"depth": 3
+			}
+		},
+		"tags": ["fitness tracker", "wearable", "health", "activity"],
+		"supplier_info": {
+			"supplier_id": "SUP-8800",
+			"supplier_name": "Wellness Gear Co.",
+			"contact_email": null
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000017",
+		"sku": "GARDEN-HOSE-50FT",
+		"name": "50ft Expandable Garden Hose",
+		"description": "A lightweight, flexible garden hose that expands to 50 feet and won't kink. Includes a 9-pattern spray nozzle.",
+		"price": {
+			"amount": 34.95,
+			"currency": "USD"
+		},
+		"stock_quantity": 180,
+		"is_active": true,
+		"created_at": "2023-04-10T00:00:00Z",
+		"updated_at": "2023-08-20T00:00:00Z",
+		"brand": "YardMaster",
+		"categories": [
+			{
+				"category_id": 1301,
+				"name": "Garden & Outdoor"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 1.2,
+			"dimensions_cm": {
+				"width": 25,
+				"height": 25,
+				"depth": 10
+			}
+		},
+		"tags": ["garden", "hose", "outdoor", "watering"],
+		"supplier_info": {
+			"supplier_id": "SUP-3321",
+			"supplier_name": "Home Goods Direct",
+			"contact_email": "contact@hgdirect.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000018",
+		"sku": "PUZZLE-1000-LAKE",
+		"name": "1000-Piece Jigsaw Puzzle - Mountain Lake",
+		"description": "A beautiful and challenging 1000-piece puzzle featuring a serene mountain lake scene. Made from high-quality recycled board.",
+		"price": {
+			"amount": 19.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 210,
+		"is_active": true,
+		"created_at": "2022-11-01T00:00:00Z",
+		"updated_at": "2023-10-01T00:00:00Z",
+		"brand": "PuzzleTime",
+		"categories": [
+			{
+				"category_id": 1401,
+				"name": "Toys & Games"
+			}
+		],
+		"variants": [],
+		"reviews": [
+			{
+				"review_id": "rev-016",
+				"author": "PuzzleFanatic",
+				"rating": 5,
+				"comment": "The pieces fit together perfectly. A very satisfying puzzle to complete.",
+				"date": "2023-02-11T20:00:00Z"
+			}
+		],
+		"shipping_details": {
+			"weight_kg": 0.8,
+			"dimensions_cm": {
+				"width": 30,
+				"height": 22,
+				"depth": 5
+			}
+		},
+		"tags": ["puzzle", "jigsaw", "games", "hobby"],
+		"supplier_info": {
+			"supplier_id": "SUP-7755",
+			"supplier_name": "Clean Living Supplies",
+			"contact_email": "orders@cleanliving.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000019",
+		"sku": "GUITAR-ACOUSTIC-D",
+		"name": "Dreadnought Acoustic Guitar",
+		"description": "A full-sized dreadnought guitar with a rich, resonant tone. Spruce top with mahogany back and sides. Perfect for beginners and intermediate players.",
+		"price": {
+			"amount": 199,
+			"currency": "USD"
+		},
+		"stock_quantity": 50,
+		"is_active": true,
+		"created_at": "2023-02-20T00:00:00Z",
+		"updated_at": "2023-10-25T00:00:00Z",
+		"brand": "Fender",
+		"categories": [
+			{
+				"category_id": 1501,
+				"name": "Musical Instruments"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 5,
+			"dimensions_cm": {
+				"width": 50,
+				"height": 110,
+				"depth": 15
+			}
+		},
+		"tags": ["guitar", "acoustic", "music", "instrument"],
+		"supplier_info": {
+			"supplier_id": "SUP-1011",
+			"supplier_name": "Innovate Electronics",
+			"contact_email": "b2b@innovate-elec.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000020",
+		"sku": "AIR-FRYER-5QT",
+		"name": "5-Quart Digital Air Fryer",
+		"description": "Enjoy crispy, delicious food with less oil. Digital touchscreen with 8 presets for easy cooking.",
+		"price": {
+			"amount": 89.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 130,
+		"is_active": false,
+		"created_at": "2023-06-12T00:00:00Z",
+		"updated_at": "2023-10-12T00:00:00Z",
+		"brand": "KitchenPro",
+		"categories": [
+			{
+				"category_id": 401,
+				"name": "Home & Kitchen"
+			},
+			{
+				"category_id": 402,
+				"name": "Appliances"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 5.5,
+			"dimensions_cm": {
+				"width": 35,
+				"height": 38,
+				"depth": 35
+			}
+		},
+		"tags": ["air fryer", "kitchen", "cooking", "healthy"],
+		"supplier_info": {
+			"supplier_id": "SUP-4412",
+			"supplier_name": "Appliance Depot",
+			"contact_email": "orders@appliancedepot.net"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000021",
+		"sku": "SHAMPOO-ARGAN-8OZ",
+		"name": "Argan Oil Repairing Shampoo",
+		"description": "Sulfate-free shampoo infused with argan oil to nourish and repair dry, damaged hair.",
+		"price": {
+			"amount": 16,
+			"currency": "USD"
+		},
+		"stock_quantity": 400,
+		"is_active": true,
+		"created_at": "2022-08-10T00:00:00Z",
+		"updated_at": "2023-11-04T00:00:00Z",
+		"brand": "PureNature",
+		"categories": [
+			{
+				"category_id": 1001,
+				"name": "Beauty & Personal Care"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.3,
+			"dimensions_cm": {
+				"width": 6,
+				"height": 20,
+				"depth": 6
+			}
+		},
+		"tags": ["shampoo", "hair care", "argan oil", "beauty"],
+		"supplier_info": {
+			"supplier_id": "SUP-7755",
+			"supplier_name": "Clean Living Supplies",
+			"contact_email": "orders@cleanliving.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000022",
+		"sku": "MONITOR-27-4K",
+		"name": "27-inch 4K UHD Monitor",
+		"description": "A stunning 27\" IPS monitor with 4K resolution, 99% sRGB color gamut, and USB-C connectivity.",
+		"price": {
+			"amount": 449.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 80,
+		"is_active": true,
+		"created_at": "2023-03-15T00:00:00Z",
+		"updated_at": "2023-10-30T00:00:00Z",
+		"brand": "Dell",
+		"categories": [
+			{
+				"category_id": 201,
+				"name": "Electronics"
+			},
+			{
+				"category_id": 202,
+				"name": "Computers"
+			}
+		],
+		"variants": [],
+		"reviews": [
+			{
+				"review_id": "rev-017",
+				"author": "DesignerDan",
+				"rating": 5,
+				"comment": "The color accuracy is fantastic for photo editing.",
+				"date": "2023-05-20T10:00:00Z"
+			}
+		],
+		"shipping_details": {
+			"weight_kg": 7,
+			"dimensions_cm": {
+				"width": 65,
+				"height": 45,
+				"depth": 20
+			}
+		},
+		"tags": ["monitor", "4k", "ips", "computer", "display"],
+		"supplier_info": {
+			"supplier_id": "SUP-1011",
+			"supplier_name": "Innovate Electronics",
+			"contact_email": "b2b@innovate-elec.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000023",
+		"sku": "CAT-TOWER-TALL",
+		"name": "Multi-Level Cat Tower",
+		"description": "A tall cat tree with multiple scratching posts, perches, and a cozy condo for your feline friend.",
+		"price": {
+			"amount": 89.95,
+			"currency": "USD"
+		},
+		"stock_quantity": 70,
+		"is_active": true,
+		"created_at": "2023-07-22T00:00:00Z",
+		"updated_at": "2023-10-29T00:00:00Z",
+		"brand": "Paws & Comfort",
+		"categories": [
+			{
+				"category_id": 1101,
+				"name": "Pet Supplies"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 18,
+			"dimensions_cm": {
+				"width": 60,
+				"height": 150,
+				"depth": 50
+			}
+		},
+		"tags": ["cat", "pet supplies", "furniture", "tower"],
+		"supplier_info": {
+			"supplier_id": "SUP-6432",
+			"supplier_name": "Pet Emporium",
+			"contact_email": "purchasing@petemporium.net"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000024",
+		"sku": "ESPRESSO-MACHINE-A",
+		"name": "Automatic Espresso Machine",
+		"description": "Bean-to-cup espresso machine with a built-in grinder and milk frother. Make lattes and cappuccinos with one touch.",
+		"price": {
+			"amount": 599,
+			"currency": "USD"
+		},
+		"stock_quantity": 30,
+		"is_active": true,
+		"created_at": "2023-01-18T00:00:00Z",
+		"updated_at": "2023-10-21T00:00:00Z",
+		"brand": "De'Longhi",
+		"categories": [
+			{
+				"category_id": 401,
+				"name": "Home & Kitchen"
+			},
+			{
+				"category_id": 402,
+				"name": "Appliances"
+			}
+		],
+		"variants": [],
+		"reviews": [
+			{
+				"review_id": "rev-018",
+				"author": "BaristaAtHome",
+				"rating": 5,
+				"comment": "A serious upgrade to my morning coffee routine. Worth every penny.",
+				"date": "2023-03-01T08:30:00Z"
+			}
+		],
+		"shipping_details": {
+			"weight_kg": 10,
+			"dimensions_cm": {
+				"width": 30,
+				"height": 40,
+				"depth": 45
+			}
+		},
+		"tags": ["espresso", "coffee", "machine", "appliance"],
+		"supplier_info": {
+			"supplier_id": "SUP-4412",
+			"supplier_name": "Appliance Depot",
+			"contact_email": "orders@appliancedepot.net"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000025",
+		"sku": "JACKET-RAIN-W-M",
+		"name": "Women's Waterproof Rain Jacket",
+		"description": "A lightweight, packable rain jacket that is fully waterproof and breathable. Perfect for hiking or city commuting.",
+		"price": {
+			"amount": 95,
+			"currency": "USD"
+		},
+		"stock_quantity": 140,
+		"is_active": true,
+		"created_at": "2023-03-25T00:00:00Z",
+		"updated_at": "2023-09-15T00:00:00Z",
+		"brand": "Summit Gear",
+		"categories": [
+			{
+				"category_id": 101,
+				"name": "Apparel"
+			},
+			{
+				"category_id": 103,
+				"name": "Women's Fashion"
+			}
+		],
+		"variants": [
+			{
+				"variant_id": "jacket-w-s",
+				"attributes": {
+					"size": "S",
+					"color": "Aqua"
+				},
+				"price_modifier": 0,
+				"stock": 50
+			},
+			{
+				"variant_id": "jacket-w-m",
+				"attributes": {
+					"size": "M",
+					"color": "Aqua"
+				},
+				"price_modifier": 0,
+				"stock": 60
+			},
+			{
+				"variant_id": "jacket-w-l",
+				"attributes": {
+					"size": "L",
+					"color": "Black"
+				},
+				"price_modifier": 0,
+				"stock": 30
+			}
+		],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.4,
+			"dimensions_cm": {
+				"width": 25,
+				"height": 35,
+				"depth": 5
+			}
+		},
+		"tags": ["jacket", "rain", "waterproof", "outdoor", "women"],
+		"supplier_info": {
+			"supplier_id": "SUP-8800",
+			"supplier_name": "Wellness Gear Co.",
+			"contact_email": "sales@wellnessgear.co"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000026",
+		"sku": "LEGO-STARWARS-X",
+		"name": "LEGO Star Wars X-Wing Fighter",
+		"description": "Build an incredibly detailed LEGO version of the classic X-Wing Fighter. Includes 4 minifigures.",
+		"price": {
+			"amount": 99.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 110,
+		"is_active": true,
+		"created_at": "2023-08-15T00:00:00Z",
+		"updated_at": "2023-11-02T00:00:00Z",
+		"brand": "LEGO",
+		"categories": [
+			{
+				"category_id": 1401,
+				"name": "Toys & Games"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 1.5,
+			"dimensions_cm": {
+				"width": 48,
+				"height": 28,
+				"depth": 7
+			}
+		},
+		"tags": ["lego", "star wars", "toys", "building", "x-wing"],
+		"supplier_info": {
+			"supplier_id": "SUP-7755",
+			"supplier_name": "Clean Living Supplies",
+			"contact_email": null
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000027",
+		"sku": "PROJECTOR-1080P",
+		"name": "HD 1080p Home Theater Projector",
+		"description": "Turn any room into a home theater with this bright, 1080p native resolution projector. Supports screens up to 300 inches.",
+		"price": {
+			"amount": 250,
+			"currency": "USD"
+		},
+		"stock_quantity": 60,
+		"is_active": true,
+		"created_at": "2023-05-10T00:00:00Z",
+		"updated_at": "2023-10-26T00:00:00Z",
+		"brand": "CinemaView",
+		"categories": [
+			{
+				"category_id": 201,
+				"name": "Electronics"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 2.8,
+			"dimensions_cm": {
+				"width": 30,
+				"height": 12,
+				"depth": 25
+			}
+		},
+		"tags": ["projector", "home theater", "1080p", "movies"],
+		"supplier_info": {
+			"supplier_id": "SUP-1011",
+			"supplier_name": "Innovate Electronics",
+			"contact_email": "b2b@innovate-elec.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000028",
+		"sku": "SLEEP-BAG-0F",
+		"name": "0°F Mummy Sleeping Bag",
+		"description": "Stay warm on cold nights with this 0°F rated mummy sleeping bag. Synthetic fill is lightweight and performs well in damp conditions.",
+		"price": {
+			"amount": 139.95,
+			"currency": "USD"
+		},
+		"stock_quantity": 85,
+		"is_active": true,
+		"created_at": "2022-10-01T00:00:00Z",
+		"updated_at": "2023-09-25T00:00:00Z",
+		"brand": "Summit Gear",
+		"categories": [
+			{
+				"category_id": 501,
+				"name": "Sports & Outdoors"
+			},
+			{
+				"category_id": 503,
+				"name": "Camping"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 2.2,
+			"dimensions_cm": {
+				"width": 25,
+				"height": 45,
+				"depth": 25
+			}
+		},
+		"tags": ["sleeping bag", "camping", "outdoors", "winter"],
+		"supplier_info": {
+			"supplier_id": "SUP-8800",
+			"supplier_name": "Wellness Gear Co.",
+			"contact_email": "sales@wellnessgear.co"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000029",
+		"sku": "CAST-IRON-12",
+		"name": "12-Inch Cast Iron Skillet",
+		"description": "A pre-seasoned 12-inch cast iron skillet for searing, sautéing, baking, and more. Unbeatable heat retention.",
+		"price": {
+			"amount": 29.97,
+			"currency": "USD"
+		},
+		"stock_quantity": 300,
+		"is_active": true,
+		"created_at": "2021-06-01T00:00:00Z",
+		"updated_at": "2023-11-05T00:00:00Z",
+		"brand": "Lodge",
+		"categories": [
+			{
+				"category_id": 401,
+				"name": "Home & Kitchen"
+			},
+			{
+				"category_id": 403,
+				"name": "Cookware"
+			}
+		],
+		"variants": [],
+		"reviews": [
+			{
+				"review_id": "rev-019",
+				"author": "HomeCook",
+				"rating": 5,
+				"comment": "A kitchen essential. Use it for everything.",
+				"date": "2022-03-15T12:00:00Z"
+			}
+		],
+		"shipping_details": {
+			"weight_kg": 3.7,
+			"dimensions_cm": {
+				"width": 32,
+				"height": 6,
+				"depth": 50
+			}
+		},
+		"tags": ["cast iron", "skillet", "cookware", "kitchen"],
+		"supplier_info": {
+			"supplier_id": "SUP-4412",
+			"supplier_name": "Appliance Depot",
+			"contact_email": "orders@appliancedepot.net"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000030",
+		"sku": "SD-CARD-128-PRO",
+		"name": "128GB Pro UHS-II SD Card",
+		"description": "A high-speed SD card for professional photographers and videographers. Read speeds up to 300MB/s.",
+		"price": {
+			"amount": 49.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 500,
+		"is_active": true,
+		"created_at": "2023-07-11T00:00:00Z",
+		"updated_at": "2023-10-28T00:00:00Z",
+		"brand": "SanDisk",
+		"categories": [
+			{
+				"category_id": 201,
+				"name": "Electronics"
+			},
+			{
+				"category_id": 801,
+				"name": "Cameras"
+			},
+			{
+				"category_id": 205,
+				"name": "Accessories"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.02,
+			"dimensions_cm": {
+				"width": 2.4,
+				"height": 3.2,
+				"depth": 0.2
+			}
+		},
+		"tags": ["sd card", "memory card", "storage", "photography"],
+		"supplier_info": {
+			"supplier_id": "SUP-1011",
+			"supplier_name": "Innovate Electronics",
+			"contact_email": "b2b@innovate-elec.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000031",
+		"sku": "ELECTRIC-TB-WHT",
+		"name": "SonicPulse Electric Toothbrush",
+		"description": "Removes 10x more plaque than a manual toothbrush. 5 brushing modes and a 2-minute timer.",
+		"price": {
+			"amount": 79.95,
+			"currency": "USD"
+		},
+		"stock_quantity": 200,
+		"is_active": true,
+		"created_at": "2023-02-08T00:00:00Z",
+		"updated_at": "2023-11-01T00:00:00Z",
+		"brand": "Philips Sonicare",
+		"categories": [
+			{
+				"category_id": 1001,
+				"name": "Beauty & Personal Care"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.5,
+			"dimensions_cm": {
+				"width": 18,
+				"height": 25,
+				"depth": 8
+			}
+		},
+		"tags": ["toothbrush", "electric", "oral care", "health"],
+		"supplier_info": {
+			"supplier_id": "SUP-7755",
+			"supplier_name": "Clean Living Supplies",
+			"contact_email": "orders@cleanliving.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000032",
+		"sku": "ROUTER-WIFI6-AX",
+		"name": "AX3000 Wi-Fi 6 Router",
+		"description": "Next-gen Wi-Fi 6 router for faster speeds, greater capacity, and reduced network congestion.",
+		"price": {
+			"amount": 149.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 120,
+		"is_active": true,
+		"created_at": "2023-06-30T00:00:00Z",
+		"updated_at": "2023-10-29T00:00:00Z",
+		"brand": "TP-Link",
+		"categories": [
+			{
+				"category_id": 201,
+				"name": "Electronics"
+			},
+			{
+				"category_id": 202,
+				"name": "Computers"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.8,
+			"dimensions_cm": {
+				"width": 30,
+				"height": 8,
+				"depth": 25
+			}
+		},
+		"tags": ["router", "wifi 6", "networking", "internet"],
+		"supplier_info": {
+			"supplier_id": "SUP-1011",
+			"supplier_name": "Innovate Electronics",
+			"contact_email": "b2b@innovate-elec.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000033",
+		"sku": "DUMBBELL-SET-ADJ",
+		"name": "Adjustable Dumbbell Set (5-52.5 lbs)",
+		"description": "Replaces 15 sets of weights. Easily adjust from 5 to 52.5 lbs with the turn of a dial.",
+		"price": {
+			"amount": 399,
+			"currency": "USD"
+		},
+		"stock_quantity": 45,
+		"is_active": true,
+		"created_at": "2022-12-15T00:00:00Z",
+		"updated_at": "2023-10-15T00:00:00Z",
+		"brand": "Bowflex",
+		"categories": [
+			{
+				"category_id": 501,
+				"name": "Sports & Outdoors"
+			},
+			{
+				"category_id": 502,
+				"name": "Fitness"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 50,
+			"dimensions_cm": {
+				"width": 50,
+				"height": 30,
+				"depth": 55
+			}
+		},
+		"tags": ["dumbbell", "fitness", "home gym", "weights"],
+		"supplier_info": {
+			"supplier_id": "SUP-8800",
+			"supplier_name": "Wellness Gear Co.",
+			"contact_email": "sales@wellnessgear.co"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000034",
+		"sku": "CANDLE-VANILLA-3W",
+		"name": "3-Wick Vanilla Bean Candle",
+		"description": "A large 3-wick candle with a rich, creamy vanilla bean fragrance. Made with soy wax for a clean burn.",
+		"price": {
+			"amount": 24.5,
+			"currency": "USD"
+		},
+		"stock_quantity": 350,
+		"is_active": true,
+		"created_at": "2022-09-01T00:00:00Z",
+		"updated_at": "2023-11-03T00:00:00Z",
+		"brand": "Home Scents",
+		"categories": [
+			{
+				"category_id": 401,
+				"name": "Home & Kitchen"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.8,
+			"dimensions_cm": {
+				"width": 12,
+				"height": 10,
+				"depth": 12
+			}
+		},
+		"tags": ["candle", "home decor", "fragrance", "vanilla"],
+		"supplier_info": {
+			"supplier_id": "SUP-3321",
+			"supplier_name": "Home Goods Direct",
+			"contact_email": "contact@hgdirect.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000035",
+		"sku": "BIRD-FEEDER-SQRL",
+		"name": "Squirrel-Proof Bird Feeder",
+		"description": "A bird feeder designed with a weight-activated cage that closes to block squirrels, but not birds.",
+		"price": {
+			"amount": 42.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 115,
+		"is_active": true,
+		"created_at": "2023-04-05T00:00:00Z",
+		"updated_at": "2023-09-30T00:00:00Z",
+		"brand": "YardMaster",
+		"categories": [
+			{
+				"category_id": 1301,
+				"name": "Garden & Outdoor"
+			},
+			{
+				"category_id": 1101,
+				"name": "Pet Supplies"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 1.5,
+			"dimensions_cm": {
+				"width": 20,
+				"height": 35,
+				"depth": 20
+			}
+		},
+		"tags": ["bird feeder", "garden", "squirrel proof", "wildlife"],
+		"supplier_info": {
+			"supplier_id": "SUP-3321",
+			"supplier_name": "Home Goods Direct",
+			"contact_email": null
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000036",
+		"sku": "SCALE-KITCHEN-DG",
+		"name": "Digital Kitchen Food Scale",
+		"description": "A precise digital scale for measuring ingredients. Measures up to 11 lbs (5kg) with a tare function.",
+		"price": {
+			"amount": 14.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 500,
+		"is_active": true,
+		"created_at": "2022-03-01T00:00:00Z",
+		"updated_at": "2023-10-20T00:00:00Z",
+		"brand": "KitchenPro",
+		"categories": [
+			{
+				"category_id": 401,
+				"name": "Home & Kitchen"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.4,
+			"dimensions_cm": {
+				"width": 15,
+				"height": 3,
+				"depth": 20
+			}
+		},
+		"tags": ["scale", "kitchen", "baking", "cooking"],
+		"supplier_info": {
+			"supplier_id": "SUP-4412",
+			"supplier_name": "Appliance Depot",
+			"contact_email": "orders@appliancedepot.net"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000037",
+		"sku": "MOUSE-WIRELESS-ERGO",
+		"name": "Ergonomic Wireless Mouse",
+		"description": "A vertical wireless mouse designed to reduce wrist strain. Features adjustable DPI and a rechargeable battery.",
+		"price": {
+			"amount": 34.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 230,
+		"is_active": true,
+		"created_at": "2023-05-25T00:00:00Z",
+		"updated_at": "2023-11-05T00:00:00Z",
+		"brand": "Logitech",
+		"categories": [
+			{
+				"category_id": 201,
+				"name": "Electronics"
+			},
+			{
+				"category_id": 202,
+				"name": "Computers"
+			},
+			{
+				"category_id": 205,
+				"name": "Accessories"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.15,
+			"dimensions_cm": {
+				"width": 8,
+				"height": 7,
+				"depth": 12
+			}
+		},
+		"tags": ["mouse", "ergonomic", "wireless", "computer"],
+		"supplier_info": {
+			"supplier_id": "SUP-1011",
+			"supplier_name": "Innovate Electronics",
+			"contact_email": "b2b@innovate-elec.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000038",
+		"sku": "FACE-CREAM-HYA",
+		"name": "Hyaluronic Acid Face Cream",
+		"description": "A deeply hydrating daily face cream with hyaluronic acid and ceramides to lock in moisture.",
+		"price": {
+			"amount": 22,
+			"currency": "USD"
+		},
+		"stock_quantity": 410,
+		"is_active": true,
+		"created_at": "2023-01-01T00:00:00Z",
+		"updated_at": "2023-11-01T00:00:00Z",
+		"brand": "CeraVe",
+		"categories": [
+			{
+				"category_id": 1001,
+				"name": "Beauty & Personal Care"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.2,
+			"dimensions_cm": {
+				"width": 8,
+				"height": 8,
+				"depth": 8
+			}
+		},
+		"tags": ["face cream", "skincare", "moisturizer", "beauty"],
+		"supplier_info": {
+			"supplier_id": "SUP-7755",
+			"supplier_name": "Clean Living Supplies",
+			"contact_email": "orders@cleanliving.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000039",
+		"sku": "HAMMOCK-DOUBLE-NYL",
+		"name": "DoubleNest Camping Hammock",
+		"description": "A lightweight and compact hammock for two. Made from durable, breathable nylon. Includes straps for easy setup.",
+		"price": {
+			"amount": 69.95,
+			"currency": "USD"
+		},
+		"stock_quantity": 180,
+		"is_active": true,
+		"created_at": "2023-04-20T00:00:00Z",
+		"updated_at": "2023-10-10T00:00:00Z",
+		"brand": "ENO",
+		"categories": [
+			{
+				"category_id": 501,
+				"name": "Sports & Outdoors"
+			},
+			{
+				"category_id": 503,
+				"name": "Camping"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.6,
+			"dimensions_cm": {
+				"width": 15,
+				"height": 15,
+				"depth": 10
+			}
+		},
+		"tags": ["hammock", "camping", "outdoors", "lightweight"],
+		"supplier_info": {
+			"supplier_id": "SUP-8800",
+			"supplier_name": "Wellness Gear Co.",
+			"contact_email": "sales@wellnessgear.co"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000040",
+		"sku": "WEB-CAM-1080P-MIC",
+		"name": "1080p HD Webcam with Microphone",
+		"description": "A plug-and-play webcam for video conferencing and streaming. Features a wide-angle lens and noise-reducing microphone.",
+		"price": {
+			"amount": 39.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 280,
+		"is_active": true,
+		"created_at": "2022-10-10T00:00:00Z",
+		"updated_at": "2023-10-27T00:00:00Z",
+		"brand": "Logitech",
+		"categories": [
+			{
+				"category_id": 201,
+				"name": "Electronics"
+			},
+			{
+				"category_id": 202,
+				"name": "Computers"
+			},
+			{
+				"category_id": 205,
+				"name": "Accessories"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.25,
+			"dimensions_cm": {
+				"width": 10,
+				"height": 8,
+				"depth": 6
+			}
+		},
+		"tags": ["webcam", "streaming", "video conferencing", "1080p"],
+		"supplier_info": {
+			"supplier_id": "SUP-1011",
+			"supplier_name": "Innovate Electronics",
+			"contact_email": null
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000041",
+		"sku": "TOWEL-SET-BAMBOO",
+		"name": "Bamboo Bath Towel Set (6-Piece)",
+		"description": "An ultra-soft and absorbent towel set made from a sustainable bamboo-cotton blend. Includes 2 bath towels, 2 hand towels, and 2 washcloths.",
+		"price": {
+			"amount": 59.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 150,
+		"is_active": true,
+		"created_at": "2023-03-03T00:00:00Z",
+		"updated_at": "2023-10-03T00:00:00Z",
+		"brand": "Loom & Co",
+		"categories": [
+			{
+				"category_id": 401,
+				"name": "Home & Kitchen"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 2.5,
+			"dimensions_cm": {
+				"width": 40,
+				"height": 15,
+				"depth": 30
+			}
+		},
+		"tags": ["towels", "bamboo", "bath", "home"],
+		"supplier_info": {
+			"supplier_id": "SUP-3321",
+			"supplier_name": "Home Goods Direct",
+			"contact_email": "contact@hgdirect.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000042",
+		"sku": "ART-SET-ACRYLIC",
+		"name": "Acrylic Paint Set (24 Colors)",
+		"description": "A vibrant set of 24 non-toxic acrylic paints in 12ml tubes. Perfect for artists of all levels.",
+		"price": {
+			"amount": 25.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 300,
+		"is_active": true,
+		"created_at": "2022-11-20T00:00:00Z",
+		"updated_at": "2023-09-20T00:00:00Z",
+		"brand": "Artify",
+		"categories": [
+			{
+				"category_id": 1601,
+				"name": "Arts & Crafts"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.7,
+			"dimensions_cm": {
+				"width": 25,
+				"height": 3,
+				"depth": 20
+			}
+		},
+		"tags": ["art", "paint", "acrylic", "crafts"],
+		"supplier_info": {
+			"supplier_id": "SUP-7755",
+			"supplier_name": "Clean Living Supplies",
+			"contact_email": "orders@cleanliving.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000043",
+		"sku": "DOG-TREATS-PB",
+		"name": "Organic Peanut Butter Dog Treats",
+		"description": "All-natural, grain-free dog treats made with organic peanut butter. A healthy and delicious reward for your pup.",
+		"price": {
+			"amount": 9.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 600,
+		"is_active": true,
+		"created_at": "2023-08-20T00:00:00Z",
+		"updated_at": "2023-11-04T00:00:00Z",
+		"brand": "Paws & Comfort",
+		"categories": [
+			{
+				"category_id": 1101,
+				"name": "Pet Supplies"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.5,
+			"dimensions_cm": {
+				"width": 15,
+				"height": 22,
+				"depth": 8
+			}
+		},
+		"tags": ["dog", "pet supplies", "treats", "organic"],
+		"supplier_info": {
+			"supplier_id": "SUP-6432",
+			"supplier_name": "Pet Emporium",
+			"contact_email": "purchasing@petemporium.net"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000044",
+		"sku": "CHARGER-GAN-100W",
+		"name": "100W GaN 4-Port Charging Station",
+		"description": "A compact and powerful GaN charger with 2 USB-C and 2 USB-A ports. Fast charge your laptop, phone, and tablet simultaneously.",
+		"price": {
+			"amount": 69.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 180,
+		"is_active": true,
+		"created_at": "2023-07-28T00:00:00Z",
+		"updated_at": "2023-11-05T00:00:00Z",
+		"brand": "Anker",
+		"categories": [
+			{
+				"category_id": 201,
+				"name": "Electronics"
+			},
+			{
+				"category_id": 205,
+				"name": "Accessories"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.3,
+			"dimensions_cm": {
+				"width": 8,
+				"height": 8,
+				"depth": 4
+			}
+		},
+		"tags": ["charger", "gan", "usb-c", "fast charging"],
+		"supplier_info": {
+			"supplier_id": "SUP-1011",
+			"supplier_name": "Innovate Electronics",
+			"contact_email": "b2b@innovate-elec.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000045",
+		"sku": "CUTTING-BOARD-BAM",
+		"name": "Extra Large Bamboo Cutting Board",
+		"description": "A durable and eco-friendly cutting board with juice grooves. Made from 100% organic bamboo.",
+		"price": {
+			"amount": 21.95,
+			"currency": "USD"
+		},
+		"stock_quantity": 250,
+		"is_active": false,
+		"created_at": "2022-07-14T00:00:00Z",
+		"updated_at": "2023-08-14T00:00:00Z",
+		"brand": "KitchenPro",
+		"categories": [
+			{
+				"category_id": 401,
+				"name": "Home & Kitchen"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 1.5,
+			"dimensions_cm": {
+				"width": 45,
+				"height": 2,
+				"depth": 30
+			}
+		},
+		"tags": ["cutting board", "bamboo", "kitchen", "cookware"],
+		"supplier_info": {
+			"supplier_id": "SUP-4412",
+			"supplier_name": "Appliance Depot",
+			"contact_email": "orders@appliancedepot.net"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000046",
+		"sku": "BIKE-LIGHT-SET",
+		"name": "Rechargeable LED Bike Light Set",
+		"description": "A bright, USB-rechargeable headlight and taillight set to keep you visible and safe. Multiple modes and waterproof.",
+		"price": {
+			"amount": 28.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 320,
+		"is_active": true,
+		"created_at": "2023-03-18T00:00:00Z",
+		"updated_at": "2023-10-18T00:00:00Z",
+		"brand": "GoGear",
+		"categories": [
+			{
+				"category_id": 501,
+				"name": "Sports & Outdoors"
+			},
+			{
+				"category_id": 504,
+				"name": "Cycling"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.2,
+			"dimensions_cm": {
+				"width": 10,
+				"height": 5,
+				"depth": 12
+			}
+		},
+		"tags": ["bike light", "cycling", "safety", "led", "rechargeable"],
+		"supplier_info": {
+			"supplier_id": "SUP-8800",
+			"supplier_name": "Wellness Gear Co.",
+			"contact_email": "sales@wellnessgear.co"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000047",
+		"sku": "THROW-BLANKET-Fleece",
+		"name": "Plush Fleece Throw Blanket",
+		"description": "A super soft and cozy fleece blanket, perfect for snuggling on the couch. Machine washable.",
+		"price": {
+			"amount": 19.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 450,
+		"is_active": true,
+		"created_at": "2022-09-15T00:00:00Z",
+		"updated_at": "2023-11-02T00:00:00Z",
+		"brand": "Loom & Co",
+		"categories": [
+			{
+				"category_id": 401,
+				"name": "Home & Kitchen"
+			}
+		],
+		"variants": [
+			{
+				"variant_id": "blanket-grey",
+				"attributes": {
+					"color": "Charcoal Grey"
+				},
+				"price_modifier": 0,
+				"stock": 250
+			},
+			{
+				"variant_id": "blanket-navy",
+				"attributes": {
+					"color": "Navy Blue"
+				},
+				"price_modifier": 0,
+				"stock": 200
+			}
+		],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.9,
+			"dimensions_cm": {
+				"width": 30,
+				"height": 15,
+				"depth": 30
+			}
+		},
+		"tags": ["blanket", "fleece", "cozy", "home decor"],
+		"supplier_info": {
+			"supplier_id": "SUP-3321",
+			"supplier_name": "Home Goods Direct",
+			"contact_email": "contact@hgdirect.com"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000048",
+		"sku": "NOTEBOOK-3PK-A5",
+		"name": "A5 Lined Journal Notebook (3-Pack)",
+		"description": "A set of three high-quality A5 notebooks with durable covers and 100gsm acid-free paper.",
+		"price": {
+			"amount": 16.95,
+			"currency": "USD"
+		},
+		"stock_quantity": 700,
+		"is_active": true,
+		"created_at": "2022-01-20T00:00:00Z",
+		"updated_at": "2023-10-24T00:00:00Z",
+		"brand": "Moleskine",
+		"categories": [
+			{
+				"category_id": 701,
+				"name": "Office Supplies"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.8,
+			"dimensions_cm": {
+				"width": 15,
+				"height": 21,
+				"depth": 4
+			}
+		},
+		"tags": ["notebook", "journal", "office", "stationery"],
+		"supplier_info": {
+			"supplier_id": "SUP-9876",
+			"supplier_name": "Publishing House Co.",
+			"contact_email": null
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000049",
+		"sku": "VACUUM-CORDLESS-V10",
+		"name": "V10 Cordless Stick Vacuum",
+		"description": "Powerful and lightweight cordless vacuum with up to 60 minutes of run time. Easily converts to a handheld.",
+		"price": {
+			"amount": 349.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 75,
+		"is_active": true,
+		"created_at": "2023-02-10T00:00:00Z",
+		"updated_at": "2023-11-01T00:00:00Z",
+		"brand": "Dyson",
+		"categories": [
+			{
+				"category_id": 401,
+				"name": "Home & Kitchen"
+			},
+			{
+				"category_id": 402,
+				"name": "Appliances"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 5.8,
+			"dimensions_cm": {
+				"width": 30,
+				"height": 120,
+				"depth": 25
+			}
+		},
+		"tags": ["vacuum", "cordless", "cleaning", "appliance"],
+		"supplier_info": {
+			"supplier_id": "SUP-4412",
+			"supplier_name": "Appliance Depot",
+			"contact_email": "orders@appliancedepot.net"
+		}
+	},
+	{
+		"product_id": "10000000-0000-0000-0000-000000000050",
+		"sku": "HDMI-CABLE-8K-2M",
+		"name": "2m Ultra High-Speed 8K HDMI Cable",
+		"description": "A certified HDMI 2.1 cable supporting 8K@60Hz and 4K@120Hz for the ultimate viewing experience.",
+		"price": {
+			"amount": 18.99,
+			"currency": "USD"
+		},
+		"stock_quantity": 900,
+		"is_active": true,
+		"created_at": "2023-07-07T00:00:00Z",
+		"updated_at": "2023-10-27T00:00:00Z",
+		"brand": "CableMasters",
+		"categories": [
+			{
+				"category_id": 201,
+				"name": "Electronics"
+			},
+			{
+				"category_id": 205,
+				"name": "Accessories"
+			}
+		],
+		"variants": [],
+		"reviews": [],
+		"shipping_details": {
+			"weight_kg": 0.15,
+			"dimensions_cm": {
+				"width": 15,
+				"height": 2,
+				"depth": 15
+			}
+		},
+		"tags": ["hdmi", "cable", "8k", "4k", "electronics"],
+		"supplier_info": {
+			"supplier_id": "SUP-1011",
+			"supplier_name": "Innovate Electronics",
+			"contact_email": "b2b@innovate-elec.com"
+		}
+	},
+	{}
 ]

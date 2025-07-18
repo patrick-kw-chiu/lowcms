@@ -131,7 +131,7 @@
 				reset();
 			}}
 		>
-			{cap(m[Boolean(field) ? 'edit_x' : 'add_x']({ x: m.field() }))}
+			{cap(m.save_changes())}
 		</Button>
 	{/if}
 </div>
