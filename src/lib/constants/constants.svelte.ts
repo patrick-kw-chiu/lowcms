@@ -61,10 +61,12 @@ export const TYPE_TO_JSON_TYPE_MAP: Record<LowCMSType, JSONSchema7TypeName | 'un
 	array: 'array',
 	'array-of-objects': 'array',
 	'array-of-strings': 'array',
-	'array-empty': 'array',
+	// 'array-empty': 'array',
 	null: 'null',
 	unknown: 'unknown'
 };
+
+export const UNSUPPORTED_TYPES = ['array', 'unknown', 'null'];
 
 export const OpTypeToLabelMap: Record<string, string> = {
 	$eq: 'equal to',

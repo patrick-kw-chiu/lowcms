@@ -96,17 +96,17 @@
       "tel": "0-2268-8888"
     },
     {
-      "id": 139,
+      "id": 999,
       "group": {
-        "code": "sf",
-        "english": "SF",
+        "code": "sf 你好",
+        "english": "SF hihi",
         "thai": "เอสเอฟ",
         "website": "http://sfcinemacity.com/"
       },
       "showtimes": "http://showtimes.everyday.in.th/api/v2/theater/139/showtimes/",
       "num_views": 131718,
       "min_screens": 3,
-      "fav": false,
+      "fav": true,
       "stars": 1,
       "code": "9905",
       "slug": "emprive-cineclub",
@@ -441,17 +441,17 @@
       "tel": "0-2268-8888"
     },
     {
-      "id": 256,
+      "id": 2560,
       "group": {
-        "code": "sf",
-        "english": "SF",
+        "code": "sf 2",
+        "english": "SF 2",
         "thai": "เอสเอฟ",
-        "website": "http://sfcinemacity.com/"
+        "website": "http://sfcinemacity.com/?a=1"
       },
       "showtimes": "http://showtimes.everyday.in.th/api/v2/theater/256/showtimes/",
-      "num_views": 917,
+      "num_views": 917000,
       "min_screens": 2,
-      "fav": false,
+      "fav": true,
       "stars": 0,
       "code": "9920",
       "slug": "",
@@ -6074,6 +6074,15 @@
       "location": "",
       "point": null,
       "tel": ""
+    },
+    {},
+    {
+      "id": 111,
+      "num_views": 29,
+      "slug": "sf-cinema-city-mbk-center",
+      "status": "operate",
+      "location": "7-8th FL. MBK Center",
+      "point": "SRID=4326;POINT (100.53 13.7447)"
     }
   ]
 }

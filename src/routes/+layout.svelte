@@ -121,7 +121,8 @@
 				(!appState.isSubSection ? ' sm:gap-4 sm:py-4' : ' sm:gap-2 sm:pt-2')}
 		>
 			<header
-				class={'sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background sm:static sm:h-auto sm:border-0 sm:bg-transparent' +
+				id="lc-header"
+				class={'sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background sm:h-auto sm:border-0 sm:bg-transparent' +
 					(!appState.isSubSection ? ' px-4 sm:px-6' : ' px-2 sm:px-3')}
 			>
 				<Sheet.Root>
@@ -202,6 +203,21 @@
 					/> 
 					-->
 				</div>
+				<!-- Place this tag where you want the button to render. -->
+				<a
+					class="github-button"
+					href="https://github.com/patrick-kw-chiu/lowcms"
+					data-color-scheme="no-preference: light; light: light; dark: dark;"
+					data-show-count="true"
+					data-icon="octicon-star"
+					data-size="large"
+					aria-label="Star buttons/github-buttons on GitHub"
+					style="vertical: middle;"
+				>
+					Star
+				</a>
+				<!-- Place this tag in your head or just before your close body tag. -->
+				<script async defer src="https://buttons.github.io/buttons.js"></script>
 				<DarkModeSwitchButton />
 				<!-- <LanguageSwitchButton /> -->
 				<!-- <DropdownMenu.Root>
@@ -254,6 +270,9 @@
 </ParaglideJS>
 
 <style>
+	:global(#lc-header > span) {
+		margin-top: 5px;
+	}
 	.sub-section-content {
 		height: calc(100dvh - 3.5rem);
 		overflow: hidden;

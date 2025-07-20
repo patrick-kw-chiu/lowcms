@@ -55,6 +55,8 @@
 	"tags": "tags",
 	"createdAt": "created at",
 	"updatedAt": "updated at",
+	"showing_x_y": "Showing {x} {y}",
+	"showing_x_out_of_y_z": "Showing {x} out of {y} {z}",
 	"showing_start_to_end_of_total_x": "Showing {start} - {end} of {total} {x}",
 	"file": "file",
 	"directory": "directory",

@@ -73,13 +73,14 @@
 		style="max-height: calc(50dvh - 60px); min-height: 280px"
 	>
 		<button
-			class="z-100 absolute right-2"
+			class="absolute right-2 z-30"
+			{disabled}
 			onclick={() => {
 				onRemoveField(field);
 				reset();
 			}}
 		>
-			<Trash_2 />
+			<Trash_2 class="h-6 w-6" />
 		</button>
 		<FieldEditor
 			{field}

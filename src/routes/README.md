@@ -13,3 +13,7 @@
   - (Coming soon) Freehand MongoDB-like query
 - **Browser-full** 💻 - Thanks to the [File System API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_API), LowCMS reads and writes content to your authorized directory all from the browser. No software installation.
 - **Privacy** 🔏 - No Data is sent to a server. In fact, LowCMS doesn't have a backend server - literally serverless!
+
+## Terminology
+
+![LowCMS Terminology](https://github.com/patrick-kw-chiu/lowcms/blob/main/static/LowCMS terminology.png?raw=true)

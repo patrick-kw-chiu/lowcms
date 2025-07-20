@@ -116,7 +116,9 @@
 			<TypeLabel {config} />
 		</Button>
 	</Popover.Trigger>
-	<Popover.Content class="border-3 max-h-[320px] overflow-scroll">
+	<Popover.Content
+		class={`border-3 max-h-[480px] ${!['number'].includes(type) ? 'overflow-scroll' : ''}`}
+	>
 		{#if type === 'string'}
 			<StringFilter
 				opType={stringOpType}

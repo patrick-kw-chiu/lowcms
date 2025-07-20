@@ -117,7 +117,7 @@
 						? m.enter_the_x({ x: m.content_name() })
 						: !Boolean(schema.title)
 							? m.enter_the_x({ x: m.schema_title() })
-							: hasXTypes(schema as JSONSchema7WithUnknown, ['unknown', 'null', 'array-empty'])
+							: hasXTypes(schema as JSONSchema7WithUnknown, ['unknown'])
 								? // TODO locales
 									'Schema contains property(s) with the "unknown" type. Please assign a type to this property.'
 								: ''

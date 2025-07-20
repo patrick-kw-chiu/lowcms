@@ -81,7 +81,7 @@
 		const isUpdated = await updateSchema(schemaId, {
 			title: schemaToEdit.title,
 			description: schemaToEdit.description,
-			properties: schemaToEdit.properties
+			properties: $state.snapshot(schemaToEdit.properties)
 		});
 
 		if (isUpdated) {

@@ -79,7 +79,7 @@
 			{#each demoImageIds as imageId}
 				<Carousel.Item>
 					<img
-						src={`https://github.com/patrick-kw-chiu/lowcms/blob/main/demo/v0.1.0-launch/edited/${imageId}.png?raw=true`}
+						src={`https://github.com/patrick-kw-chiu/lowcms/blob/main/static/demo/v0.1.0-launch/edited/${imageId}.png?raw=true`}
 						alt="LowCMS demo"
 					/>
 				</Carousel.Item>

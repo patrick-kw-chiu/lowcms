@@ -77,7 +77,7 @@ export type LowCMSType =
 	| 'boolean'
 	| 'array-of-objects'
 	| 'array-of-strings'
-	| 'array-empty'
+	// | 'array-empty'
 	| 'object'
 	| 'unknown';
 

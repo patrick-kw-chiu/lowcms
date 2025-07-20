@@ -16,7 +16,8 @@ import {
 	BASE_PATH,
 	BASE_SCHEMA,
 	JSON_SCHEMA,
-	TYPE_TO_JSON_TYPE_MAP
+	TYPE_TO_JSON_TYPE_MAP,
+	UNSUPPORTED_TYPES
 } from '$lib/constants/constants.svelte';
 
 export const cap = (str: string) => {
@@ -50,7 +51,7 @@ export const getSectionInfoByPage = (page: Page) => {
 			if (index === 0) {
 				return {
 					name: m.lowcms(),
-					path: '/'
+					path: `/${BASE_PATH}`
 				};
 			}
 
@@ -331,7 +332,7 @@ export const deriveJSONSchema = (object: JSONObject | JSONObject[], nestedSchema
 			);
 
 			// 2. Apply type specific handling
-			if (['array', 'unknown'].includes(type)) {
+			if (UNSUPPORTED_TYPES.includes(type)) {
 				// Do nothing - handle array as `unknown`
 				_schema.properties[key] = {
 					..._schema.properties[key],
@@ -414,17 +415,19 @@ export const deriveJSONSchema = (object: JSONObject | JSONObject[], nestedSchema
 		// => see if we can suggest the values as enum
 		for (const key in typeMap) {
 			// types is the count of detected types of the field
+			const typesWithoutUnsupportedFields = typeMap[key].filter(
+				(t: string) => !UNSUPPORTED_TYPES.includes(t)
+			);
 
-			const isOnlyContainsEmptyArray =
-				new Set(typeMap[key] as string[]).values().next().value === 'array-empty';
+			const isOnlyContainUnknownField = typesWithoutUnsupportedFields.length === 0;
 
-			const types = isOnlyContainsEmptyArray
-				? ['unknown']
-				: typeMap[key].filter((t: string) => t !== 'array-empty');
+			const mostOccuredType = isOnlyContainUnknownField
+				? 'unknown'
+				: getMostOccurance(typesWithoutUnsupportedFields);
 
-			const mostOccuredType = getMostOccurance(types);
 			const jsonSchemaType = convertLowCMSTypeToJSONSchemaType(mostOccuredType);
-			console.log({ key, types, mostOccuredType, jsonSchemaType });
+
+			console.log({ key, typesWithoutUnsupportedFields, mostOccuredType, jsonSchemaType });
 
 			// 1. Apply default keyword fields
 			_schema.properties[key] = {
@@ -470,10 +473,13 @@ export const deriveJSONSchema = (object: JSONObject | JSONObject[], nestedSchema
 				};
 
 				// If there are limited unique items, suggest that it could be `enum` to users
-				const uniqueItems = [...new Set(types)];
+				const uniqueItems = [...new Set(typesWithoutUnsupportedFields)];
 				const numOfUniqueItems = uniqueItems.length;
-				console.log({ 'types.length': types.length, numOfUniqueItems });
-				if (Math.sqrt(types.length) < numOfUniqueItems) {
+				console.log({
+					'typesWithoutUnsupportedFields.length': typesWithoutUnsupportedFields.length,
+					numOfUniqueItems
+				});
+				if (Math.sqrt(typesWithoutUnsupportedFields.length) < numOfUniqueItems) {
 					_schema.properties[key].enum = uniqueItems;
 				}
 			} else if (['object'].includes(mostOccuredType!)) {

@@ -119,25 +119,48 @@ It could edit a single `document` or document inside a `collection`.
 		const file = await selectedContent.fileHandle!.getFile();
 		const contentInFile = await file.text();
 		try {
-			const jsonContent: JSONObject = JSON.parse(contentInFile);
+			let jsonContent: JSONObject = JSON.parse(contentInFile);
+			const hasJsonPath = selectedContent.jsonPath !== '';
+			console.log({ hasJsonPath });
 
 			if (selectedContent.type === 'document') {
-				setValueByJsonPathsMutable(jsonContent, selectedContent.jsonPath!.split('.'), {
-					value: editedData
-				});
+				if (hasJsonPath) {
+					setValueByJsonPathsMutable(jsonContent, selectedContent.jsonPath!.split('.'), {
+						value: editedData
+					});
+				} else {
+					jsonContent = editedData;
+				}
 			} else {
-				const originalJsonWithPath = getValueByJsonPaths(
-					jsonContent,
-					selectedContent.jsonPath!.split('.')
-				);
-				setValueByJsonPathsMutable(jsonContent, selectedContent.jsonPath!.split('.'), {
-					value:
-						checkedRowIndex === jsonContent.length
+				if (hasJsonPath) {
+					const originalJsonWithPath = getValueByJsonPaths(
+						jsonContent,
+						selectedContent.jsonPath!.split('.')
+					);
+					const isCreate = checkedRowIndex === originalJsonWithPath.length;
+					setValueByJsonPathsMutable(jsonContent, selectedContent.jsonPath!.split('.'), {
+						value: isCreate
 							? [...(originalJsonWithPath as []), editedData]
 							: originalJsonWithPath.map((row: any, index: number) => {
 									return index === checkedRowIndex ? editedData : row;
 								})
-				});
+					});
+					console.log({
+						jsonContent,
+						isCreate,
+						'[...(originalJsonWithPath as []), editedData]': [
+							...(originalJsonWithPath as []),
+							editedData
+						]
+					});
+				} else {
+					const isCreate = checkedRowIndex === jsonContent.length;
+					jsonContent = isCreate
+						? [...(jsonContent as []), editedData]
+						: jsonContent.map((row: any, index: number) => {
+								return index === checkedRowIndex ? editedData : row;
+							});
+				}
 			}
 
 			// Create a FileSystemWritableFileStream to write to.

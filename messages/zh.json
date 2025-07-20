@@ -55,6 +55,8 @@
 	"tags": "標籤",
 	"createdAt": "創建於",
 	"updatedAt": "更新於",
+	"showing_x_y": "顯示{x}個{y}",
+	"showing_x_out_of_y_z": "顯示{x}個{y}中的{z}個",
 	"showing_start_to_end_of_total_x": "顯示 {total} 個{x}中的 {start}-{end} 個",
 	"file": "檔案",
 	"directory": "目錄",

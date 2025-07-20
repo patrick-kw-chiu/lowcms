@@ -106,6 +106,19 @@
 				</div>
 			{/if}
 			<FilterObjectEditor {filterObject} isRoot={true} />
+			<div class="py-2 text-center text-sm text-muted-foreground">
+				{#if rows.length === filteredRows.length}
+					{cap(m.showing_x_y({ x: rows.length, y: m.documents() }))}
+				{:else}
+					{cap(
+						m.showing_x_out_of_y_z({
+							x: filteredRows.length,
+							y: rows.length,
+							z: m.documents()
+						})
+					)}
+				{/if}
+			</div>
 		</Card.Header>
 	{/if}
 	<Card.Content>
@@ -182,29 +195,21 @@
 			</Table.Body>
 		</Table.Root>
 	</Card.Content>
-	<!-- <Card.Footer class="gap-4">
-		<Button variant="outline" size="icon" disabled={page === 1} onclick={() => page--}>
-						<ChevronLeft class="h-4 w-4" />
-					</Button>
-					<div class="text-xs text-muted-foreground">
-						{cap(
-							m.showing_start_to_end_of_total_x({
-								start: (page - 1) * limit + 1,
-								end: Math.min(numOfDbConfigs, page * limit),
-								total: numOfDbConfigs,
-								x: m.databases()
-							})
-						)}
-					</div>
-					<Button
-						variant="outline"
-						size="icon"
-						disabled={page === Math.ceil(numOfDbConfigs / limit)}
-						onclick={() => page++}
-					>
-						<ChevronRight class="h-4 w-4" />
-					</Button>
-	</Card.Footer> -->
+	<Card.Footer class="gap-4">
+		<div class="w-full py-2 text-center text-sm text-muted-foreground">
+			{#if rows.length === filteredRows.length}
+				{cap(m.showing_x_y({ x: rows.length, y: m.documents() }))}
+			{:else}
+				{cap(
+					m.showing_x_out_of_y_z({
+						x: filteredRows.length,
+						y: rows.length,
+						z: m.documents()
+					})
+				)}
+			{/if}
+		</div>
+	</Card.Footer>
 	<Sheet.Root bind:open={isContentEditorOpen}>
 		<Sheet.Content
 			class="!max-w-[848px] p-3 py-6"

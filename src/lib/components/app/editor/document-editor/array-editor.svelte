@@ -209,7 +209,7 @@ It could edit a single `document` or document inside a `collection`.
 							objectIndexToRemove = -1;
 						}
 					}
-					deleteTarget={`"${item[stringFields[0]]}"`}
+					deleteTarget={`"${stringFields.length > 0 ? item[stringFields[0]] : 'item ' + index}"`}
 					onConfirm={() => {
 						const array = setValueByJsonPathsMutable(data, jsonPaths, {
 							isGetNestedFieldOnly: true,
@@ -242,6 +242,9 @@ It could edit a single `document` or document inside a `collection`.
 								<span class="font-medium text-gray-900">{item[field]}</span>
 							</h3>
 						{/each}
+						{#if stringFields.length === 0}
+							<span class="text-gray-500">Item {index}</span>
+						{/if}
 					</div>
 				</div>
 			</div>

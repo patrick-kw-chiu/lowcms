@@ -99,6 +99,7 @@ const getSchemaById = async (id: string) => {
 };
 
 const updateSchema = async (schemaId: string, schema: Partial<Omit<Schema, 'id'>>) => {
+	console.log({ schemaId, schema });
 	return await db.schemas.update(schemaId, schema);
 };
 
