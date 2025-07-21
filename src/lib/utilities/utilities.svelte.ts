@@ -546,7 +546,7 @@ type StringPart = {
 export const extractWhitespaceParts = (input: string): StringPart[] => {
 	// 1. Handle null, undefined, or empty string inputs gracefully.
 	if (!input || typeof input !== 'string') {
-		return [];
+		return [{ isWhiteSpace: false, content: input }];
 	}
 
 	// 2. Use a regular expression to capture the three main parts:

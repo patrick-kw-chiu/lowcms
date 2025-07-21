@@ -51,9 +51,17 @@
 	const { data } = $props();
 	const { databaseId, databaseConfig, schemaId, schemas, contents } = $derived(data);
 
-	let schemaToEdit = $derived($state.snapshot(schemas).find((schema) => schema.id === schemaId));
+	// let schemaToEdit = $derived($state.snapshot(schemas).find((schema) => schema.id === schemaId));
+	let schemaToEdit = $state<Schema>();
+	$effect(() => {
+		if (schemaId) {
+			schemaToEdit = $state.snapshot(schemas).find((schema) => schema.id === schemaId);
+		} else {
+			schemaToEdit = undefined;
+		}
+	});
 	let contentsLinkToSchema = $derived<Content[]>(
-		schemaToEdit ? contents.filter((content) => content.schemaId === schemaToEdit.id) : []
+		schemaToEdit ? contents.filter((content) => content.schemaId === schemaToEdit!.id) : []
 	);
 	let schemaToRemove = $state<Schema>();
 
