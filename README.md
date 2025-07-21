@@ -26,6 +26,6 @@
 
 ## Terminology
 
-![LowCMS Terminology](https://github.com/patrick-kw-chiu/lowcms/blob/main/static/LowCMS terminology.png?raw=true)
+![LowCMS Terminology](https://github.com/patrick-kw-chiu/lowcms/blob/main/static/LowCMS_terminology.png?raw=true)
 
 <!-- ## Blogs -->
