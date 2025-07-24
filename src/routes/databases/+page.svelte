@@ -274,7 +274,7 @@
 			<Button
 				variant="outline"
 				size="icon"
-				disabled={page === Math.ceil(numOfDbConfigs / limit)}
+				disabled={numOfDbConfigs === 0 || page === Math.ceil(numOfDbConfigs / limit)}
 				onclick={() => page++}
 			>
 				<ChevronRight class="h-4 w-4" />
