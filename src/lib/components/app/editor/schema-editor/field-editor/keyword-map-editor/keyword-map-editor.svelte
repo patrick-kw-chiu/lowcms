@@ -11,7 +11,7 @@
 
 	// Types
 	import type { JSONSchema7, JSONSchema7TypeName } from 'json-schema';
-	import type { JSONObject } from '$lib/types/types.svelte';
+	import type { JSONObject, JSONSchema7WithCustomKeyword } from '$lib/types/types.svelte';
 
 	// Utilities
 	import { cap } from '$lib/utilities/utilities.svelte';
@@ -21,15 +21,15 @@
 	import { JSON_SCHEMA } from '$lib/constants/constants.svelte';
 	import type { Selected } from 'bits-ui';
 	import EnumEditor from './enum-editor.svelte';
+	import RemovableSelect from '$lib/components/app/removable-select/removable-select.svelte';
+	import StringCustomTypeEditor from './string-custom-type-editor.svelte';
 
 	interface Props {
-		keywordObj: JSONSchema7;
+		keywordObj: JSONSchema7WithCustomKeyword;
 		type: JSONSchema7TypeName;
 		disabled: boolean;
 	}
 	let { keywordObj = $bindable(), type, disabled }: Props = $props();
-	let entries = $derived(Object.entries(keywordObj));
-	let enumValue = $state('');
 
 	// TODO: Should use two-way binding, but library's type seems incorrect
 	const handleArrayOfChange = (item: unknown) => {
@@ -77,7 +77,14 @@
 	{/if}
 {:else}
 	{#if type === 'string'}
-		<EnumEditor bind:keywordObj type="string" {disabled} />
+		<StringCustomTypeEditor bind:keywordObj {disabled} />
+		<div class={keywordObj['x-custom-string-type'] ? 'opacity-60' : ''}>
+			<EnumEditor
+				bind:keywordObj
+				type="string"
+				disabled={disabled || !!keywordObj['x-custom-string-type']}
+			/>
+		</div>
 	{/if}
 	<!-- {#each entries as entry}
 		<div class="space-y-2">

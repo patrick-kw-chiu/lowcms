@@ -172,7 +172,7 @@
 			/>
 		{/if}
 		{#if ['array-of-objects', 'object'].includes(getLowCMSTypeByConfig(config))}
-			<!-- TODO locals -->
+			<!-- TODO locales -->
 			Coming soon!
 			<li>Search by "object"</li>
 			<li>Search by "array of objects"</li>

@@ -6,6 +6,8 @@ It could edit a single `document` or document inside a `collection`.
 <script lang="ts">
 	import { codeToHtml } from 'shiki';
 	import { mode } from 'mode-watcher';
+	import { v4 as uuidv4 } from 'uuid';
+	import { nanoid } from 'nanoid';
 
 	// Libraries - shadcn
 	import { Label } from '$lib/components/ui/label';
@@ -21,7 +23,7 @@ It could edit a single `document` or document inside a `collection`.
 
 	// Types
 	import type { JSONSchema7, JSONSchema7TypeName } from 'json-schema';
-	import type { Content, JSONObject } from '$lib/types/types.svelte';
+	import type { Content, JSONObject, JSONSchema7WithCustomKeyword } from '$lib/types/types.svelte';
 	import type { Selected } from 'bits-ui';
 
 	// IndexedDB
@@ -83,6 +85,9 @@ It could edit a single `document` or document inside a `collection`.
 	let hasContentChanged = $state(false);
 	let jsonHTML = $state('');
 	let showTypeLabel = $state(false);
+
+	// State - ID - nanoid
+	let lengthOfNanoid = $state(32);
 
 	const generateJsonHTML = async (editedData: JSONObject) => {
 		jsonHTML =
@@ -198,7 +203,7 @@ It could edit a single `document` or document inside a `collection`.
 	});
 </script>
 
-{#snippet StringEditor(jsonPaths: string[], config: JSONSchema7)}
+{#snippet StringEditor(jsonPaths: string[], config: JSONSchema7WithCustomKeyword)}
 	{#if config.enum}
 		<RemovableSelect
 			options={config.enum.map((label) => ({ label, value: label })) as {
@@ -212,7 +217,26 @@ It could edit a single `document` or document inside a `collection`.
 			value={getValueByJsonPaths(editedData, jsonPaths) as string}
 			placeholder={cap(m.select_x({ x: m.enumeration() }))}
 		/>
-	{:else if (config as JSONSchema7).type === 'string'}
+	{:else if config.type === 'string'}
+		{#if config['x-custom-string-type']}
+			<div class="mb-1 flex items-center gap-2">
+				<Button
+					variant="secondary"
+					size="sm"
+					onclick={() => {
+						const xCustomStringType = config['x-custom-string-type'];
+						const value = xCustomStringType === 'ID - uuid' ? uuidv4() : nanoid(lengthOfNanoid);
+						setValueByJsonPathsMutable(editedData, jsonPaths, { value });
+					}}
+				>
+					Generate a "{config['x-custom-string-type']}"
+				</Button>
+				{#if config['x-custom-string-type'] === 'ID - nanoid'}
+					<Label for="nanoid-length">Length</Label>
+					<Input id="nanoid-length" class="h-6 w-fit" type="number" bind:value={lengthOfNanoid} />
+				{/if}
+			</div>
+		{/if}
 		<Input
 			id={getLabelFor(jsonPaths)}
 			class={`h-8`}

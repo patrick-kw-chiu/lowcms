@@ -12,7 +12,11 @@
 	// Types
 	import type { JSONSchema7, JSONSchema7TypeName } from 'json-schema';
 	import type { Selected } from 'bits-ui';
-	import type { JSONObject, StringKeyword } from '$lib/types/types.svelte';
+	import type {
+		JSONObject,
+		JSONSchema7WithCustomKeyword,
+		StringKeyword
+	} from '$lib/types/types.svelte';
 
 	// Utilities
 	import { cap, pick } from '$lib/utilities/utilities.svelte';
@@ -24,6 +28,7 @@
 	// Components
 	import KeywordMapEditor from './keyword-map-editor/keyword-map-editor.svelte';
 	import Hr from '$lib/components/app/hr.svelte';
+	import DataTypeSelect from '$lib/components/app/select/data-type-select/data-type-select.svelte';
 
 	interface Props {
 		/**
@@ -34,14 +39,14 @@
 		onConfirmFieldDetail: (field: string, schema: JSONSchema7) => void;
 		field?: string;
 		jsonSchema?: JSONSchema7;
-		keywordObj?: JSONObject;
+		keywordObj?: JSONSchema7WithCustomKeyword;
 		disabled: boolean;
 	}
 	let { onConfirmFieldDetail, field, jsonSchema, keywordObj, disabled }: Props = $props();
 
 	let _field = $state(field);
 	let _dataType = $state<JSONSchema7TypeName | undefined>(jsonSchema?.type as JSONSchema7TypeName);
-	let _keywordObj = $state<JSONSchema7 | undefined>(keywordObj);
+	let _keywordObj = $state<JSONSchema7WithCustomKeyword | undefined>(keywordObj);
 
 	const reset = () => {
 		_field = '';
@@ -77,40 +82,11 @@
 		<Label for="field">{cap(m.field())} *</Label>
 		<Input id="field" bind:value={_field} required {disabled} />
 	</div>
-	<Select.Root
-		portal={null}
-		selected={{ value: _dataType }}
-		onSelectedChange={handleDataTypeChange}
-		required
-		{disabled}
-	>
-		<Select.Trigger class="">
-			<!-- TODO: workaround to show selected value -->
-			{#if _dataType}
-				{_dataType}
-			{:else}
-				<Select.Value placeholder={cap(m.data_type()) + ' *'} />
-			{/if}
-		</Select.Trigger>
-		<Select.Content>
-			<Select.Group>
-				{#each JSON_SCHEMA.types.filter((t) => t !== 'null') as jsonSchemaType}
-					<Select.Item value={jsonSchemaType} label={cap(m[jsonSchemaType]())}>
-						<span class={`h-3.5 w-3.5 lc-badge-${jsonSchemaType} mr-2`}></span>
-						{cap(m[jsonSchemaType]())}
-					</Select.Item>
-				{/each}
-			</Select.Group>
-		</Select.Content>
-	</Select.Root>
+	<DataTypeSelect bind:dataType={_dataType} {disabled} {handleDataTypeChange} />
 	<Hr class="mb-0" />
 	{#if _keywordObj}
 		<KeywordMapEditor bind:keywordObj={_keywordObj} type={_dataType!} {disabled} />
 	{/if}
-	<!-- {#if _dataType === 'string'}
-		<Hr class="mb-0" />
-		<KeywordMapEditor bind:keywordObj={_keywordObj as StringKeyword} />
-	{/if} -->
 	{#if !disabled}
 		<Button
 			size="sm"

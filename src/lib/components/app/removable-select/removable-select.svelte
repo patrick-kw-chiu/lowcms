@@ -6,9 +6,13 @@
 	import type { Selected } from 'bits-ui';
 	import * as m from '$lib/paraglide/messages.js';
 	import CircleX from 'lucide-svelte/icons/circle-x';
+	import IDCardLanyard from 'lucide-svelte/icons/id-card-lanyard';
+	import Mail from 'lucide-svelte/icons/mail';
+	import CalendarClock from 'lucide-svelte/icons/calendar-clock';
+	import LinkIcon from 'lucide-svelte/icons/link';
 
 	interface Props {
-		options: { value: string; label: string }[];
+		options: { value: string; label: string; withIcon?: boolean }[];
 		onSelectedChange: (item: Selected<string | undefined> | undefined) => void;
 		value?: string;
 		label?: string;
@@ -50,6 +54,19 @@
 				<Select.Group>
 					{#each options as option}
 						<Select.Item value={option.value} label={option.label}>
+							{#if option.withIcon}
+								{#if option.label.startsWith('ID - ')}
+									<IDCardLanyard class="h-5 w-5" />
+								{:else if ['email'].includes(option.label)}
+									<Mail class="h-5 w-5" />
+								{:else if ['date', 'datetime', 'time'].includes(option.label)}
+									<CalendarClock class="h-5 w-5" />
+								{:else if ['url'].includes(option.label)}
+									<LinkIcon class="h-5 w-5" />
+								{:else}
+									{null}
+								{/if}
+							{/if}
 							{option.label}
 						</Select.Item>
 					{/each}
@@ -58,7 +75,7 @@
 		</Select.Root>
 		{#if onRemove}
 			<Button variant="outline" size="icon" class="p-2" {disabled} onclick={onRemove}>
-				<CircleX />
+				<CircleX onclick={onRemove} />
 			</Button>
 		{/if}
 	</div>
