@@ -218,20 +218,20 @@ It could edit a single `document` or document inside a `collection`.
 			placeholder={cap(m.select_x({ x: m.enumeration() }))}
 		/>
 	{:else if config.type === 'string'}
-		{#if config['x-custom-string-type']}
+		{#if config['x-string-custom-type']}
 			<div class="mb-1 flex items-center gap-2">
 				<Button
 					variant="secondary"
 					size="sm"
 					onclick={() => {
-						const xCustomStringType = config['x-custom-string-type'];
+						const xCustomStringType = config['x-string-custom-type'];
 						const value = xCustomStringType === 'ID - uuid' ? uuidv4() : nanoid(lengthOfNanoid);
 						setValueByJsonPathsMutable(editedData, jsonPaths, { value });
 					}}
 				>
-					Generate a "{config['x-custom-string-type']}"
+					Generate a "{config['x-string-custom-type']}"
 				</Button>
-				{#if config['x-custom-string-type'] === 'ID - nanoid'}
+				{#if config['x-string-custom-type'] === 'ID - nanoid'}
 					<Label for="nanoid-length">Length</Label>
 					<Input id="nanoid-length" class="h-6 w-fit" type="number" bind:value={lengthOfNanoid} />
 				{/if}

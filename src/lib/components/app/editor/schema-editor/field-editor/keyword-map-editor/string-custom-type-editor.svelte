@@ -19,7 +19,7 @@
 		disabled?: boolean;
 	}
 	let { keywordObj = $bindable(), disabled }: Props = $props();
-	let xCustomStringType = $derived(keywordObj['x-custom-string-type']);
+	let xCustomStringType = $derived(keywordObj['x-string-custom-type']);
 </script>
 
 <RemovableSelect
@@ -28,12 +28,12 @@
 	options={JSON_SCHEMA.string.customTypes.map((t) => ({ label: t, value: t, withIcon: true }))}
 	onSelectedChange={(item) => {
 		const { value } = item as Selected<string>;
-		keywordObj['x-custom-string-type'] = value;
+		keywordObj['x-string-custom-type'] = value;
 	}}
 	{disabled}
 	onRemove={() => {
 		console.log({ keywordObj });
-		delete keywordObj['x-custom-string-type'];
+		delete keywordObj['x-string-custom-type'];
 		delete keywordObj.enum;
 	}}
 />

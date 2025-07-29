@@ -70,7 +70,7 @@
 	</Popover.Trigger>
 	<Popover.Content
 		class="border-3 w-96 overflow-scroll"
-		style="max-height: calc(50dvh - 60px); min-height: 320px"
+		style="max-height: 70dvh; min-height: 320px"
 	>
 		<button
 			class="absolute right-2 z-30"

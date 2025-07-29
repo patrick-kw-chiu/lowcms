@@ -40,7 +40,8 @@
 		getValueByJsonPaths,
 		getLowCMSTypeByValue,
 		removeFileExtension,
-		hasXTypes
+		hasXTypes,
+		checkHasIDField
 	} from '$lib/utilities/utilities.svelte';
 
 	// Types
@@ -206,14 +207,22 @@
 	};
 
 	const promptConfirmation = () => {
-		if (
-			window.confirm(
-				m.add_content_confirmation({
-					x: contentName,
-					y: schema.title!
-				})
-			)
-		) {
+		const hasIDField = checkHasIDField($state.snapshot(schema));
+		console.log({ schema: $state.snapshot(schema), hasIDField });
+		const message =
+			(!hasIDField
+				? `🚨 This content's schema does not include any ID field 🚨
+Including an ID field enables other content to "relate" it. To create one:
+1. Select Data type = "string"
+2. Select Custom type = "ID - uuid" or "ID - nanoid"
+
+`
+				: '') +
+			m.add_content_confirmation({
+				x: contentName,
+				y: schema.title!
+			});
+		if (window.confirm(message)) {
 			createContentAndSchema();
 		}
 	};

@@ -9,10 +9,10 @@
 	import Trash2 from 'lucide-svelte/icons/trash-2';
 
 	// Types
-	import type { Content } from '$lib/types/types.svelte';
+	import type { Content, Schema } from '$lib/types/types.svelte';
 
 	// Utilities
-	import { cap, getQueryString } from '$lib/utilities/utilities.svelte';
+	import { cap, checkHasIDField, getQueryString } from '$lib/utilities/utilities.svelte';
 
 	// Constants and locales
 	import * as m from '$lib/paraglide/messages.js';
@@ -21,12 +21,14 @@
 	import ConfirmToRemove from '$lib/components/app/popover/confirm-to-remove.svelte';
 	import { deleteContentById } from '$lib/db/db';
 	import { invalidateAll } from '$app/navigation';
+	import IdCardLanyard from 'lucide-svelte/icons/id-card-lanyard';
 
 	interface Props {
 		content: Content;
+		schemas: Schema[];
 		onclick: (_viewDocumentAs?: 'document' | 'documentsGroup') => void;
 	}
-	let { content, onclick }: Props = $props();
+	let { content, schemas, onclick }: Props = $props();
 	let badgeType = $derived(
 		content.type === 'collection' ? 'string' : content.type === 'object' ? 'number' : 'boolean'
 	);
@@ -75,7 +77,19 @@
 		</Tooltip.Content>
 	</Tooltip.Root>
 	<div class="flex flex-col overflow-hidden text-left">
-		<div class="whitespace-nowrap">{content.name}</div>
+		<div class="flex items-center gap-1 whitespace-nowrap">
+			{#if checkHasIDField($state.snapshot(schemas.find((schema) => schema.id === content.schemaId)!))}
+				<Tooltip.Root>
+					<Tooltip.Trigger>
+						<IdCardLanyard class="h-5 w-5" />
+					</Tooltip.Trigger>
+					<Tooltip.Content side="bottom">
+						<!-- TODO locales -->
+						This content's schema contains ID field(s)
+					</Tooltip.Content>
+				</Tooltip.Root>
+			{/if}{content.name}
+		</div>
 		<div class="whitespace-nowrap text-xs text-muted-foreground">
 			{content.description}
 		</div>

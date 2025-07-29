@@ -78,11 +78,11 @@
 {:else}
 	{#if type === 'string'}
 		<StringCustomTypeEditor bind:keywordObj {disabled} />
-		<div class={keywordObj['x-custom-string-type'] ? 'opacity-60' : ''}>
+		<div class={keywordObj['x-string-custom-type'] ? 'opacity-60' : ''}>
 			<EnumEditor
 				bind:keywordObj
 				type="string"
-				disabled={disabled || !!keywordObj['x-custom-string-type']}
+				disabled={disabled || !!keywordObj['x-string-custom-type']}
 			/>
 		</div>
 	{/if}

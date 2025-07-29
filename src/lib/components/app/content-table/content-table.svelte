@@ -27,7 +27,12 @@
 	import type { FilterObject, JSONObject, Content } from '$lib/types/types.svelte';
 
 	// Utilities
-	import { cap, getLowCMSTypeByConfig, includesAny } from '$lib/utilities/utilities.svelte';
+	import {
+		cap,
+		checkHasIDField,
+		getLowCMSTypeByConfig,
+		includesAny
+	} from '$lib/utilities/utilities.svelte';
 
 	// Constants and locales
 	import * as m from '$lib/paraglide/messages.js';
@@ -56,7 +61,20 @@
 				})
 			: []
 	);
-	let entries = $derived(Object.entries(schema?.properties ?? {})) as [string, JSONSchema7][];
+	let entries = $derived(
+		Object.entries(schema?.properties ?? {}).sort((a, b) => {
+			const isAIDField = checkHasIDField({ properties: a });
+			const isBIDField = checkHasIDField({ properties: b });
+			if (isAIDField && !isBIDField) {
+				return -1;
+			} else if (!isAIDField && isBIDField) {
+				return 1;
+			} else {
+				return 0;
+			}
+		})
+	) as [string, JSONSchema7][];
+	console.log({ entries });
 
 	// State
 	let checkedRowIndexes = $state<number[]>([]);

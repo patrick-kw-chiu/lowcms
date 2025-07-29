@@ -19,7 +19,13 @@
 	import Trash_2 from 'lucide-svelte/icons/trash-2';
 
 	// Utilities
-	import { cap, getQueryString, getValueByJsonPaths } from '$lib/utilities/utilities.svelte';
+	import {
+		cap,
+		checkHasIDField,
+		getQueryString,
+		getValueByJsonPaths,
+		hasPropertyWithValues
+	} from '$lib/utilities/utilities.svelte';
 
 	// IndexedDB
 	import { deleteSchemaById, updateSchema } from '$lib/db/db.js';
@@ -47,6 +53,7 @@
 	import Hr from '$lib/components/app/hr.svelte';
 	import DocumentEditor from '$lib/components/app/editor/document-editor/document-editor.svelte';
 	import ConfirmToRemove from '$lib/components/app/popover/confirm-to-remove.svelte';
+	import IdCardLanyard from 'lucide-svelte/icons/id-card-lanyard';
 
 	const { data } = $props();
 	const { databaseId, databaseConfig, schemaId, schemas, contents } = $derived(data);
@@ -201,7 +208,20 @@
 									/>
 								</Table.Cell>
 								<Table.Cell class="truncate">
-									{schema.title}
+									<div class="flex items-center gap-1">
+										{#if checkHasIDField($state.snapshot(schema))}
+											<Tooltip.Root>
+												<Tooltip.Trigger>
+													<IdCardLanyard class="h-5 w-5" />
+												</Tooltip.Trigger>
+												<Tooltip.Content side="bottom">
+													<!-- TODO locales -->
+													This schema contains ID field(s)
+												</Tooltip.Content>
+											</Tooltip.Root>
+										{/if}
+										{schema.title}
+									</div>
 								</Table.Cell>
 								<Table.Cell class="truncate">
 									{schema.description}

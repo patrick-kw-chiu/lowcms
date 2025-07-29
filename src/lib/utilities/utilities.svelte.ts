@@ -629,6 +629,7 @@ export const getLabelFor = (jsonPaths: string[], prefix = 'document-editor') => 
  * Recursively checks if any nested property in a JSON Schema object has the types.
  *
  * @param {JSONSchema} schema - The JSON Schema object to inspect.
+ * @param {string[]} types - types to check, default = ['unknown']
  * @returns {boolean} - True if a property with types is found, otherwise false.
  */
 export function hasXTypes(schema: JSONSchema7WithUnknown, types = ['unknown']): boolean {
@@ -671,6 +672,69 @@ export function hasXTypes(schema: JSONSchema7WithUnknown, types = ['unknown']): 
 	// If we've searched all branches and found nothing, return false.
 	return false;
 }
+
+/**
+ * Recursively checks if any nested property in a JSON Schema object
+ * has a specific property with one of the given values.
+ *
+ * @param {JSONSchema7WithUnknown} schema - The JSON Schema object to inspect.
+ * @param {Array<{key: string, values: string[]}>} checks - An array of checks to perform.
+ *        Each check is an object with a 'key' (the property to check)
+ *        and 'values' (an array of allowed values for that property).
+ * @returns {boolean} - True if a property matching the criteria is found, otherwise false.
+ */
+export function hasPropertyWithValues(
+	schema: JSONObject,
+	checks: { key: string; values: string[] }[]
+): boolean {
+	// Base case: Check if the current schema object itself matches the criteria.
+	if (typeof schema === 'object' && schema !== null) {
+		const matches = checks.every((check) => {
+			const value = schema[check.key];
+			return typeof value === 'string' && check.values.includes(value);
+		});
+
+		if (matches) {
+			return true;
+		}
+	}
+
+	// Recursive step 1: Check nested properties of an object.
+	if (schema.properties) {
+		const hasMatchInProperties = Object.values(schema.properties).some((propertySchema) =>
+			hasPropertyWithValues(propertySchema as JSONSchema7WithUnknown, checks)
+		);
+		if (hasMatchInProperties) {
+			return true;
+		}
+	}
+
+	// Recursive step 2: Check the 'items' of an array.
+	// if (schema.items) {
+	// 	if (Array.isArray(schema.items)) {
+	// 		const hasMatchInItemsArray = schema.items.some((itemSchema) =>
+	// 			hasPropertyWithValues(itemSchema as JSONSchema7WithUnknown, checks)
+	// 		);
+	// 		if (hasMatchInItemsArray) {
+	// 			return true;
+	// 		}
+	// 	} else if (typeof schema.items === 'object') {
+	// 		if (hasPropertyWithValues(schema.items as JSONSchema7WithUnknown, checks)) {
+	// 			return true;
+	// 		}
+	// 	}
+	// }
+
+	// If we've searched all branches and found nothing, return false.
+	return false;
+}
+
+export const checkHasIDField = (schema: JSONObject) => {
+	return hasPropertyWithValues(schema, [
+		{ key: 'type', values: ['string'] },
+		{ key: 'x-string-custom-type', values: ['ID - uuid', 'ID - nanoid'] }
+	]);
+};
 
 /**
  * Get value of object's nested fields

@@ -249,6 +249,7 @@
 				{#each filteredContents as content}
 					<ContentButton
 						{content}
+						{schemas}
 						onclick={(viewDocumentAs?: 'document' | 'documentsGroup') => {
 							onContentClick(content, viewDocumentAs);
 						}}

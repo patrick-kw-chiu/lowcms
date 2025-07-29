@@ -10,7 +10,7 @@
 <span>
 	{config.type === 'array'
 		? `${config.type} of ${(config!.items as JSONSchema7WithCustomKeyword)!.type}(s)`
-		: config.type === 'string' && config['x-custom-string-type']
-			? `${config.type} | ${config['x-custom-string-type']}`
+		: config.type === 'string' && config['x-string-custom-type']
+			? `${config.type} | ${config['x-string-custom-type']}`
 			: config.type}
 </span>

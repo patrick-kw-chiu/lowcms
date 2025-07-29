@@ -114,7 +114,7 @@ export const JSON_SCHEMA = {
 		'null'
 	] as JSONSchema7TypeName[],
 	string: {
-		keywords: ['enum', 'minLength', 'maxLength', 'pattern', 'x-custom-string-type'],
+		keywords: ['enum', 'minLength', 'maxLength', 'pattern', 'x-string-custom-type'],
 		customTypes: [
 			'ID - uuid',
 			'ID - nanoid'
