@@ -57,6 +57,8 @@
 							{#if option.withIcon}
 								{#if option.label.startsWith('ID - ')}
 									<IDCardLanyard class="h-5 w-5" />
+								{:else if ['relationship'].includes(option.label)}
+									<Mail class="h-5 w-5" />
 								{:else if ['email'].includes(option.label)}
 									<Mail class="h-5 w-5" />
 								{:else if ['date', 'datetime', 'time'].includes(option.label)}

@@ -26,7 +26,7 @@
 
 	// Constants and locales
 	import * as m from '$lib/paraglide/messages.js';
-	import { JSON_SCHEMA, StringFilterOperatorOptions } from '$lib/constants/constants.svelte';
+	import { StringFilterOperatorOptions } from '$lib/constants/constants.svelte';
 
 	// Components
 	import RemovableSelect from '../../removable-select/removable-select.svelte';

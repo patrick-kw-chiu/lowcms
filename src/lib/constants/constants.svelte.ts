@@ -103,7 +103,7 @@ export const NUMERIC_KEYWORDS = [
 	'exclusiveMaximum'
 ];
 
-export const JSON_SCHEMA = {
+export const FIELD = {
 	types: [
 		'string',
 		'number',

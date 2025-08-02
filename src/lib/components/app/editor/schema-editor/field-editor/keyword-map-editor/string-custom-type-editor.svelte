@@ -10,7 +10,7 @@
 
 	// Constants and locales
 	import * as m from '$lib/paraglide/messages.js';
-	import { JSON_SCHEMA } from '$lib/constants/constants.svelte';
+	import { FIELD } from '$lib/constants/constants.svelte';
 	import type { Selected } from 'bits-ui';
 	import RemovableSelect from '$lib/components/app/removable-select/removable-select.svelte';
 
@@ -25,7 +25,7 @@
 <RemovableSelect
 	label="Custom type"
 	value={xCustomStringType}
-	options={JSON_SCHEMA.string.customTypes.map((t) => ({ label: t, value: t, withIcon: true }))}
+	options={FIELD.string.customTypes.map((t) => ({ label: t, value: t, withIcon: true }))}
 	onSelectedChange={(item) => {
 		const { value } = item as Selected<string>;
 		keywordObj['x-string-custom-type'] = value;

@@ -18,7 +18,7 @@
 
 	// Constants and locales
 	import * as m from '$lib/paraglide/messages.js';
-	import { JSON_SCHEMA } from '$lib/constants/constants.svelte';
+	import { FIELD } from '$lib/constants/constants.svelte';
 
 	// Components
 	import FieldEditor from './field-editor/field-editor.svelte';
@@ -85,7 +85,7 @@
 		<FieldEditor
 			{field}
 			{jsonSchema}
-			keywordObj={pick(jsonSchema, JSON_SCHEMA[jsonSchema.type as JSONSchema7TypeName].keywords)}
+			keywordObj={pick(jsonSchema, FIELD[jsonSchema.type as JSONSchema7TypeName].keywords)}
 			onConfirmFieldDetail={(newField, schema) => {
 				onEditField(field, newField, schema);
 				reset();

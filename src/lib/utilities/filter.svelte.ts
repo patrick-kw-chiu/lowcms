@@ -15,12 +15,7 @@ import type {
 	Section
 } from '$lib/types/types.svelte';
 
-import {
-	BASE_PATH,
-	BASE_SCHEMA,
-	JSON_SCHEMA,
-	TYPE_TO_JSON_TYPE_MAP
-} from '$lib/constants/constants.svelte';
+import { BASE_PATH, BASE_SCHEMA, TYPE_TO_JSON_TYPE_MAP } from '$lib/constants/constants.svelte';
 import { getLowCMSTypeByConfig } from './utilities.svelte';
 
 export const updateFilterObject = (

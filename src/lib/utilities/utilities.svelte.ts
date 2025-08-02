@@ -15,7 +15,7 @@ import type {
 import {
 	BASE_PATH,
 	BASE_SCHEMA,
-	JSON_SCHEMA,
+	FIELD,
 	TYPE_TO_JSON_TYPE_MAP,
 	UNSUPPORTED_TYPES
 } from '$lib/constants/constants.svelte';
@@ -326,7 +326,7 @@ export const deriveJSONSchema = (object: JSONObject | JSONObject[], nestedSchema
 			const jsonSchemaType = convertLowCMSTypeToJSONSchemaType(type);
 
 			// 1. Apply default keyword fields
-			_schema.properties[key] = JSON_SCHEMA[jsonSchemaType as JSONSchema7TypeName].keywords.reduce(
+			_schema.properties[key] = FIELD[jsonSchemaType as JSONSchema7TypeName].keywords.reduce(
 				(prev, curr) => ({ ...prev, [curr]: undefined }),
 				{}
 			);
@@ -432,7 +432,7 @@ export const deriveJSONSchema = (object: JSONObject | JSONObject[], nestedSchema
 			// 1. Apply default keyword fields
 			_schema.properties[key] = {
 				..._schema.properties[key],
-				...JSON_SCHEMA[jsonSchemaType as JSONSchema7TypeName].keywords.reduce(
+				...FIELD[jsonSchemaType as JSONSchema7TypeName].keywords.reduce(
 					(prev, curr) => ({ ...prev, [curr]: undefined }),
 					{}
 				)

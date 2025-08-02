@@ -18,7 +18,7 @@
 
 	// Constants and locales
 	import * as m from '$lib/paraglide/messages.js';
-	import { JSON_SCHEMA } from '$lib/constants/constants.svelte';
+	import { FIELD } from '$lib/constants/constants.svelte';
 	import type { Selected } from 'bits-ui';
 	import EnumEditor from './enum-editor.svelte';
 	import RemovableSelect from '$lib/components/app/removable-select/removable-select.svelte';
@@ -63,7 +63,7 @@
 		</Select.Trigger>
 		<Select.Content>
 			<Select.Group>
-				{#each JSON_SCHEMA.types.filter((t) => t === 'string' || t === 'object') as jsonSchemaType}
+				{#each FIELD.types.filter((t) => t === 'string' || t === 'object') as jsonSchemaType}
 					<Select.Item value={jsonSchemaType} label={cap(m[jsonSchemaType]())}>
 						<span class={`h-3.5 w-3.5 lc-badge-${jsonSchemaType}`}></span>
 						{cap(m[jsonSchemaType]())}

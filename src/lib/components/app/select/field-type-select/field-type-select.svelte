@@ -14,7 +14,7 @@
 
 	// Constants and locales
 	import * as m from '$lib/paraglide/messages.js';
-	import { JSON_SCHEMA } from '$lib/constants/constants.svelte';
+	import { FIELD } from '$lib/constants/constants.svelte';
 
 	// Utilities
 	import { cap } from '$lib/utilities/utilities.svelte';
@@ -23,35 +23,35 @@
 	import type { JSONSchema7TypeName } from 'json-schema';
 
 	interface Props {
-		dataType: JSONSchema7TypeName | undefined;
+		fieldType: JSONSchema7TypeName | undefined;
 		disabled: boolean;
 		handleDataTypeChange: (item: unknown) => void;
 	}
-	let { dataType = $bindable(), disabled, handleDataTypeChange }: Props = $props();
+	let { fieldType = $bindable(), disabled, handleDataTypeChange }: Props = $props();
 </script>
 
 <Label for="data-type">
 	<!-- TODO locales -->
-	Data type *
+	Field type *
 </Label>
 <Select.Root
 	portal={null}
-	selected={{ value: dataType }}
+	selected={{ value: fieldType }}
 	onSelectedChange={handleDataTypeChange}
 	required
 	{disabled}
 >
 	<Select.Trigger id="data-type">
 		<!-- TODO: workaround to show selected value -->
-		{#if dataType}
-			{dataType}
+		{#if fieldType}
+			{fieldType}
 		{:else}
 			<Select.Value placeholder={cap(m.data_type()) + ' *'} />
 		{/if}
 	</Select.Trigger>
 	<Select.Content>
 		<Select.Group>
-			{#each JSON_SCHEMA.types.filter((t) => t !== 'null') as jsonSchemaType}
+			{#each FIELD.types.filter((t) => t !== 'null') as jsonSchemaType}
 				<Select.Item value={jsonSchemaType} label={cap(m[jsonSchemaType]())}>
 					<span class={`h-5 w-5 lc-badge-${jsonSchemaType} mr-2 flex items-center justify-center`}>
 						{#if jsonSchemaType === 'string'}

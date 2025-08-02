@@ -213,7 +213,7 @@
 			(!hasIDField
 				? `🚨 This content's schema does not include any ID field 🚨
 Including an ID field enables other content to "relate" it. To create one:
-1. Select Data type = "string"
+1. Select Field type = "string"
 2. Select Custom type = "ID - uuid" or "ID - nanoid"
 
 `

@@ -25,7 +25,7 @@
 
 	// Constants and locales
 	import * as m from '$lib/paraglide/messages.js';
-	import { JSON_SCHEMA } from '$lib/constants/constants.svelte';
+	import {} from '$lib/constants/constants.svelte';
 	import type { Selected } from 'bits-ui';
 
 	interface Props {

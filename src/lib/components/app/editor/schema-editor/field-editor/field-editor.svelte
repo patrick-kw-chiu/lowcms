@@ -23,12 +23,12 @@
 
 	// Constants and locales
 	import * as m from '$lib/paraglide/messages.js';
-	import { JSON_SCHEMA } from '$lib/constants/constants.svelte';
+	import { FIELD } from '$lib/constants/constants.svelte';
 
 	// Components
 	import KeywordMapEditor from './keyword-map-editor/keyword-map-editor.svelte';
 	import Hr from '$lib/components/app/hr.svelte';
-	import DataTypeSelect from '$lib/components/app/select/data-type-select/data-type-select.svelte';
+	import FieldTypeSelect from '$lib/components/app/select/field-type-select/field-type-select.svelte';
 
 	interface Props {
 		/**
@@ -45,12 +45,12 @@
 	let { onConfirmFieldDetail, field, jsonSchema, keywordObj, disabled }: Props = $props();
 
 	let _field = $state(field);
-	let _dataType = $state<JSONSchema7TypeName | undefined>(jsonSchema?.type as JSONSchema7TypeName);
+	let _fieldType = $state<JSONSchema7TypeName | undefined>(jsonSchema?.type as JSONSchema7TypeName);
 	let _keywordObj = $state<JSONSchema7WithCustomKeyword | undefined>(keywordObj);
 
 	const reset = () => {
 		_field = '';
-		_dataType = undefined;
+		_fieldType = undefined;
 		_keywordObj = {};
 	};
 
@@ -67,8 +67,8 @@
 	// TODO: Should use two-way binding, but library's type seems incorrect
 	const handleDataTypeChange = (item: unknown) => {
 		const { value } = item as Selected<JSONSchema7TypeName>;
-		_dataType = value;
-		_keywordObj = JSON_SCHEMA[value].keywords.reduce(
+		_fieldType = value;
+		_keywordObj = FIELD[value].keywords.reduce(
 			(prev, curr) => ({ ...prev, [curr]: undefined }),
 			{}
 		);
@@ -82,16 +82,16 @@
 		<Label for="field">{cap(m.field())} *</Label>
 		<Input id="field" bind:value={_field} required {disabled} />
 	</div>
-	<DataTypeSelect bind:dataType={_dataType} {disabled} {handleDataTypeChange} />
+	<FieldTypeSelect bind:fieldType={_fieldType} {disabled} {handleDataTypeChange} />
 	<Hr class="mb-0" />
 	{#if _keywordObj}
-		<KeywordMapEditor bind:keywordObj={_keywordObj} type={_dataType!} {disabled} />
+		<KeywordMapEditor bind:keywordObj={_keywordObj} type={_fieldType!} {disabled} />
 	{/if}
 	{#if !disabled}
 		<Button
 			size="sm"
 			onclick={() => {
-				if (!_field || !_dataType) {
+				if (!_field || !_fieldType) {
 					// TODO locales
 					return toast.warning('Please field in the field name and select the data type.', {
 						position: 'top-center'
@@ -103,7 +103,7 @@
 						position: 'top-center'
 					});
 				}
-				onConfirmFieldDetail(_field, formulateSchema(_dataType));
+				onConfirmFieldDetail(_field, formulateSchema(_fieldType));
 				reset();
 			}}
 		>
