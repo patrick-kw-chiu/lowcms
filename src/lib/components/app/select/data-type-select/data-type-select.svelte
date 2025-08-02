@@ -30,6 +30,10 @@
 	let { dataType = $bindable(), disabled, handleDataTypeChange }: Props = $props();
 </script>
 
+<Label for="data-type">
+	<!-- TODO locales -->
+	Data type *
+</Label>
 <Select.Root
 	portal={null}
 	selected={{ value: dataType }}
@@ -37,7 +41,7 @@
 	required
 	{disabled}
 >
-	<Select.Trigger class="">
+	<Select.Trigger id="data-type">
 		<!-- TODO: workaround to show selected value -->
 		{#if dataType}
 			{dataType}

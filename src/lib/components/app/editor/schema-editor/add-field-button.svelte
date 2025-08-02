@@ -74,10 +74,11 @@
 		{:else}
 			<div
 				class={`absolute h-[4px] ${isOpen || isHovered ? '' : 'overflow-hidden'}`}
-				style="width: calc(100% - 0.5rem)"
+				style="transform: translateY(-0.2rem); width: calc(100% - 0.5rem);"
 			>
 				<hr
-					class={`h-[4px] opacity-0 ${isOpen || isHovered ? 'opacity-100' : ''}`}
+					class={`h-[4px] bg-gray-300 opacity-0 ${isOpen || isHovered ? 'opacity-45' : ''}`}
+					style={`width: ${isOpen || isHovered ? 'calc(100% - 1.8rem)' : '100%'}`}
 					onmouseover={() => (isHovered = true)}
 					onfocus={() => (isHovered = true)}
 					onmouseout={() => (isHovered = false)}

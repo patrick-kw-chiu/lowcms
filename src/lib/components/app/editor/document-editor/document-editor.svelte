@@ -229,7 +229,7 @@ It could edit a single `document` or document inside a `collection`.
 						setValueByJsonPathsMutable(editedData, jsonPaths, { value });
 					}}
 				>
-					Generate a "{config['x-string-custom-type']}"
+					Generate a new "{config['x-string-custom-type']}"
 				</Button>
 				{#if config['x-string-custom-type'] === 'ID - nanoid'}
 					<Label for="nanoid-length">Length</Label>
