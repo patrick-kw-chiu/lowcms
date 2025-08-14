@@ -46,9 +46,10 @@ It could edit a single `document` or document inside a `collection`.
 	}
 	let { config, jsonPaths, data }: Props = $props();
 	let { 'x-content-id': xContentId, 'x-id-field': xIdField } = config;
+	let isOneToMany = $derived((config?.type as string) === 'x_relationship_one_to_many');
 	let relationships = $derived(getValueByJsonPaths(data, jsonPaths));
 	$effect(() => {
-		if (!relationships) {
+		if (isOneToMany && !relationships) {
 			relationships = setValueByJsonPathsMutable(data, jsonPaths, {
 				isGetNestedFieldOnly: true,
 				isArray: true
@@ -92,7 +93,15 @@ It could edit a single `document` or document inside a `collection`.
 		}
 	};
 
-	console.log({ config: $state.snapshot(config), contents, xContentId, content, schema });
+	console.log({
+		config: $state.snapshot(config),
+		contents,
+		data: $state.snapshot(data),
+		xContentId,
+		content,
+		schema,
+		relationships
+	});
 
 	// State
 	let selectedObject = $state<JSONObject>();
@@ -130,13 +139,15 @@ It could edit a single `document` or document inside a `collection`.
 
 	const onSelectRelationship = (document: JSONObject) => {
 		console.log({ document, xIdField });
-		const relationships = setValueByJsonPathsMutable(data, jsonPaths, {
-			isGetNestedFieldOnly: true
-		});
-		if ((config?.type as string) === 'x_relationship_one_to_many') {
+		if (isOneToMany) {
+			const relationships = setValueByJsonPathsMutable(data, jsonPaths, {
+				isGetNestedFieldOnly: true
+			});
 			relationships.push(document[xIdField!]);
 		} else {
-			relationships[0] = document[xIdField!];
+			setValueByJsonPathsMutable(data, jsonPaths, {
+				value: document[xIdField!]
+			});
 		}
 		closeSheet();
 	};
@@ -154,68 +165,54 @@ It could edit a single `document` or document inside a `collection`.
 </script>
 
 <div class="flex flex-col gap-2">
-	{#each relationships as item, index (index)}
-		<div class="flex flex-row items-center gap-2">
-			<!-- <Button variant="ghost" size="icon" class="h-8 w-8">
-				<SquarePen
-					class="h-5 w-5"
-					onclick={() => {
-						selectedObject = item;
-						selectedObjectIndex = index;
-					}}
-				/>
-			</Button> -->
-			<Button class="h-8 w-8" variant="ghost" size="icon">
-				<Trash_2
-					class="h-5 w-5"
-					onclick={() => {
-						objectIndexToRemove = index;
-					}}
-				/>
-			</Button>
-			{#if (config?.type as string) === 'x_relationship_one_to_one'}
+	{#if isOneToMany || relationships?.length === 0}
+		{#each relationships as item, index (index)}
+			<div class="flex flex-row items-center gap-2">
 				<Button class="h-8 w-8" variant="ghost" size="icon">
-					<SquarePen class="h-5 w-5" onclick={openSheet} />
+					<Trash_2
+						class="h-5 w-5"
+						onclick={() => {
+							objectIndexToRemove = index;
+						}}
+					/>
 				</Button>
-			{/if}
-			<ConfirmToRemove
-				bind:open={
-					() => objectIndexToRemove === index,
-					() => {
-						objectIndexToRemove = -1;
+				<ConfirmToRemove
+					bind:open={
+						() => objectIndexToRemove === index,
+						() => {
+							objectIndexToRemove = -1;
+						}
 					}
-				}
-				deleteTarget={`"${'item ' + index}"`}
-				onConfirm={() => {
-					const relationships = setValueByJsonPathsMutable(data, jsonPaths, {
-						isGetNestedFieldOnly: true,
-						isArray: true
-					});
-					relationships.splice(index, 1);
-					objectIndexToRemove = -1;
-				}}
-				onCancel={() => {
-					objectIndexToRemove = -1;
-				}}
-			/>
-			<div
-				use:draggable={{
-					container: getContainerId(index),
-					dragData: index
-				}}
-				use:droppable={{
-					container: getContainerId(index),
-					callbacks: { onDrop: handleDrop }
-				}}
-				in:fade={{ duration: 150 }}
-				out:fade={{ duration: 150 }}
-				class="svelte-dnd-touch-feedback flex cursor-move gap-2 rounded-lg bg-white p-2.5 text-gray-900 shadow-sm ring-1 ring-gray-200 transition-all duration-200 hover:shadow-md hover:ring-2 hover:ring-blue-200"
-			>
-				{item}
+					deleteTarget={`"${'item ' + index}"`}
+					onConfirm={() => {
+						const relationships = setValueByJsonPathsMutable(data, jsonPaths, {
+							isGetNestedFieldOnly: true,
+							isArray: true
+						});
+						relationships.splice(index, 1);
+						objectIndexToRemove = -1;
+					}}
+					onCancel={() => {
+						objectIndexToRemove = -1;
+					}}
+				/>
+				<div
+					use:draggable={{
+						container: getContainerId(index),
+						dragData: index
+					}}
+					use:droppable={{
+						container: getContainerId(index),
+						callbacks: { onDrop: handleDrop }
+					}}
+					in:fade={{ duration: 150 }}
+					out:fade={{ duration: 150 }}
+					class="svelte-dnd-touch-feedback flex cursor-move gap-2 rounded-lg bg-white p-2.5 text-gray-900 shadow-sm ring-1 ring-gray-200 transition-all duration-200 hover:shadow-md hover:ring-2 hover:ring-blue-200"
+				>
+					{item}
+				</div>
 			</div>
-		</div>
-	{/each}
-	{#if (config?.type as string) === 'x_relationship_one_to_many' || relationships?.length === 0}
+		{/each}
 		<button
 			class="flex w-fit flex-row items-center gap-2 rounded-lg p-1.5 opacity-80 hover:bg-gray-500/10 hover:opacity-100"
 			onclick={openSheet}
@@ -225,6 +222,42 @@ It could edit a single `document` or document inside a `collection`.
 				{cap(m.add_x({ x: m.object() }))}
 			</div>
 		</button>
+	{:else}
+		<div class="flex flex-row items-center gap-2">
+			<Button class="h-8 w-8" variant="ghost" size="icon">
+				<Trash_2
+					class="h-5 w-5"
+					onclick={() => {
+						objectIndexToRemove = 0;
+					}}
+				/>
+			</Button>
+			<Button class="h-8 w-8" variant="ghost" size="icon">
+				<SquarePen class="h-5 w-5" onclick={openSheet} />
+			</Button>
+			<ConfirmToRemove
+				bind:open={
+					() => objectIndexToRemove === 0,
+					() => {
+						objectIndexToRemove = -1;
+					}
+				}
+				deleteTarget={`"${relationships}"`}
+				onConfirm={() => {
+					console.log('Removing relationship:', relationships);
+					setValueByJsonPathsMutable(data, jsonPaths, { value: undefined });
+					objectIndexToRemove = -1;
+				}}
+				onCancel={() => {
+					objectIndexToRemove = -1;
+				}}
+			/>
+			<div
+				class="flex gap-2 rounded-lg bg-white p-2.5 text-gray-900 shadow-sm ring-1 ring-gray-200 transition-all duration-200"
+			>
+				{relationships}
+			</div>
+		</div>
 	{/if}
 
 	<Sheet.Root bind:open={() => Boolean(selectedObject), closeSheet}>
