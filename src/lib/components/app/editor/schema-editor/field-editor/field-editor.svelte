@@ -1,34 +1,23 @@
 <script lang="ts">
 	// Libraries - shadcn
 	import { Button } from '$lib/components/ui/button';
-	import { Label } from '$lib/components/ui/label';
 	import { Input } from '$lib/components/ui/input';
-	import * as Select from '$lib/components/ui/select';
+	import { Label } from '$lib/components/ui/label';
 	import { toast } from 'svelte-sonner';
-
 	// Libraries - lucide
-	import CirclePlus from 'lucide-svelte/icons/circle-plus';
-
 	// Types
-	import type { JSONSchema7, JSONSchema7TypeName } from 'json-schema';
+	import type { JSONSchema7WithCustomKeyword } from '$lib/types/types.svelte';
 	import type { Selected } from 'bits-ui';
-	import type {
-		JSONObject,
-		JSONSchema7WithCustomKeyword,
-		StringKeyword
-	} from '$lib/types/types.svelte';
-
+	import type { JSONSchema7, JSONSchema7TypeName } from 'json-schema';
 	// Utilities
-	import { cap, pick } from '$lib/utilities/utilities.svelte';
-
+	import { cap } from '$lib/utilities/utilities.svelte';
 	// Constants and locales
-	import * as m from '$lib/paraglide/messages.js';
 	import { FIELD } from '$lib/constants/constants.svelte';
-
+	import * as m from '$lib/paraglide/messages.js';
 	// Components
-	import KeywordMapEditor from './keyword-map-editor/keyword-map-editor.svelte';
 	import Hr from '$lib/components/app/hr.svelte';
 	import FieldTypeSelect from '$lib/components/app/select/field-type-select/field-type-select.svelte';
+	import KeywordMapEditor from './keyword-map-editor/keyword-map-editor.svelte';
 
 	interface Props {
 		/**
@@ -56,7 +45,7 @@
 
 	const formulateSchema = (fieldDataType: JSONSchema7TypeName) => {
 		let schema: JSONSchema7 = { type: fieldDataType };
-		if (['string', 'array'].includes(fieldDataType)) {
+		if (!['object'].includes(fieldDataType)) {
 			schema = { ...schema, ..._keywordObj };
 		} else if (fieldDataType === 'object') {
 			schema.properties = {};
@@ -79,7 +68,7 @@
 
 <div class="relative grid w-full gap-2">
 	<div class="space-y-2">
-		<Label for="field">{cap(m.field())} *</Label>
+		<Label for="field">{cap(m.field())} name *</Label>
 		<Input id="field" bind:value={_field} required {disabled} />
 	</div>
 	<FieldTypeSelect bind:fieldType={_fieldType} {disabled} {handleDataTypeChange} />
@@ -91,6 +80,7 @@
 		<Button
 			size="sm"
 			onclick={() => {
+				console.log({ _fieldType });
 				if (!_field || !_fieldType) {
 					// TODO locales
 					return toast.warning('Please field in the field name and select the data type.', {
@@ -103,6 +93,22 @@
 						position: 'top-center'
 					});
 				}
+
+				if (_fieldType.startsWith('x_relationship_')) {
+					if (_keywordObj?.['x-content-id'] === undefined) {
+						// TODO locales
+						return toast.warning('Please select a content to link.', {
+							position: 'top-center'
+						});
+					}
+					if (_keywordObj?.['x-id-field'] === undefined) {
+						// TODO locales
+						return toast.warning('Please select an ID field.', {
+							position: 'top-center'
+						});
+					}
+				}
+
 				onConfirmFieldDetail(_field, formulateSchema(_fieldType));
 				reset();
 			}}

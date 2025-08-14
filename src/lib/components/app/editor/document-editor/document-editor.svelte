@@ -4,51 +4,47 @@ It could edit a single `document` or document inside a `collection`.
 -->
 
 <script lang="ts">
-	import { codeToHtml } from 'shiki';
 	import { mode } from 'mode-watcher';
-	import { v4 as uuidv4 } from 'uuid';
 	import { nanoid } from 'nanoid';
-
+	import { codeToHtml } from 'shiki';
+	import { getContext } from 'svelte';
+	import { v4 as uuidv4 } from 'uuid';
 	// Libraries - shadcn
-	import { Label } from '$lib/components/ui/label';
-	import { Input } from '$lib/components/ui/input';
 	import Button from '$lib/components/ui/button/button.svelte';
+	import { Input } from '$lib/components/ui/input';
+	import { Label } from '$lib/components/ui/label';
 	import { Switch } from '$lib/components/ui/switch';
-	import { toast } from 'svelte-sonner';
 	import { Toggle } from '$lib/components/ui/toggle';
-
+	import { toast } from 'svelte-sonner';
 	// Libraries - lucide
-	import X from 'lucide-svelte/icons/x';
 	import Type from 'lucide-svelte/icons/type';
-
 	// Types
-	import type { JSONSchema7, JSONSchema7TypeName } from 'json-schema';
-	import type { Content, JSONObject, JSONSchema7WithCustomKeyword } from '$lib/types/types.svelte';
+	import type {
+		Content,
+		JSONObject,
+		JSONSchema7WithCustomKeyword,
+		Schema
+	} from '$lib/types/types.svelte';
 	import type { Selected } from 'bits-ui';
-
+	import type { JSONSchema7 } from 'json-schema';
 	// IndexedDB
-	import { updateContent } from '$lib/db/db';
-
 	// Utilities
 	import {
 		cap,
-		extractWhitespaceParts,
+		getLabelFor,
 		getValueByJsonPaths,
-		setValueByJsonPathsMutable,
-		getLabelFor
+		setValueByJsonPathsMutable
 	} from '$lib/utilities/utilities.svelte';
-
 	// Constants and locales
 	import * as m from '$lib/paraglide/messages.js';
 
 	// Components
 	import Hr from '$lib/components/app/hr.svelte';
-	import JsonFieldSelector from '$lib/components/app/json-field-selector/json-field-selector.svelte';
+	import FileJson from 'lucide-svelte/icons/file-json';
 	import TypeLabel from '../../label/type-label.svelte';
-	import ArrayEditor from './array-editor.svelte';
-	import Braces from 'lucide-svelte/icons/braces';
 	import RemovableSelect from '../../removable-select/removable-select.svelte';
-	import Textarea from '$lib/components/ui/textarea/textarea.svelte';
+	import ArrayEditor from './array-editor.svelte';
+	import RelationshipEditor from './relationship-editor.svelte';
 
 	interface Props {
 		contentType: 'document' | 'collection';
@@ -81,10 +77,16 @@ It could edit a single `document` or document inside a `collection`.
 	let rawData = $state<JSONObject>(rows[checkedRowIndex] ?? {});
 	let editedData = $state<JSONObject>($state.snapshot(rawData));
 
+	// Context
+	const data = (getContext('data') ?? { schemas: [], contents: [] }) as {
+		schemas: Schema[];
+		contents: Content[];
+	};
+
 	// State
 	let hasContentChanged = $state(false);
 	let jsonHTML = $state('');
-	let showTypeLabel = $state(false);
+	let showTypeLabel = $state(true);
 
 	// State - ID - nanoid
 	let lengthOfNanoid = $state(32);
@@ -98,6 +100,9 @@ It could edit a single `document` or document inside a `collection`.
 					})
 				: '';
 	};
+	$effect(() => {
+		generateJsonHTML(editedData);
+	});
 
 	const handleUpdateDocument = async () => {
 		console.log({
@@ -190,9 +195,7 @@ It could edit a single `document` or document inside a `collection`.
 		}
 	};
 
-	$effect(() => {
-		generateJsonHTML(editedData);
-	});
+	// const getItemsInContent
 
 	console.log({
 		rows: $state.snapshot(rows),
@@ -202,6 +205,26 @@ It could edit a single `document` or document inside a `collection`.
 		schema: $state.snapshot(schema)
 	});
 </script>
+
+{#snippet IDEditor(jsonPaths: string[], config: JSONSchema7)}
+	<div class="mb-1 flex items-center gap-2">
+		<Button
+			variant="secondary"
+			size="sm"
+			onclick={() => {
+				const xCustomStringType = config.type as string;
+				const value = xCustomStringType === 'ID - uuid' ? uuidv4() : nanoid(lengthOfNanoid);
+				setValueByJsonPathsMutable(editedData, jsonPaths, { value });
+			}}
+		>
+			Generate a new "{m[config.type as 'string']?.()}"
+		</Button>
+		{#if (config.type as string) === 'ID - nanoid'}
+			<Label for="nanoid-length">Length</Label>
+			<Input id="nanoid-length" class="h-6 w-fit" type="number" bind:value={lengthOfNanoid} />
+		{/if}
+	</div>
+{/snippet}
 
 {#snippet StringEditor(jsonPaths: string[], config: JSONSchema7WithCustomKeyword)}
 	{#if config.enum}
@@ -217,26 +240,7 @@ It could edit a single `document` or document inside a `collection`.
 			value={getValueByJsonPaths(editedData, jsonPaths) as string}
 			placeholder={cap(m.select_x({ x: m.enumeration() }))}
 		/>
-	{:else if config.type === 'string'}
-		{#if config['x-string-custom-type']}
-			<div class="mb-1 flex items-center gap-2">
-				<Button
-					variant="secondary"
-					size="sm"
-					onclick={() => {
-						const xCustomStringType = config['x-string-custom-type'];
-						const value = xCustomStringType === 'ID - uuid' ? uuidv4() : nanoid(lengthOfNanoid);
-						setValueByJsonPathsMutable(editedData, jsonPaths, { value });
-					}}
-				>
-					Generate a new "{config['x-string-custom-type']}"
-				</Button>
-				{#if config['x-string-custom-type'] === 'ID - nanoid'}
-					<Label for="nanoid-length">Length</Label>
-					<Input id="nanoid-length" class="h-6 w-fit" type="number" bind:value={lengthOfNanoid} />
-				{/if}
-			</div>
-		{/if}
+	{:else}
 		<Input
 			id={getLabelFor(jsonPaths)}
 			class={`h-8`}
@@ -245,27 +249,6 @@ It could edit a single `document` or document inside a `collection`.
 				() => getValueByJsonPaths(editedData, jsonPaths) as string,
 				(value: string) => {
 					setValueByJsonPathsMutable(editedData, jsonPaths, { value });
-				}
-			}
-		/>
-	{:else}
-		<Textarea
-			id={getLabelFor(jsonPaths)}
-			placeholder={jsonPaths[jsonPaths.length - 1]}
-			bind:value={
-				() => {
-					let _value = getValueByJsonPaths(editedData, jsonPaths);
-					try {
-						_value = JSON.stringify(_value as string, null, 2);
-					} catch (e) {}
-					return _value;
-				},
-				(value: string) => {
-					let _value = value;
-					try {
-						_value = JSON.parse(value);
-					} catch (e) {}
-					setValueByJsonPathsMutable(editedData, jsonPaths, { value: _value });
 				}
 			}
 		/>
@@ -322,7 +305,10 @@ It could edit a single `document` or document inside a `collection`.
 				{/if}
 			</div>
 			<div class="mb-4">
-				{#if ['string'].includes((config as JSONSchema7).type as string)}
+				{#if ['x_id_uuid', 'x_id_nanoid'].includes((config as JSONSchema7).type as string)}
+					{@render IDEditor([...jsonPaths, field], config as JSONSchema7)}
+				{/if}
+				{#if ['string', 'x_id_uuid', 'x_id_nanoid'].includes((config as JSONSchema7).type as string)}
 					{@render StringEditor([...jsonPaths, field], config as JSONSchema7)}
 				{:else if ['number', 'integer'].includes((config as JSONSchema7).type as string)}
 					{@render NumberEditor([...jsonPaths, field], config as JSONSchema7)}
@@ -338,6 +324,12 @@ It could edit a single `document` or document inside a `collection`.
 					<div class="pl-4">
 						{@render ObjectEditor([...jsonPaths, field], config as JSONSchema7)}
 					</div>
+				{:else if ['x_relationship_one_to_one', 'x_relationship_one_to_many'].includes((config as JSONSchema7).type as string)}
+					<RelationshipEditor
+						config={config as JSONSchema7}
+						jsonPaths={[...jsonPaths, field]}
+						data={editedData}
+					/>
 				{/if}
 			</div>
 		{/each}
@@ -365,7 +357,7 @@ It could edit a single `document` or document inside a `collection`.
 				}}
 				class="w-fit"
 			>
-				<Braces class="h-4 w-4" />
+				<FileJson class="h-4 w-4" />
 			</Toggle>
 			<Toggle
 				aria-label="Toggle type label"

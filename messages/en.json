@@ -137,5 +137,10 @@
 	"_false": "false",
 	"save_changes": "save changes",
 	"used_by_x_y": "used by {x} {y}",
-	"usage": "usage"
+	"usage": "usage",
+
+	"x_id_uuid": "ID (UUID)",
+	"x_id_nanoid": "ID (Nano ID)",
+	"x_relationship_one_to_one": "1-to-1 relationship",
+	"x_relationship_one_to_many": "1-to-many relationship"
 }

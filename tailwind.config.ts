@@ -13,6 +13,12 @@ const config: Config = {
 		'lc-badge-array',
 		'lc-badge-object',
 		'lc-badge-unknown',
+		'lc-badge-id',
+		'lc-badge-x_id_uuid',
+		'lc-badge-x_id_nanoid',
+		'lc-badge-relationship',
+		'lc-badge-x_relationship_one_to_one',
+		'lc-badge-x_relationship_one_to_many',
 		'bg-sky-300',
 		'bg-sky-800'
 	],

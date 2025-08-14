@@ -66,7 +66,16 @@
       "supplier_id": "SUP-1011",
       "supplier_name": "Innovate Electronics",
       "contact_email": "b2b@innovate-elec.com"
-    }
+    },
+    "relatedProducts": [
+      "f6a7b8c9-d0e1-2345-6789-0abcdef12345",
+      "b2b2b2b2-c3c3-d4d4-e5e5-f6f6f6f6f6f6",
+      "10000000-0000-0000-0000-000000000004"
+    ],
+    "emptyArray": [
+      "e5f6a7b8-c9d0-1234-5678-90abcdef1234"
+    ],
+    "categories": []
   },
   {
     "emptyArray": [],

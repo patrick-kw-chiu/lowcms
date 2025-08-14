@@ -730,10 +730,11 @@ export function hasPropertyWithValues(
 }
 
 export const checkHasIDField = (schema: JSONObject) => {
-	return hasPropertyWithValues(schema, [
-		{ key: 'type', values: ['string'] },
-		{ key: 'x-string-custom-type', values: ['ID - uuid', 'ID - nanoid'] }
-	]);
+	return hasPropertyWithValues(schema, [{ key: 'type', values: ['x_id_uuid', 'x_id_nanoid'] }]);
+	// return hasPropertyWithValues(schema, [
+	// 	{ key: 'type', values: ['string'] },
+	// 	{ key: 'x-string-custom-type', values: ['ID - uuid', 'ID - nanoid'] }
+	// ]);
 };
 
 /**
@@ -803,3 +804,32 @@ export function setValueByJsonPathsMutable(
 		return obj; // Return the mutated object.
 	}
 }
+
+/**
+ * Get JSON content by fileHandle and jsonPaths
+ */
+export const getJsonContent = async (
+	fileHandle: FileSystemFileHandle,
+	jsonPaths: (string | number)[],
+	options = { expectedType: 'json' }
+): Promise<{ fileHasContent: boolean; content: JSONObject | undefined }> => {
+	try {
+		const file = await fileHandle.getFile();
+		const contentInFile = await file.text();
+
+		const jsonContent = getValueByJsonPaths(contentInFile, jsonPaths);
+		if (options?.expectedType === 'json') {
+			try {
+				return { fileHasContent: true, content: JSON.parse(jsonContent) };
+			} catch (error) {
+				console.error('Invalid JSON content:', jsonContent);
+				return { fileHasContent: true, content: undefined };
+			}
+		}
+
+		return { fileHasContent: true, content: jsonContent };
+	} catch (error) {
+		console.error('Error getting JSON content:', error);
+		return { fileHasContent: false, content: undefined };
+	}
+};

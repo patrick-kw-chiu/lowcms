@@ -1,51 +1,32 @@
 <script lang="ts">
 	// Libraries
-	import { onDestroy } from 'svelte';
-	import { liveQuery, type Subscription } from 'dexie';
 	import { page } from '$app/state';
 	import { nanoid } from 'nanoid';
-
+	import { setContext } from 'svelte';
 	// Libraries - shadcn
-	import { Badge } from '$lib/components/ui/badge';
 	import { Button } from '$lib/components/ui/button';
-	import * as Card from '$lib/components/ui/card';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
-	import * as Table from '$lib/components/ui/table';
-	import * as Tabs from '$lib/components/ui/tabs';
-	import { Toggle } from '$lib/components/ui/toggle';
+	import { Input } from '$lib/components/ui/input';
+	import { Label } from '$lib/components/ui/label';
 	import * as Resizable from '$lib/components/ui/resizable';
 	import * as Tooltip from '$lib/components/ui/tooltip';
-	import { Label } from '$lib/components/ui/label';
-	import * as RadioGroup from '$lib/components/ui/radio-group';
-	import { Input } from '$lib/components/ui/input';
 
-	import * as Accordion from '$lib/components/ui/accordion';
 	import { Toaster } from '$lib/components/ui/sonner';
 	import { toast } from 'svelte-sonner';
-	import * as Alert from '$lib/components/ui/alert';
-
 	// Libraries - lucide
-	import Boxes from 'lucide-svelte/icons/boxes';
-	import FileText from 'lucide-svelte/icons/file-text';
-	import ChevronLeft from 'lucide-svelte/icons/chevron-left';
 	import ChevronRight from 'lucide-svelte/icons/chevron-right';
-	import CirclePlus from 'lucide-svelte/icons/circle-plus';
 	import CircleHelp from 'lucide-svelte/icons/circle-help';
-	import FileWarning from 'lucide-svelte/icons/file-warning';
-
+	import CirclePlus from 'lucide-svelte/icons/circle-plus';
 	// Utilities
 	import {
 		cap,
+		checkHasIDField,
 		deriveJSONSchema,
-		getValueByJsonPaths,
 		getLowCMSTypeByValue,
-		removeFileExtension,
+		getValueByJsonPaths,
 		hasXTypes,
-		checkHasIDField
+		removeFileExtension
 	} from '$lib/utilities/utilities.svelte';
-
 	// Types
-	import type { JSONSchema7 } from 'json-schema';
 	import {
 		type ContentDataType,
 		type ContentType,
@@ -53,36 +34,22 @@
 		type JSONSchema7WithUnknown
 	} from '$lib/types/types.svelte';
 	import type { Selected } from 'bits-ui';
-
+	import type { JSONSchema7 } from 'json-schema';
 	// IndexedDB
-	import {
-		createContent,
-		createSchema,
-		db,
-		deleteDatabaseConfigById,
-		getDatabaseConfigById
-	} from '$lib/db/db.js';
-
+	import { createContent, createSchema } from '$lib/db/db.js';
 	// Constants and locales
-	import {
-		BASE_PATH,
-		BASE_SCHEMA,
-		CONTENT_TYPES,
-		DATABASE_SECTIONS
-	} from '$lib/constants/constants.svelte';
+	import { BASE_PATH, BASE_SCHEMA } from '$lib/constants/constants.svelte';
 	import * as m from '$lib/paraglide/messages.js';
-
 	// Components
 	import DirectoryTree from '$lib/components/app/directory-tree/directory-tree.svelte';
-	import JsonFieldSelector from '$lib/components/app/json-field-selector/json-field-selector.svelte';
+	import ContentEditor from '$lib/components/app/editor/content-editor/content-editor.svelte';
 	import SchemaEditor from '$lib/components/app/editor/schema-editor/schema-editor.svelte';
 	import RemovableSelect from '$lib/components/app/removable-select/removable-select.svelte';
-	import Hr from '$lib/components/app/hr.svelte';
-	import ContentEditor from '$lib/components/app/editor/content-editor/content-editor.svelte';
 	import Braces from 'lucide-svelte/icons/braces';
 
 	let { data } = $props();
 	let { loadingState, databaseConfig, isPermitted, contents, schemas } = $derived(data);
+	setContext('data', data);
 
 	// Content
 	let fileHandle = $state<FileSystemFileHandle>();

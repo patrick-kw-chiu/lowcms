@@ -84,7 +84,8 @@ export type LowCMSType =
 export type JSONSchema7WithUnknown = JSONSchema7 & { type: 'unknown' };
 
 export type JSONSchema7WithCustomKeyword = JSONSchema7 & {
-	'x-string-custom-type'?: string;
+	'x-content-id'?: string;
+	'x-id-field'?: string;
 };
 
 export type FilterObject = {

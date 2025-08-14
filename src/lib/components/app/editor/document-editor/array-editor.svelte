@@ -4,32 +4,20 @@ It could edit a single `document` or document inside a `collection`.
 -->
 
 <script lang="ts">
+	import { draggable, droppable, type DragDropState } from '@thisux/sveltednd';
 	import { innerWidth } from 'svelte/reactivity/window';
 	import { fade } from 'svelte/transition';
-	import { draggable, droppable, type DragDropState } from '@thisux/sveltednd';
-
 	// Libraries - shadcn
-	import { Label } from '$lib/components/ui/label';
-	import { Input } from '$lib/components/ui/input';
 	import { Badge } from '$lib/components/ui/badge';
-	import * as RadioGroup from '$lib/components/ui/radio-group';
-	import * as Tooltip from '$lib/components/ui/tooltip';
-	import { toast } from 'svelte-sonner';
-	import { Toggle } from '$lib/components/ui/toggle';
 	import * as Sheet from '$lib/components/ui/sheet';
-
 	// Libraries - lucide
-	import X from 'lucide-svelte/icons/x';
 	import SquarePen from 'lucide-svelte/icons/square-pen';
-
+	import X from 'lucide-svelte/icons/x';
 	// Types
-	import type { JSONSchema7, JSONSchema7TypeName } from 'json-schema';
-	import type { Content, JSONObject } from '$lib/types/types.svelte';
+	import type { JSONObject } from '$lib/types/types.svelte';
 	import type { Selected } from 'bits-ui';
-
+	import type { JSONSchema7 } from 'json-schema';
 	// IndexedDB
-	import { updateContent } from '$lib/db/db';
-
 	// Utilities
 	import {
 		cap,
@@ -37,21 +25,16 @@ It could edit a single `document` or document inside a `collection`.
 		getValueByJsonPaths,
 		setValueByJsonPathsMutable
 	} from '$lib/utilities/utilities.svelte';
-
 	// Constants and locales
 	import * as m from '$lib/paraglide/messages.js';
 
 	// Components
-	import Hr from '$lib/components/app/hr.svelte';
-	import JsonFieldSelector from '$lib/components/app/json-field-selector/json-field-selector.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
-	import Textarea from '$lib/components/ui/textarea/textarea.svelte';
-	import TypeLabel from '../../label/type-label.svelte';
-	import RemovableSelect from '../../removable-select/removable-select.svelte';
-	import DocumentEditor from './document-editor.svelte';
 	import CirclePlus from 'lucide-svelte/icons/circle-plus';
 	import Trash_2 from 'lucide-svelte/icons/trash-2';
 	import ConfirmToRemove from '../../popover/confirm-to-remove.svelte';
+	import RemovableSelect from '../../removable-select/removable-select.svelte';
+	import DocumentEditor from './document-editor.svelte';
 
 	interface Props {
 		config: JSONSchema7;

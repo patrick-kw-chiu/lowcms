@@ -9,48 +9,54 @@
 <script lang="ts">
 	import sift, { createEqualsOperation } from 'sift';
 	import { innerWidth } from 'svelte/reactivity/window';
-
 	// Libraries - shadcn
-	import { Checkbox } from '$lib/components/ui/checkbox';
-	import * as Card from '$lib/components/ui/card';
-	import * as Table from '$lib/components/ui/table';
 	import Button from '$lib/components/ui/button/button.svelte';
+	import * as Card from '$lib/components/ui/card';
 	import * as Dialog from '$lib/components/ui/dialog';
 	import * as Sheet from '$lib/components/ui/sheet';
-
+	import * as Table from '$lib/components/ui/table';
 	// Libraries - lucide
 	import Braces from 'lucide-svelte/icons/braces';
 	import SquarePen from 'lucide-svelte/icons/square-pen';
-
+	import Workflow from 'lucide-svelte/icons/workflow';
 	// Types
+	import type { Content, FilterObject, JSONObject } from '$lib/types/types.svelte';
 	import type { JSONSchema7 } from 'json-schema';
-	import type { FilterObject, JSONObject, Content } from '$lib/types/types.svelte';
-
 	// Utilities
 	import {
 		cap,
 		checkHasIDField,
 		getLowCMSTypeByConfig,
-		includesAny
+		hasPropertyWithValues
 	} from '$lib/utilities/utilities.svelte';
-
 	// Constants and locales
 	import * as m from '$lib/paraglide/messages.js';
 
 	// Components
-	import FieldFilter from './field-filter.svelte';
-	import JsonFieldSelector from '../json-field-selector/json-field-selector.svelte';
-	import FilterObjectEditor from '../editor/filter-object-editor/filter-object-editor.svelte';
-	import DocumentEditor from '../editor/document-editor/document-editor.svelte';
 	import { invalidateAll } from '$app/navigation';
+	import DocumentEditor from '../editor/document-editor/document-editor.svelte';
+	import FilterObjectEditor from '../editor/filter-object-editor/filter-object-editor.svelte';
+	import JsonFieldSelector from '../json-field-selector/json-field-selector.svelte';
+	import FieldFilter from './field-filter.svelte';
 	interface Props {
 		rows: JSONObject[];
 		schema: JSONSchema7;
 		selectedContents: Content[];
 		contentType: 'document' | 'collection';
 		onAttemptedToEditRows?: (rowIndexes: number[], rows: JSONObject[]) => void;
+		content?: Content;
+		onSelectRelationship?: (document: JSONObject) => void;
 	}
-	let { rows, schema, selectedContents, contentType, onAttemptedToEditRows }: Props = $props();
+	let {
+		rows,
+		schema,
+		selectedContents,
+		contentType,
+		onAttemptedToEditRows,
+		content,
+		onSelectRelationship
+	}: Props = $props();
+	let isToSelectRelationship = $derived(Boolean(content) && Boolean(onSelectRelationship));
 	let rowsWithRawIndex = $derived(
 		Array.isArray(rows)
 			? rows.map((row, index) => {
@@ -65,16 +71,26 @@
 		Object.entries(schema?.properties ?? {}).sort((a, b) => {
 			const isAIDField = checkHasIDField({ properties: a });
 			const isBIDField = checkHasIDField({ properties: b });
+			const relationshipQuery = [
+				{ key: 'type', values: ['x_relationship_one_to_one', 'x_relationship_one_to_many'] }
+			];
+			const isARelationshipField = hasPropertyWithValues({ properties: a }, relationshipQuery);
+			const isBRelationshipField = hasPropertyWithValues({ properties: b }, relationshipQuery);
+
 			if (isAIDField && !isBIDField) {
 				return -1;
 			} else if (!isAIDField && isBIDField) {
+				return 1;
+			} else if (isARelationshipField && !isBRelationshipField) {
+				return -1;
+			} else if (!isARelationshipField && isBRelationshipField) {
 				return 1;
 			} else {
 				return 0;
 			}
 		})
 	) as [string, JSONSchema7][];
-	console.log({ entries });
+	console.log({ entries: $state.snapshot(entries) });
 
 	// State
 	let checkedRowIndexes = $state<number[]>([]);
@@ -106,10 +122,10 @@
 	};
 </script>
 
-<Card.Root>
+<Card.Root class={isToSelectRelationship ? 'border-none' : ''}>
 	{#if contentType === 'collection' || Object.keys(filterObject).length > 0}
 		<Card.Header>
-			{#if contentType === 'collection'}
+			{#if !isToSelectRelationship && contentType === 'collection'}
 				<div class="flex justify-end">
 					<Button
 						size="sm"
@@ -122,6 +138,9 @@
 						{cap(m.add_x({ x: m.document() }))}
 					</Button>
 				</div>
+			{:else if isToSelectRelationship}
+				<!-- TODO: locales -->
+				<div>Select a document in "<b>{content!.name}</b>" to create a relationship</div>
 			{/if}
 			<FilterObjectEditor {filterObject} isRoot={true} />
 			<div class="py-2 text-center text-sm text-muted-foreground">
@@ -158,7 +177,19 @@
 				{#each filteredRows as row}
 					<Table.Row>
 						<Table.Cell class="sticky left-0 bg-background">
-							<!-- <Checkbox
+							{#if isToSelectRelationship}
+								<Button
+									variant="ghost"
+									size="icon"
+									class="h-8 w-8"
+									onclick={() => {
+										onSelectRelationship?.(row);
+									}}
+								>
+									<Workflow class="h-5 w-5" />
+								</Button>
+							{:else}
+								<!-- <Checkbox
 								onCheckedChange={(checked) => {
 									if (checked) {
 										checkedRowIndexes.push(row.____rawIndex____);
@@ -167,17 +198,18 @@
 									}
 								}}
 							/> -->
-							<Button
-								variant="ghost"
-								size="icon"
-								class="h-8 w-8"
-								onclick={() => {
-									checkedRowIndexes = [row.____rawIndex____];
-									onAttemptedToEditRows?.([row.____rawIndex____], [row]);
-								}}
-							>
-								<SquarePen class="h-5 w-5" />
-							</Button>
+								<Button
+									variant="ghost"
+									size="icon"
+									class="h-8 w-8"
+									onclick={() => {
+										checkedRowIndexes = [row.____rawIndex____];
+										onAttemptedToEditRows?.([row.____rawIndex____], [row]);
+									}}
+								>
+									<SquarePen class="h-5 w-5" />
+								</Button>
+							{/if}
 						</Table.Cell>
 						{#each entries as [field, config]}
 							<Table.Cell

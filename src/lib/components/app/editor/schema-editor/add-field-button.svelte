@@ -1,11 +1,7 @@
 <script lang="ts">
 	// Libraries - shadcn
-	import * as Popover from '$lib/components/ui/popover';
 	import { Button } from '$lib/components/ui/button';
-	import { Label } from '$lib/components/ui/label';
-	import { Input } from '$lib/components/ui/input';
-	import * as Select from '$lib/components/ui/select';
-
+	import * as Popover from '$lib/components/ui/popover';
 	// Libraries - lucide
 	import CirclePlus from 'lucide-svelte/icons/circle-plus';
 
@@ -13,12 +9,8 @@
 	import type { JSONSchema7 } from 'json-schema';
 
 	// Utilities
-	import { cap } from '$lib/utilities/utilities.svelte';
-
 	// Constants and locales
-	import * as m from '$lib/paraglide/messages.js';
 	import {} from '$lib/constants/constants.svelte';
-
 	// Components
 	import FieldEditor from './field-editor/field-editor.svelte';
 
@@ -78,7 +70,7 @@
 			>
 				<hr
 					class={`h-[4px] bg-gray-300 opacity-0 ${isOpen || isHovered ? 'opacity-45' : ''}`}
-					style={`width: ${isOpen || isHovered ? 'calc(100% - 1.8rem)' : '100%'}`}
+					style={`width: ${isOpen || isHovered ? 'calc(100% - 2rem)' : '100%'}`}
 					onmouseover={() => (isHovered = true)}
 					onfocus={() => (isHovered = true)}
 					onmouseout={() => (isHovered = false)}
@@ -101,10 +93,7 @@
 			</div>
 		{/if}
 	</Popover.Trigger>
-	<Popover.Content
-		class="border-3 w-96 overflow-scroll"
-		style="max-height: 70dvh; min-height: 320px"
-	>
+	<Popover.Content class="border-3 w-96" style={`max--height: 70dvh; min--height: 320px;`}>
 		<FieldEditor
 			onConfirmFieldDetail={(field, schema) => {
 				onAddField(field, schema, { beforeField: entry?.[0] });

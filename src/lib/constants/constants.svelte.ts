@@ -111,10 +111,14 @@ export const FIELD = {
 		'boolean',
 		'array',
 		'object',
-		'null'
+		'null',
+		'x_id_uuid',
+		'x_id_nanoid',
+		'x_relationship_one_to_one',
+		'x_relationship_one_to_many'
 	] as JSONSchema7TypeName[],
 	string: {
-		keywords: ['enum', 'minLength', 'maxLength', 'pattern', 'x-string-custom-type'],
+		keywords: ['enum', 'minLength', 'maxLength', 'pattern'],
 		customTypes: [
 			'ID - uuid',
 			'ID - nanoid'
@@ -141,5 +145,17 @@ export const FIELD = {
 	},
 	unknown: {
 		keywords: []
+	},
+	x_id_uuid: {
+		keywords: []
+	},
+	x_id_nanoid: {
+		keywords: []
+	},
+	x_relationship_one_to_one: {
+		keywords: ['x-content-id', 'x-id-field']
+	},
+	x_relationship_one_to_many: {
+		keywords: ['x-content-id', 'x-id-field']
 	}
 };

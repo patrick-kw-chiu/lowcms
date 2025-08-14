@@ -1,28 +1,22 @@
 <script lang="ts">
+	import { nanoid } from 'nanoid';
+	import { v4 as uuidv4 } from 'uuid';
 	// Libraries - shadcn
-	import { Button } from '$lib/components/ui/button';
 	import { Label } from '$lib/components/ui/label';
-	import { Input } from '$lib/components/ui/input';
 	import * as Select from '$lib/components/ui/select';
-	import { Badge } from '$lib/components/ui/badge';
-
 	// Libraries - lucide
-	import X from 'lucide-svelte/icons/x';
-
 	// Types
+	import type { JSONSchema7WithCustomKeyword } from '$lib/types/types.svelte';
 	import type { JSONSchema7, JSONSchema7TypeName } from 'json-schema';
-	import type { JSONObject, JSONSchema7WithCustomKeyword } from '$lib/types/types.svelte';
-
 	// Utilities
 	import { cap } from '$lib/utilities/utilities.svelte';
 
 	// Constants and locales
-	import * as m from '$lib/paraglide/messages.js';
 	import { FIELD } from '$lib/constants/constants.svelte';
+	import * as m from '$lib/paraglide/messages.js';
 	import type { Selected } from 'bits-ui';
 	import EnumEditor from './enum-editor.svelte';
-	import RemovableSelect from '$lib/components/app/removable-select/removable-select.svelte';
-	import StringCustomTypeEditor from './string-custom-type-editor.svelte';
+	import RelationshipEditor from './relationship-editor.svelte';
 
 	interface Props {
 		keywordObj: JSONSchema7WithCustomKeyword;
@@ -77,14 +71,24 @@
 	{/if}
 {:else}
 	{#if type === 'string'}
-		<StringCustomTypeEditor bind:keywordObj {disabled} />
-		<div class={keywordObj['x-string-custom-type'] ? 'opacity-60' : ''}>
-			<EnumEditor
-				bind:keywordObj
-				type="string"
-				disabled={disabled || !!keywordObj['x-string-custom-type']}
-			/>
-		</div>
+		<EnumEditor bind:keywordObj type="string" {disabled} />
+	{/if}
+	{#if ['x_id_uuid', 'x_id_nanoid'].includes(type)}
+		<p class="text-xs opacity-60">
+			<!-- TODO locales -->
+			{#if ['x_id_uuid'].includes(type)}
+				You can generate a UUID in LowCMS e.g. "{uuidv4()}", or input your own.
+			{:else if ['x_id_nanoid'].includes(type)}
+				You can generate a nanoid in LowCMS e.g. "{nanoid(32)}", or input your own.
+			{/if}
+		</p>
+	{/if}
+	{#if ['x_relationship_one_to_one', 'x_relationship_one_to_many'].includes(type)}
+		<RelationshipEditor
+			bind:keywordObj
+			type={type as 'x_relationship_one_to_one' | 'x_relationship_one_to_many'}
+			{disabled}
+		/>
 	{/if}
 	<!-- {#each entries as entry}
 		<div class="space-y-2">

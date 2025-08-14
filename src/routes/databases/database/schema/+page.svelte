@@ -1,62 +1,42 @@
 <script lang="ts">
 	// Libraries
 	import { goto, invalidateAll } from '$app/navigation';
+	import { setContext } from 'svelte';
 	import { innerWidth } from 'svelte/reactivity/window';
-
 	// Libraries - shadcn
 	import { Button } from '$lib/components/ui/button';
-	import * as Tooltip from '$lib/components/ui/tooltip';
-	import * as Table from '$lib/components/ui/table';
 	import * as Card from '$lib/components/ui/card';
-	import { toast } from 'svelte-sonner';
-	import { Toaster } from '$lib/components/ui/sonner';
-	import * as Sheet from '$lib/components/ui/sheet';
-	import { Label } from '$lib/components/ui/label';
 	import { Input } from '$lib/components/ui/input';
-
+	import { Label } from '$lib/components/ui/label';
+	import * as Sheet from '$lib/components/ui/sheet';
+	import { Toaster } from '$lib/components/ui/sonner';
+	import * as Table from '$lib/components/ui/table';
+	import * as Tooltip from '$lib/components/ui/tooltip';
+	import { toast } from 'svelte-sonner';
 	// Libraries - lucide
 	import SquarePen from 'lucide-svelte/icons/square-pen';
 	import Trash_2 from 'lucide-svelte/icons/trash-2';
-
 	// Utilities
-	import {
-		cap,
-		checkHasIDField,
-		getQueryString,
-		getValueByJsonPaths,
-		hasPropertyWithValues
-	} from '$lib/utilities/utilities.svelte';
-
+	import { cap, checkHasIDField, getQueryString } from '$lib/utilities/utilities.svelte';
 	// IndexedDB
 	import { deleteSchemaById, updateSchema } from '$lib/db/db.js';
 
 	// Types
+	import type { Content, Schema } from '$lib/types/types.svelte';
 	import type { JSONSchema7 } from 'json-schema';
-	import type { Selected } from 'bits-ui';
-	import type { Schema, Content, JSONObject } from '$lib/types/types.svelte';
-
 	// IndexedDB
-	import {
-		db,
-		deleteDatabaseConfigById,
-		getDatabaseConfigById,
-		getSchemaById
-	} from '$lib/db/db.js';
-
 	// Constants and locales
-	import { BASE_PATH, CONTENT_TYPES, DATABASE_SECTIONS } from '$lib/constants/constants.svelte';
+	import { BASE_PATH } from '$lib/constants/constants.svelte';
 	import * as m from '$lib/paraglide/messages.js';
-
 	// Components
 	import SchemaEditor from '$lib/components/app/editor/schema-editor/schema-editor.svelte';
-	import Textarea from '$lib/components/ui/textarea/textarea.svelte';
-	import Hr from '$lib/components/app/hr.svelte';
-	import DocumentEditor from '$lib/components/app/editor/document-editor/document-editor.svelte';
 	import ConfirmToRemove from '$lib/components/app/popover/confirm-to-remove.svelte';
+	import Textarea from '$lib/components/ui/textarea/textarea.svelte';
 	import IdCardLanyard from 'lucide-svelte/icons/id-card-lanyard';
 
 	const { data } = $props();
 	const { databaseId, databaseConfig, schemaId, schemas, contents } = $derived(data);
+	setContext('data', data);
 
 	// let schemaToEdit = $derived($state.snapshot(schemas).find((schema) => schema.id === schemaId));
 	let schemaToEdit = $state<Schema>();

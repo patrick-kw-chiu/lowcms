@@ -137,5 +137,10 @@
 	"_false": "否",
 	"save_changes": "儲存變更",
 	"used_by_x_y": "被{x}個{y}使用",
-	"usage": "使用"
+	"usage": "使用",
+
+	"x_id_uuid": "ID (UUID)",
+	"x_id_nanoid": "ID (Nano ID)",
+	"x_relationship_one_to_one": "1對1關係",
+	"x_relationship_one_to_many": "1對多關係"
 }

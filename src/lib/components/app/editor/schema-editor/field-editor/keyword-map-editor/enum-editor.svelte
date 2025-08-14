@@ -4,29 +4,21 @@
 `EnumEditor` add/remove `enums` for a schema field (`string` or `array of strings`)
 -->
 <script lang="ts">
+	import { innerHeight } from 'svelte/reactivity/window';
 	// Libraries - shadcn
-	import { Button } from '$lib/components/ui/button';
-	import { Label } from '$lib/components/ui/label';
-	import { Input } from '$lib/components/ui/input';
-	import { Checkbox } from '$lib/components/ui/checkbox';
 	import { Badge } from '$lib/components/ui/badge';
-
+	import { Button } from '$lib/components/ui/button';
+	import { Input } from '$lib/components/ui/input';
+	import { Label } from '$lib/components/ui/label';
 	// Libraries - lucide
 	import X from 'lucide-svelte/icons/x';
-	import Eye from 'lucide-svelte/icons/eye';
-	import EyeClosed from 'lucide-svelte/icons/eye-closed';
-
 	// Types
-	import type { JSONSchema7, JSONSchema7TypeName } from 'json-schema';
-	import type { JSONObject } from '$lib/types/types.svelte';
-
+	import type { JSONSchema7 } from 'json-schema';
 	// Utilities
-	import { cap, extractWhitespaceParts } from '$lib/utilities/utilities.svelte';
-
+	import { extractWhitespaceParts } from '$lib/utilities/utilities.svelte';
 	// Constants and locales
-	import * as m from '$lib/paraglide/messages.js';
 	import {} from '$lib/constants/constants.svelte';
-	import type { Selected } from 'bits-ui';
+	import * as m from '$lib/paraglide/messages.js';
 
 	interface Props {
 		type: 'array-of-strings' | 'string';
@@ -106,7 +98,9 @@
 			<Button type="submit" disabled={!enumValue} onclick={addEnumValue}>{m.add()}</Button>
 		</div>
 	</div>
-	<div>
+	<div
+		style={`max-height: ${Math.max((innerHeight.current ?? 200) / 4, 200)}px; max-width: $200}px; overflow-y: auto;`}
+	>
 		{#if (keywordObj.enum ?? []).length > 0}
 			{#each keywordObj.enum! as enumValue}
 				{@render EditEnumBadge(enumValue as string, removeEnumValue, disabled)}

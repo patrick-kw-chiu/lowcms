@@ -2,17 +2,16 @@
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Label from '$lib/components/ui/label/label.svelte';
 	import * as Select from '$lib/components/ui/select';
-	import { cap } from '$lib/utilities/utilities.svelte';
 	import type { Selected } from 'bits-ui';
-	import * as m from '$lib/paraglide/messages.js';
+	import CalendarClock from 'lucide-svelte/icons/calendar-clock';
 	import CircleX from 'lucide-svelte/icons/circle-x';
 	import IDCardLanyard from 'lucide-svelte/icons/id-card-lanyard';
-	import Mail from 'lucide-svelte/icons/mail';
-	import CalendarClock from 'lucide-svelte/icons/calendar-clock';
 	import LinkIcon from 'lucide-svelte/icons/link';
+	import Mail from 'lucide-svelte/icons/mail';
+	import Workflow from 'lucide-svelte/icons/workflow';
 
 	interface Props {
-		options: { value: string; label: string; withIcon?: boolean }[];
+		options: { value: string; label: string; iconName?: string }[];
 		onSelectedChange: (item: Selected<string | undefined> | undefined) => void;
 		value?: string;
 		label?: string;
@@ -54,20 +53,16 @@
 				<Select.Group>
 					{#each options as option}
 						<Select.Item value={option.value} label={option.label}>
-							{#if option.withIcon}
-								{#if option.label.startsWith('ID - ')}
-									<IDCardLanyard class="h-5 w-5" />
-								{:else if ['relationship'].includes(option.label)}
-									<Mail class="h-5 w-5" />
-								{:else if ['email'].includes(option.label)}
-									<Mail class="h-5 w-5" />
-								{:else if ['date', 'datetime', 'time'].includes(option.label)}
-									<CalendarClock class="h-5 w-5" />
-								{:else if ['url'].includes(option.label)}
-									<LinkIcon class="h-5 w-5" />
-								{:else}
-									{null}
-								{/if}
+							{#if option.iconName === 'id'}
+								<IDCardLanyard class="h-5 w-5" />
+							{:else if option.iconName === 'email'}
+								<Mail class="h-5 w-5" />
+							{:else if ['date', 'datetime', 'time'].includes(option.iconName!)}
+								<CalendarClock class="h-5 w-5" />
+							{:else if option.iconName === 'url'}
+								<LinkIcon class="h-5 w-5" />
+							{:else if option.iconName === 'relationship'}
+								<Workflow class="h-5 w-5" />
 							{/if}
 							{option.label}
 						</Select.Item>

@@ -1,61 +1,46 @@
 <script lang="ts">
 	// Libraries
-	import { onDestroy } from 'svelte';
-	import { liveQuery, type Subscription } from 'dexie';
-	import { page } from '$app/state';
 	import { goto, invalidateAll } from '$app/navigation';
 	import { languageTag } from '$lib/paraglide/runtime.js';
-
+	import { setContext } from 'svelte';
 	// Libraries - shadcn
-	import { Button } from '$lib/components/ui/button';
-	import * as Tooltip from '$lib/components/ui/tooltip';
-	import * as Table from '$lib/components/ui/table';
-	import * as Resizable from '$lib/components/ui/resizable';
-	import { toast } from 'svelte-sonner';
-	import { Toaster } from '$lib/components/ui/sonner';
-	import * as Sheet from '$lib/components/ui/sheet';
 	import * as Accordion from '$lib/components/ui/accordion';
-
+	import { Button } from '$lib/components/ui/button';
+	import * as Resizable from '$lib/components/ui/resizable';
+	import * as Sheet from '$lib/components/ui/sheet';
+	import { Toaster } from '$lib/components/ui/sonner';
+	import * as Tooltip from '$lib/components/ui/tooltip';
+	import { toast } from 'svelte-sonner';
 	// Libraries - lucide
-	import CirclePlus from 'lucide-svelte/icons/circle-plus';
+	import Braces from 'lucide-svelte/icons/braces';
 
 	// Utilities
 	import { cap, getQueryString, getValueByJsonPaths } from '$lib/utilities/utilities.svelte';
 
 	// Types
-	import type { JSONSchema7 } from 'json-schema';
-	import type { Selected } from 'bits-ui';
 	import { type Content, type JSONObject } from '$lib/types/types.svelte';
-
+	import type { Selected } from 'bits-ui';
+	import type { JSONSchema7 } from 'json-schema';
 	// IndexedDB
-	import {
-		db,
-		deleteDatabaseConfigById,
-		getDatabaseConfigById,
-		getSchemaById
-	} from '$lib/db/db.js';
-
+	import { getSchemaById } from '$lib/db/db.js';
 	// Constants and locales
-	import { BASE_PATH, CONTENT_TYPES, DATABASE_SECTIONS } from '$lib/constants/constants.svelte';
+	import { BASE_PATH, CONTENT_TYPES } from '$lib/constants/constants.svelte';
 	import * as m from '$lib/paraglide/messages.js';
-
 	// Components
-	import StorageOption from '$lib/components/app/tag/storage-option/storage-option.svelte';
-	import DeleteDbConfigDialog from '$lib/components/app/dialog/delete-db-config-dialog/delete-db-config-dialog.svelte';
-	import AddDbConfigDialog from '$lib/components/app/dialog/add-db-config-dialog/add-db-config-dialog.svelte';
-	import RemovableSelect from '$lib/components/app/removable-select/removable-select.svelte';
 	import ContentButton from '$lib/components/app/button/content-button.svelte';
 	import ContentTable from '$lib/components/app/content-table/content-table.svelte';
 	import ContentEditor from '$lib/components/app/editor/content-editor/content-editor.svelte';
-	import Settings from 'lucide-svelte/icons/settings';
+	import DocumentEditor from '$lib/components/app/editor/document-editor/document-editor.svelte';
+	import Hr from '$lib/components/app/hr.svelte';
+	import RemovableSelect from '$lib/components/app/removable-select/removable-select.svelte';
 	import Input from '$lib/components/ui/input/input.svelte';
 	import Textarea from '$lib/components/ui/textarea/textarea.svelte';
-	import Hr from '$lib/components/app/hr.svelte';
-	import DocumentEditor from '$lib/components/app/editor/document-editor/document-editor.svelte';
+	import Settings from 'lucide-svelte/icons/settings';
 
 	const { data } = $props();
 	const { databaseId, contentId, viewDocumentAs, databaseConfig, contents, schemas } =
 		$derived(data);
+	setContext('data', data);
 
 	let contentType = $state('all');
 	let filteredContents = $derived(
@@ -221,7 +206,7 @@
 			<div class="lc-long-content gap-1 p-2 py-3" style="height: calc(100% - 3.5rem)">
 				<a href={`/${BASE_PATH}/databases/database/content/add?databaseId=${databaseId}`}>
 					<Button size="sm" class="h-8 w-full gap-1">
-						<CirclePlus class="h-3.5 w-3.5" />
+						<Braces class="h-3.5 w-3.5" />
 						<span>
 							{cap(
 								m.add_x({
@@ -280,11 +265,11 @@
 					To resolve the issue, please "edit content" and assign a schema to it.
 				</div>
 			{:else}
-				<div class="lc-long-content gap-4 px-6" style="height: calc(100% - 3.5rem)">
+				<div class="lc-long-content relative gap-4 px-6" style="height: calc(100% - 3.5rem)">
 					<div class="flex items-start justify-between">
-						<Accordion.Root bind:value={contentAccordionValue} style="width: calc(100% - 36px)">
+						<Accordion.Root bind:value={contentAccordionValue} style="width: 100%">
 							<Accordion.Item value="content-accordion">
-								<Accordion.Trigger>
+								<Accordion.Trigger style="margin-right: 6.5rem;">
 									<div class="flex items-center gap-2">
 										<h3 class="text-lg font-semibold">
 											{selectedContents[0]?.name}
@@ -342,8 +327,42 @@
 								</Accordion.Content>
 							</Accordion.Item>
 						</Accordion.Root>
+						<Tooltip.Root>
+							<Tooltip.Trigger>
+								<Button
+									variant="outline"
+									size="icon"
+									class="absolute mt-2"
+									style="right: 4.5rem;"
+									onclick={() => {
+										const queryString = getQueryString({
+											databaseId,
+											schemaId: selectedContents[0]?.schemaId
+										});
+										goto(`/${BASE_PATH}/databases/database/schema${queryString}`);
+									}}
+								>
+									<Braces />
+								</Button>
+							</Tooltip.Trigger>
+							<Tooltip.Content class="mt-2">
+								<!-- TODO locales -->
+								View content schema
+							</Tooltip.Content>
+						</Tooltip.Root>
 						<Sheet.Root bind:open={isContentEditorOpen}>
-							<Sheet.Trigger><Settings class="mt-4" /></Sheet.Trigger>
+							<Sheet.Trigger>
+								<Button
+									variant="outline"
+									size="icon"
+									class="absolute right-6 mt-2"
+									onclick={() => {
+										isContentEditorOpen = true;
+									}}
+								>
+									<Settings />
+								</Button>
+							</Sheet.Trigger>
 							<Sheet.Content class="w-[520px] p-3 py-6" style="max-width: 520px !important">
 								<ContentEditor
 									{contentId}

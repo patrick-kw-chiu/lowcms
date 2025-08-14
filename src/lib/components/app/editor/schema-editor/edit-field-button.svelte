@@ -1,29 +1,19 @@
 <script lang="ts">
 	// Libraries - shadcn
-	import * as Popover from '$lib/components/ui/popover';
 	import { Button } from '$lib/components/ui/button';
-	import { Label } from '$lib/components/ui/label';
-	import { Input } from '$lib/components/ui/input';
-	import * as Select from '$lib/components/ui/select';
-
+	import * as Popover from '$lib/components/ui/popover';
 	// Libraries - lucide
-	import CirclePlus from 'lucide-svelte/icons/circle-plus';
-
 	// Types
-	import type { JSONSchema7, JSONSchema7TypeName } from 'json-schema';
 	import type { JSONObject } from '$lib/types/types.svelte';
-
+	import type { JSONSchema7, JSONSchema7TypeName } from 'json-schema';
 	// Utilities
-	import { cap, pick } from '$lib/utilities/utilities.svelte';
-
+	import { pick } from '$lib/utilities/utilities.svelte';
 	// Constants and locales
-	import * as m from '$lib/paraglide/messages.js';
 	import { FIELD } from '$lib/constants/constants.svelte';
-
 	// Components
-	import FieldEditor from './field-editor/field-editor.svelte';
-	import TypeLabel from '../../label/type-label.svelte';
 	import Trash_2 from 'lucide-svelte/icons/trash-2';
+	import TypeLabel from '../../label/type-label.svelte';
+	import FieldEditor from './field-editor/field-editor.svelte';
 
 	interface Props {
 		field: string;
@@ -68,10 +58,7 @@
 			<TypeLabel config={jsonSchema} />
 		</Button>
 	</Popover.Trigger>
-	<Popover.Content
-		class="border-3 w-96 overflow-scroll"
-		style="max-height: 70dvh; min-height: 320px"
-	>
+	<Popover.Content class="border-3 w-96" style={`max--height: 70dvh; min--height: 320px;`}>
 		<button
 			class="absolute right-2 z-30"
 			{disabled}

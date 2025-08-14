@@ -157,6 +157,18 @@
 		@apply h-4 !bg-purple-200 !text-black dark:!bg-purple-800 dark:!text-white;
 	}
 
+	.lc-badge-id,
+	.lc-badge-x_id_uuid,
+	.lc-badge-x_id_nanoid {
+		@apply h-4 border border-violet-700 !bg-violet-200 !text-black dark:!border-violet-100 dark:!bg-violet-800 dark:!text-white;
+	}
+
+	.lc-badge-relationship,
+	.lc-badge-x_relationship_one_to_one,
+	.lc-badge-x_relationship_one_to_many {
+		@apply h-4 border border-cyan-700 !bg-cyan-200 !text-black dark:!border-cyan-100 dark:!bg-cyan-800 dark:!text-white;
+	}
+
 	:root {
 		div[role='tooltip'].bg-popover {
 			background-color: hsl(var(--tooltip));
